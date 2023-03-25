@@ -232,7 +232,7 @@
           </div>
         </div>
         <div class="video__preview">
-          <button
+          <div
             data-fancybox
             data-src="https://youtu.be/r6Ocw-Su3Qc"
             class="first__video_preview_link"
@@ -240,24 +240,20 @@
             <span class="video__preview-subtitle">Видео-обзор</span>
             <span class="video__preview-title">Onlooker M84 Pro</span>
             <span class="video__preview-img">
-              <picture>
-                <source srcset="./img/video/video.webp" type="image/webp" />
-                <img
-                  class="video__preview-item lazyload"
-                  loading="lazy"
-                  data-src="./img/video/video.png"
-                  alt="images"
-                />
-              </picture>
+          <picture>
+            <source srcset="./img/video/video.webp" type="image/webp" />
+            <source srcset="./img/video/video.png" type="image/png" />
+            <img src="./img/video/video.png" alt="Видео" />
+          </picture>
               <span class="video__preview-block">
                 <img
                   class="video__preview-icon lazyload"
-                  data-src="assets/img/icons/play-white.svg"
+                  src="./img/video/icon/polygon.svg"
                   alt="images"
                 />
               </span>
             </span>
-          </button>
+          </div>
         </div>
       </section>
     </main>
