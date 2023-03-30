@@ -1228,14 +1228,8 @@
               />
             </picture>
             <picture>
-              <source
-                srcset="./img/alert/alert-sign.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./img/alert/alert-sign.png"
-                type="image/png"
-              />
+              <source srcset="./img/alert/alert-sign.webp" type="image/webp" />
+              <source srcset="./img/alert/alert-sign.png" type="image/png" />
               <img
                 class="alert__img-sign"
                 loading="lazy"
@@ -1264,9 +1258,123 @@
               />
             </picture>
           </div>
-          
+          <div class="alert__right">
+            <picture>
+              <source srcset="./img/alert/alert-bg1.webp" type="image/webp" />
+              <source srcset="./img/alert/alert-bg1.png" type="image/png" />
+              <img
+                class="alert__bg"
+                loading="lazy"
+                src="./img/alert/alert-bg1.png"
+                alt="background"
+              />
+            </picture>
+          </div>
         </div>
       </section>
+
+      <!-- ----------------------- cold start ---------------------- -->
+      <section class="coldstart container">
+        <div class="coldstart__title">
+          <img
+            class="coldstart__icon"
+            src="./img/coldstart/timer.svg"
+            alt="timer"
+          />
+          <span>Запуск за 1 минуту</span> при холодном старте
+        </div>
+        <div class="coldstart__text">
+          Спутники GPS, ГЛОНАСС, BAIDU находятся с рекордной скоростью
+        </div>
+        <div class="coldstart__items">
+          <div class="coldstart__item">
+            <div>
+              <picture>
+                <source
+                  srcset="./img/coldstart/coldstart.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/coldstart/coldstart.png"
+                  type="image/png"
+                />
+                <img
+                  class="coldstart__item-img"
+                  loading="lazy"
+                  src="./img/coldstart/coldstart.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+            <div class="coldstart__item-title">
+              Просматривайте пройденный маршрут на карте
+            </div>
+            <div class="coldstart__item-text">
+              Смотрите видео с GPS-треком на ПК. Координаты сохраняются на видео
+              в формате .TS
+            </div>
+          </div>
+          <div class="coldstart__item">
+            <div>
+              <picture>
+                <source
+                  srcset="./img/coldstart/coldstart2.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/coldstart/coldstart2.png"
+                  type="image/png"
+                />
+                <img
+                  class="coldstart__item-img"
+                  loading="lazy"
+                  src="./img/coldstart/coldstart2.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+            <div class="coldstart__item-title">Проверка перед поездкой</div>
+            <div class="coldstart__item-text">
+              Проверьте, как происходят оповещения после настройки в демо
+              режиме. Проверьте статус спутинков
+            </div>
+          </div>
+        </div>
+        <div class="coldstart__footer">
+          <div class="coldstart__footer-text">
+            На видео отображается штамп<br>
+            <span>с необходимой с информацией для суда:</span>
+          </div>
+          <div class="coldstart__info">
+            <div class="info__time info__wrap">
+              <img class="info__img1" src="./img/coldstart/clock.svg" alt="" />
+              <div class="info__block">
+                <div class="info__text">Время</div>
+                <div class="info__data">12:56</div>
+              </div>
+            </div>
+            <div class="info__speed info__wrap">
+              <img class="info__img2" src="./img/coldstart/speed.svg" alt="" />
+              <div class="info__block">
+                <div class="info__text">Скорость</div>
+                <div class="info__data">123 км/ч</div>
+              </div>
+            </div>
+            <div class="info__gps info__wrap">
+              <img class="info__img3" src="./img/coldstart/gps.svg" alt="" />
+              <div class="info__block">
+                <div class="info__text">Координаты GPS</div>
+                <div class="info__data">51.4535N - 45.3456W</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ------------------- radar---------------------------- -->
+
+      <section class="radar container"
+    </section>
+
     </main>
 
     <footer class="footer"></footer>
