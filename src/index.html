@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>title</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -45,12 +46,12 @@
       <section class="hero">
         <div class="container">
           <div class="hero__wrap">
-            <h1 class="hero__title">
+            <h1 data-aos="fade-up" class="hero__title">
               <span>Видеорегистратор</span> &nbsp;&nbsp;&nbsp;&nbsp; с
               сигнатурным радар-детектором
             </h1>
             <div class="hero__advantages advantages">
-              <div class="advantages__item">
+              <div data-aos="fade-up" class="advantages__item">
                 <img src="./img/hero/icons/icon1.svg" alt="icon1" />
                 <div class="advantages__info">
                   <div class="advantages__title">
@@ -61,7 +62,7 @@
                   </div>
                 </div>
               </div>
-              <div class="advantages__item">
+              <div data-aos="fade-up" class="advantages__item">
                 <img
                   loading="lazy"
                   src="./img/hero/icons/icon2.svg"
@@ -74,7 +75,7 @@
                   </div>
                 </div>
               </div>
-              <div class="advantages__item">
+              <div data-aos="fade-up" class="advantages__item">
                 <img src="./img/hero/icons/icon3.svg" alt="icon3" />
                 <div class="advantages__info">
                   <div class="advantages__title">Без ложных срабатываний</div>
@@ -83,7 +84,7 @@
                   </div>
                 </div>
               </div>
-              <div class="advantages__item">
+              <div data-aos="fade-up" class="advantages__item">
                 <img
                   loading="lazy"
                   src="./img/hero/icons/icon4.svg"
@@ -1468,35 +1469,78 @@
       <!-- ---------------  interface -------------------------- -->
       <section class="interface container">
         <div class="interface__title">
-          Интерфейс покажет информацию о точке контроля
+          Интерфейс покажет информацию <br />
+          о точке контроля
         </div>
-        <div class="interface__block">
-          <div class="interface__item">
-            <img src="./img/interface/icon1.svg" alt="" class="interface__icon1" />
-            <div class="interface__text">
-              Работа радара , диапазон излучения
+        <div class="interface__wrap">
+          <div class="interface__block">
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon1.svg"
+                alt=""
+                class="interface__icon1"
+              />
+              <div class="interface__text">
+                Работа радара , диапазон излучения
+              </div>
+            </div>
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon2.svg"
+                alt=""
+                class="interface__icon2"
+              />
+              <div class="interface__text">
+                Ограничение скорости и расстояние до камеры
+              </div>
+            </div>
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon3.svg"
+                alt=""
+                class="interface__icon3"
+              />
+              <div class="interface__text">
+                Текущая скорость или средняя скорость
+              </div>
+            </div>
+            <div class="interface__item">
+              <img
+                src="./img/interface/icon4.svg"
+                alt=""
+                class="interface__icon4"
+              />
+              <div class="interface__text">Дополнительные типы контроля</div>
             </div>
           </div>
-          <div class="interface__item">
-            <img src="./img/interface/icon2.svg" alt="" class="interface__icon2" />
-            <div class="interface__text">
-              Ограничение скорости и расстояние до камеры
-            </div>
-          </div>
-          <div class="interface__item">
-            <img src="./img/interface/icon3.svg" alt="" class="interface__icon3" />
-            <div class="interface__text">
-              Текущая скорость или средняя скорость
-            </div>
-          </div>
-          <div class="interface__item">
-            <img src="./img/interface/icon4.svg" alt="" class="interface__icon4" />
-            <div class="interface__text">Дополнительные типы контроля</div>
+          <div class="interface__img">
+            <picture>
+              <source
+                srcset="./img/interface/intreface-bg.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="./img/interface/intreface-bg.png"
+                type="image/png"
+              />
+              <img
+                class="interface__img-bg"
+                loading="lazy"
+                src="./img/interface/intreface-bg.png"
+                alt="radar"
+              />
+            </picture>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer"></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
