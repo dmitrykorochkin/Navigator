@@ -2299,7 +2299,7 @@
           Надежная карта памяти на 128 Гб - <br />
           до 12 часов непрерывной съемки
         </div>
-        <p>* Дополнительный аксессуар</p>
+        <div class="memory__accessory">* Дополнительный аксессуар</div>
         <div class="memory__wrap">
           <div class="memory__left">
             <div class="memory__items">
@@ -2381,7 +2381,7 @@
                   alt="cart"
                   class="cart__icon1"
                 />
-                <p>25 минут</p>
+                <div class="cart__text">25 минут</div>
               </div>
               <div class="cart__img-two">
                 <img
@@ -2389,24 +2389,143 @@
                   alt="cart"
                   class="cart__icon2"
                 />
-                <p>120 минут</p>
+                <div class="cart__text">120 минут</div>
               </div>
               <div class="cart__img-three">
                 <img
-                  src="./img/memory/cart4.svg"
+                  src="./img/memory/cart3.svg"
                   alt="cart"
                   class="cart__icon3"
                 />
-                <p>120 минут</p>
+                <div class="cart__text cart__text-big">до 720 минут</div>
               </div>
             </div>
           </div>
         </div>
         <div class="accessory">
           <p>* Доп. аксессуар</p>
-          <img src="" alt="" class="accessory__icon" />
-          <div class="accessory__price-old"></div>
-          <div class="accessory__price-new"></div>
+          <picture>
+            <source srcset="./img/memory/cart.webp" type="image/webp" />
+            <source srcset="./img/memory/cart.png" type="image/png" />
+            <img
+              class="accessory__img"
+              src="./img/memory/cart.png"
+              alt="memory card"
+            />
+          </picture>
+          <div class="accessory__price-old">2 990 ₽</div>
+          <div class="accessory__price-new">2 190 ₽</div>
+        </div>
+
+        <picture>
+          <source srcset="./img/memory/memory-bg-line.webp" type="image/webp" />
+          <source srcset="./img/memory/memory-bg-line.png" type="image/png" />
+          <img
+            class="accessory__bg-line"
+            src="./img/memory/memory-bg-line.png"
+            alt="memory card"
+          />
+        </picture>
+      </section>
+
+      <!-- --------------------- cartreader------------------------------------- -->
+      <section class="cartreader container">
+        <div class="cartreader__left">
+          <img
+            class="cartreader__img-line"
+            src="./img/cartreader/line.svg"
+            alt="line"
+          />
+          <picture>
+            <source
+              srcset="./img/cartreader/cartreader-img.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/cartreader/cartreader-img.png"
+              type="image/png"
+            />
+            <img
+              class="cartreader__radar"
+              src="./img/cartreader/cartreader-img.png"
+              alt="cartreader"
+            />
+          </picture>
+
+          <picture>
+            <source srcset="./img/cartreader/flash.webp" type="image/webp" />
+            <source srcset="./img/cartreader/flash.png" type="image/png" />
+            <img
+              class="flash-img"
+              src="./img/cartreader/flash.png"
+              alt="flash"
+            />
+          </picture>
+
+          <picture>
+            <source srcset="./img/cartreader/card.webp" type="image/webp" />
+            <source srcset="./img/cartreader/card.png" type="image/png" />
+            <img class="card__img" src="./img/cartreader/card.png" alt="card" />
+          </picture>
+        </div>
+        <div class="cartreader__right">
+          <div class="cartreader__title">
+            Закажите видеорегистратор с картой памяти сегодня и получите
+            картридер!
+          </div>
+          <div class="cartreader__wrap">
+            <div class="cartreader__price">
+              <div class="cartreader__price-new">17 990 ₽</div>
+              <div class="cartreader__price-old">24 890 ₽</div>
+            </div>
+            <div class="cartreader__present">
+              Картридер <span>в подарок</span>
+            </div>
+          </div>
+          <a href="#" class="cartreader__button button">Перейти к оформлению</a>
+          <div class="cartreader__person">
+            Нажимая на кнопку, вы даете согласие на обработку своих
+            <span>персональных данных</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- -------------------- protection ---------------------- -->
+
+      <section class="protection container">
+        <div class="protection__title">Лучшая круглосуточная защита авто</div>
+        <div class="protection__subtitle">
+          В случае удара или движения в кадре - сразу начинается запись
+        </div>
+        <div class="protection__items">
+          <div class="protection__item">
+            <img src="" alt="" class="protection__icon1" />
+            <div class="protection__text">
+              Вы покидаете машину и выключаете зажигание. При этом устройство
+              продолжает работать в скрытом режиме.
+            </div>
+          </div>
+          <div class="protection__item">
+            <img src="" alt="" class="protection__icon2" />
+            <div class="protection__text">
+              При возникновения движения в кадре или от удара, регистратор
+              начинает запись
+            </div>
+          </div>
+          <div class="protection__item">
+            <img src="" alt="" class="protection__icon3" />
+            <div class="protection__text">
+              Файлы сохраняются в папку и защищены от удаления. По видео Вы
+              сможете определить виновного в ДТП или вандализме!
+            </div>
+          </div>
+          <div class="protection__item">
+            <img src="" alt="" class="protection__icon4" />
+            <div class="protection__text">
+              Отличное дополнение к штатной сигнализации авто! Удобно, когда на
+              вашей парковке нет камер
+            </div>
+          </div>
         </div>
       </section>
     </main>
