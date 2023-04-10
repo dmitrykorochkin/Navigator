@@ -3710,14 +3710,19 @@
           <a href="#" class="examination__button button">Оставить отзыв</a>
         </div>
       </section>
+      <!-- -------------------------- payment------------------------------------- -->
       <section class="payment container">
         <div class="payment__top">
           <div class="pay">
-            <img src="" alt="" class="pay__icon" />
+            <img src="./img/payment/pay.svg" alt="pay" class="pay__icon" />
             <div class="pay__text">Доставка, оплата</div>
           </div>
           <div class="answers">
-            <img src="" alt="" class="answers__text" />
+            <img
+              src="./img/payment/answer.svg"
+              alt="answer"
+              class="answers__icon"
+            />
             <div class="answers__text">Ответы на популярные вопросы</div>
           </div>
         </div>
@@ -3725,86 +3730,542 @@
           Оплату товара производите только после получения и осмотра
         </div>
         <div class="payment__info">
-          Если захотите внести предоплату, мы только ЗА. Но не настаиваем -
-          Отправим и без предоплаты
+          Если захотите внести предоплату, мы только ЗА.
+          <span>Но не настаиваем</span> -
+          <span>Отправим и без предоплаты</span>
         </div>
         <div class="payment__left">
           <div class="payment__delivery delivery">
             <div class="delivery__one">
-              <img src="" alt="sdek" class="delivery__img" />
+              <img
+                loading="lazy"
+                src="./img/payment/sdek.svg"
+                alt="sdek"
+                class="delivery__img"
+              />
+              <div class="delivery__text">
+                курьером до адреса или до точки самовывоза
+              </div>
             </div>
-            <div class="delivery__two">
-              <img src="" alt="yandex" class="delivery__img" />
-            </div>
-            <div class="delivery__three">
-              <img src="" alt="dpd" class="delivery__img" />
+            <div class="delivery__wrap">
+              <div class="delivery__two">
+                <img
+                  loading="lazy"
+                  src="./img/payment/yandex.svg"
+                  alt="yandex"
+                  class="delivery__yandex"
+                />
+              </div>
+              <div class="delivery__three">
+                <img
+                  loading="lazy"
+                  src="./img/payment/dpd.svg"
+                  alt="dpd"
+                  class="delivery__dpd"
+                />
+              </div>
             </div>
             <div class="delivery__four">
-              <img src="" alt="mail russia" class="delivery__img" />
+              <picture>
+                <source
+                  srcset="./img/payment/mail.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/payment/mail.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="payment__mail"
+                  src="./img/payment/mail.png"
+                  alt="examination"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="delivery__text">
+                с наложенным платежом и с описью содержимого
+              </div>
             </div>
           </div>
           <div class="payment__examination">
-            <img src="" alt="" class="payment__examination-icon" />
+            <img
+              src="./img/payment/icon.svg"
+              alt=""
+              class="payment__examination-icon"
+            />
             <div class="payment__examination-info">
               При курьерской доставке вы сможете
               <span>проверить устройство прямо в автомобиле</span> и только
               потом оплатить заказ
             </div>
+          </div>
+          <div class="payment__items">
             <div class="payment__cash">
               <div class="payment__cash-title">Оплата</div>
               <div class="cash">
-                <img src="" alt="" class="cash__img" />
+                <picture>
+                  <source
+                    srcset="./img/payment/rub.webp"
+                    type="image/webp"
+                    loading="lazy"
+                  />
+                  <source
+                    srcset="./img/payment/rub.png"
+                    type="image/png"
+                    loading="lazy"
+                  />
+                  <img
+                    class="cash__img"
+                    src="./img/payment/rub.png"
+                    alt="cash"
+                    loading="lazy"
+                  />
+                </picture>
                 <div class="cash__text">Наличными при получении</div>
               </div>
               <div class="card">
-                <img src="" alt="" class="card__img" />
+                <picture>
+                  <source
+                    srcset="./img/payment/visa.webp"
+                    type="image/webp"
+                    loading="lazy"
+                  />
+                  <source
+                    srcset="./img/payment/visa.png"
+                    type="image/png"
+                    loading="lazy"
+                  />
+                  <img
+                    class="card__payment-img"
+                    src="./img/payment/visa.png"
+                    alt="cash"
+                    loading="lazy"
+                  />
+                </picture>
                 <div class="card__text">Картой при получении</div>
               </div>
-                          <picture>
-              <source
-                srcset=""
-                type="image/webp"
-                loading="lazy"
-              />
-              <source
-                srcset=""
-                type="image/png"
-                loading="lazy"
-              />
-              <img
-                class=""
-                src=""
-                alt="examination"
-                loading="lazy"
-              />
-            </picture>
+              <picture>
+                <source
+                  srcset="./img/payment/pay.webp"
+                  type="image/webp"
+                  loading="lazy"
+                />
+                <source
+                  srcset="./img/payment/pay.png"
+                  type="image/png"
+                  loading="lazy"
+                />
+                <img
+                  class="card__pay-img"
+                  src="./img/payment/pay.png"
+                  alt="cash"
+                  loading="lazy"
+                />
+              </picture>
             </div>
+
             <div class="payment__credit">
               <div class="payment__credit-title">Кредит и рассрочка</div>
-              <img src="" alt="" class="payment__credit-img">
-              <div class="payment__credit-text">Обязательно! Выдаем бумажный или электронный чек</div>
+              <div class="credit__img">
+                <picture>
+                  <source
+                    srcset="./img/payment/tinkof.webp"
+                    type="image/webp"
+                    loading="lazy"
+                  />
+                  <source
+                    srcset="./img/payment/tinkof.png"
+                    type="image/png"
+                    loading="lazy"
+                  />
+                  <img
+                    class="payment__credit-img"
+                    src="./img/payment/tinkof.png"
+                    alt="cash"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+
+              <div class="payment__credit-text">
+                Обязательно! Выдаем бумажный или электронный чек
+              </div>
             </div>
           </div>
         </div>
+
         <div class="payment__right">
-                                    <picture>
-              <source
-                srcset=""
-                type="image/webp"
-                loading="lazy"
-              />
-              <source
-                srcset=""
-                type="image/png"
-                loading="lazy"
-              />
+          <picture>
+            <source
+              srcset="./img/payment/onlooker.webp"
+              type="image/webp"
+              loading="lazy"
+            />
+            <source
+              srcset="./img/payment/onlooker.png"
+              type="image/png"
+              loading="lazy"
+            />
+            <img
+              class="payment__right-img"
+              src="./img/payment/onlooker.png"
+              alt=""
+              loading="lazy"
+            />
+          </picture>
+        </div>
+
+        <div class="payment__top">
+          <div class="pay">
+            <img src="./img/payment/pay.svg" alt="pay" class="pay__icon" />
+            <div class="pay__text">Доставка, оплата</div>
+          </div>
+          <div class="answers">
+            <img
+              src="./img/payment/answer.svg"
+              alt="answer"
+              class="answers__icon"
+            />
+            <div class="answers__text">Ответы на популярные вопросы</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------- answerblock -------------------------------------------- -->
+
+      <section class="answerblock container">
+        <div class="answerblock__title">
+          Мы подготовили ответы на часто задаваемые вопросы
+        </div>
+        <div class="answerblock__items">
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Товар точно соответствует характеристикам?
+              </div>
               <img
-                class=""
-                src=""
-                alt="examination"
-                loading="lazy"
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
               />
-            </picture>
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Как я могу проверить, что товар качественный?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                GPS-модуль хорошо ловит связь?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Есть ли проблемы с картами памяти у Вашего устройства?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Радарный комплекс определит все радары и камеры? Я точно не
+                получу штрафов?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Как часто нужно обновлять видеорегистратор?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Как ведёт себя устройство в мороз и жару?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+          <div class="answerblock__item">
+            <div class="answerblock__item-top">
+              <div class="answerblock__item-title">
+                Какая нужна карта памяти для видеорегистратора?
+              </div>
+              <img
+                src="./img/answers/plus.svg"
+                alt=""
+                class="answerblock__icon"
+              />
+            </div>
+            <div class="answerblock__item-text">
+              Мы - компания, уважающая пользователей и свою репутацию. Поэтому
+              мы не продаем товар, который может нас запятнать. Мошенники часто
+              продают совсем дешевые товары, ставя максимальную скидку. Наше
+              устройство - совсем другой сегмент. К тому же, у вас есть
+              возможность проверить устройство еще до момента оплаты (если вы
+              выбрали постоплату).
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cartreader container">
+        <div class="cartreader__left">
+          <picture>
+            <source
+              srcset="./img/cartreader/cartreader-footer.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/cartreader/cartreader-footer.png"
+              type="image/png"
+            />
+            <img
+              class="cartreader__footer"
+              src="./img/cartreader/cartreader-footer.png"
+              alt="card"
+            />
+          </picture>
+        </div>
+        <div class="cartreader__right">
+          <div class="cartreader__title cartreader__title-footer">
+            Закажите видеорегистратор <br />с доставкой <span>в 1 клик</span>
+          </div>
+          <div class="cartreader__present cartreader__present-footer">
+            Картридер <span>в подарок</span>
+          </div>
+          <div class="cartreader__date">До 22 августа 2022 года</div>
+          <div class="cartreader__wrap">
+            <div class="cartreader__price">
+              <div class="cartreader__price-new">17 990 ₽</div>
+              <div class="cartreader__price-old">24 890 ₽</div>
+            </div>
+          </div>
+          <a href="#" class="cartreader__button button">Заказать</a>
+          <div class="cartreader__person">
+            Нажимая на кнопку, вы даете согласие на обработку своих
+            <span>персональных данных</span>
+          </div>
+        </div>
+      </section>
+      <!-- -------------------------  guarantee  ------------------------------------------ -->
+      <section class="guarantee container">
+        <div class="guarantee__one">
+          <div class="guarantee__title">Гарантия на устройство</div>
+          <div class="guarantee__year">1,5 года</div>
+          <div class="guarantee__text">
+            В течение этого срока оказываем бесплатно обслуживание и сервис
+          </div>
+        </div>
+        <div class="guarantee__two">
+          <div class="guarantee__two-wrap">
+            <img
+              src="./img/guarantee/guarantee1.svg"
+              alt=""
+              class="guarantee__two-img"
+            />
+            <div class="guarantee__two-title">Гарантия товара</div>
+          </div>
+          <div class="guarantee__items">
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon1.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">
+                Возврат без объяснения причины
+              </div>
+              <div class="guarantee__item-text">
+                Если не использовали товар в течение 7 дней
+              </div>
+            </div>
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon1.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">2 недели на тест товара</div>
+              <div class="guarantee__item-text">
+                При выявлении неисправностей вернём полную сумму
+              </div>
+            </div>
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon1.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">
+                100% проверка перед отправкой
+              </div>
+              <div class="guarantee__item-text">
+                Перед отправкой оборудование проходят полную проверку на
+                работоспособность.
+              </div>
+            </div>
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon1.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">
+                Гарантия осмотра товара до оплаты
+              </div>
+              <div class="guarantee__item-text">
+                Осматриваете товар и комплектацию заказа до оплаты, при курьере
+                или на пункте выдачи.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guarantee__three">
+          <div class="guarantee__two-wrap">
+            <img
+              src="./img/guarantee/guarantee2.svg"
+              alt=""
+              class="guarantee__two-img"
+            />
+            <div class="guarantee__two-title">Гарантия поддержки</div>
+          </div>
+          <div class="guarantee__items">
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon5.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">
+                10 лет поддержки и обслуживания
+              </div>
+              <div class="guarantee__item-text">
+                В случае поломок ремонтируем и поставляем запчасти или меняем на
+                новый
+              </div>
+            </div>
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon6.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">
+                Регулярные обновление прошивки
+              </div>
+              <div class="guarantee__item-text">на основе отзывов клиентов</div>
+            </div>
+            <div class="guarantee__item">
+              <img
+                src="./img/guarantee/icon7.svg"
+                alt=""
+                class="guarantee__item-img"
+              />
+              <div class="guarantee__item-title">
+                Бесплатная замена аксессуаров
+              </div>
+              <div class="guarantee__item-text">
+                В случае поломки/утери заменим Ваши аксессуары (кронштейны, GPS
+                антенны, адаптеры, ЗУ)
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
