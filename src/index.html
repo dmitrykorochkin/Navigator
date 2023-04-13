@@ -1131,14 +1131,12 @@
           <div class="form__click">
             Закажите устройство с доставкой <span>в 1 клик</span>
           </div>
-          <form  action="#" method="POST" class="form__elements">
+          <form id="form1" action="#" method="POST" class="form__element">
             <label for="name" class="form__label">
               <div class="label__name">Ваше Фамилия и Имя*</div>
               <input
                 data-validate-field="name"
                 type="text"
-                minlength="3"
-                maxlength="20"
                 name="user-name"
                 id="name"
                 required
@@ -1155,15 +1153,16 @@
                 required
                 placeholder=""
             /></label>
-          </form>
-          <div class="form__footer">
-            <div class="form__button-text">
-              Нажимая на кнопку, вы даете согласие на обработку персональных
-              данных
+            <div class="form__footer">
+              <div class="form__button-text">
+                Нажимая на кнопку, вы даете согласие на обработку персональных
+                данных
+              </div>
+              <button type="submit" class="btn button button__form">
+                Заказать
+              </button>
             </div>
-            <button class="button button__form">Заказать</button>
-            
-          </div>
+          </form>
         </div>
 
         <div class="form__img">
@@ -1736,7 +1735,7 @@
             <div class="form__click" data-aos="fade-in">
               Закажите устройство с доставкой <span>в 1 клик</span>
             </div>
-            <form data-aos="fade-in">
+            <form id="form2" data-aos="fade-in" class="form__element2">
               <label for="name">
                 <div class="label__name">Ваше Фамилия и Имя*</div>
                 <input
@@ -1750,18 +1749,18 @@
 
               <label for="telephone">
                 <div class="label__name">Ваш телефон*</div>
-                <input type="tel" id="telephone" placeholder=""
+                <input name="user-tel" type="tel" placeholder=""
               /></label>
-            </form>
-            <div class="form__footer" data-aos="fade-in">
-              <div class="form__button-text">
-                Нажимая на кнопку, вы даете согласие на обработку персональных
-                данных
+              <div class="form__footer" data-aos="fade-in">
+                <div class="form__button-text">
+                  Нажимая на кнопку, вы даете согласие на обработку персональных
+                  данных
+                </div>
+                <button type="submit" class="button button__form">
+                  Заказать
+                </button>
               </div>
-              <a href="#" target="_blank" class="button button__form"
-                >Заказать</a
-              >
-            </div>
+            </form>
           </div>
           <div class="form__right">
             <div class="form__check">
@@ -4200,6 +4199,7 @@
           </div>
         </div>
       </section>
+      <!-- ----------------------------- cartreader---------------------------------------- -->
       <section class="cartreader container">
         <div class="cartreader__left">
           <picture>
@@ -4584,7 +4584,7 @@
             <div class="form__click">
               Закажите устройство с доставкой <span>в 1 клик</span>
             </div>
-            <form>
+            <form class="form__element3">
               <label for="name">
                 <div class="label__name">Ваше Фамилия и Имя*</div>
                 <input
@@ -4600,16 +4600,14 @@
                 <div class="label__name">Ваш телефон*</div>
                 <input type="tel" id="telephone2" placeholder=""
               /></label>
-            </form>
-            <div class="form__footer">
-              <div class="form__button-text">
-                Нажимая на кнопку, вы даете согласие на обработку персональных
-                данных
+              <div class="form__footer">
+                <div class="form__button-text">
+                  Нажимая на кнопку, вы даете согласие на обработку персональных
+                  данных
+                </div>
+                <button class="button button__form">Заказать</button>
               </div>
-              <a href="#" target="_blank" class="button button__form"
-                >Заказать</a
-              >
-            </div>
+            </form>
           </div>
         </div>
 
@@ -4740,14 +4738,19 @@
           </div>
         </div>
         <div class="purchase__form">
-          <form>
-            <label for="telephone"></label>
-            <input type="tel" id="telephone33" placeholder="Ваш телефон" />
+          <form action="#" method="POST" class="form__element4">
+            <label class="form__label" for="telephone"></label>
+            <input
+              name="user-phone"
+              data-validate-field="tel"
+              type="tel"
+              placeholder="Ваш телефон"
+              required
+            />
+            <button class="purchase__button button" type="submit">
+              Получить консультацию
+            </button>
           </form>
-
-          <button class="purchase__button button" type="submit">
-            Получить консультацию
-          </button>
         </div>
         <div class="purchase__chat">
           Или напишите нам <span><a href="#">в онлайн чат</a></span>
@@ -4760,8 +4763,8 @@
             class="purchase__img"
             src="./img/purchase/purchase-img.png"
             alt="bg"
-          />
-        </picture>
+          /> </picture
+        >''
       </section>
     </main>
 
@@ -5082,6 +5085,7 @@
     <script src="js/inputmask.min.js"></script>
     <script src="js/just-validate.min.js"></script>
     <script src="js/main.js"></script>
+
     <script>
       AOS.init();
     </script>
