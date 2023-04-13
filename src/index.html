@@ -52,7 +52,6 @@
             </h1>
             <div class="hero__advantages advantages">
               <div
-              
                 data-aos-offset="200"
                 data-aos="fade-up"
                 class="advantages__item"
@@ -140,6 +139,7 @@
             <source srcset="./img/hero/bg.webp" type="image/webp" />
             <source srcset="./img/hero/bg.png" type="image/png" />
             <img
+              class="hero__img-bg"
               loading="lazy"
               src="./img/hero/bg.png"
               alt="Видеорегистратор"
@@ -150,6 +150,7 @@
           <img src="./img/hero/ellipse-bg1.png" alt="" />
         </div> -->
       </section>
+      <!-- ----------------------- ABOUT----------------------------------- -->
       <section class="about container" data-aos="fade-in">
         <div class="about__item">
           <div class="about__title">ТОП-1</div>
@@ -1130,21 +1131,29 @@
           <div class="form__click">
             Закажите устройство с доставкой <span>в 1 клик</span>
           </div>
-          <form>
-            <label for="name">
+          <form  action="#" method="POST" class="form__elements">
+            <label for="name" class="form__label">
               <div class="label__name">Ваше Фамилия и Имя*</div>
               <input
+                data-validate-field="name"
                 type="text"
                 minlength="3"
                 maxlength="20"
                 name="user-name"
                 id="name"
+                required
               />
             </label>
 
-            <label for="telephone">
+            <label class="form__label" for="telephone">
               <div class="label__name">Ваш телефон*</div>
-              <input type="tel" id="telephone" placeholder=""
+              <input
+                name="user-phone"
+                data-validate-field="tel"
+                type="tel"
+                id="telephone"
+                required
+                placeholder=""
             /></label>
           </form>
           <div class="form__footer">
@@ -1152,7 +1161,8 @@
               Нажимая на кнопку, вы даете согласие на обработку персональных
               данных
             </div>
-            <a href="#" target="_blank" class="button button__form">Заказать</a>
+            <button class="button button__form">Заказать</button>
+            
           </div>
         </div>
 
@@ -1765,11 +1775,12 @@
                 class="form__check-icon"
               />
             </div>
-            <div class="form__img" >
+            <div class="form__img">
               <picture>
                 <source srcset="./img/form/form-bg2.webp" type="image/webp" />
                 <source srcset="./img/form/form-bg2.png" type="image/png" />
-                <img data-aos="fade-in"
+                <img
+                  data-aos="fade-in"
                   class="form__img-bg2"
                   src="./img/form/form-bg2.png"
                   alt="background"
@@ -1814,20 +1825,18 @@
           </div>
 
           <div class="quality__item1">
-            <div class="item__info" data-aos="fade-in"  data-aos-delay="100">
+            <div class="item__info" data-aos="fade-in" data-aos-delay="100">
               <div class="item__title">Видеосъемка FullHD</div>
               <div class="item__text">1920×1080 Захват 30 кадров в секунду</div>
             </div>
-            <img  data-aos-delay="500"
+            <img
+              data-aos-delay="500"
               src="./img/quality/line/line1.svg"
               alt="line"
               class="item__icon"
             />
           </div>
-          <div
-            class="quality__item2"
-            data-aos="fade-in"
-          >
+          <div class="quality__item2" data-aos="fade-in">
             <div class="item__info" data-aos="fade-in" data-aos-delay="100">
               <div class="item__title">Широкий угол обзора</div>
               <div class="item__text">
@@ -1880,7 +1889,7 @@
             </div>
             <img
               data-aos="fade-in"
-             data-aos-delay="500"
+              data-aos-delay="500"
               src="./img/quality/line/line5.svg"
               alt="line"
               class="item__icon"
@@ -1927,7 +1936,7 @@
             </div>
             <img
               data-aos="fade-in"
-             data-aos-delay="500"
+              data-aos-delay="500"
               src="./img/quality/line/line8.svg"
               alt="line"
               class="item__icon"
@@ -2042,11 +2051,12 @@
         <div class="shooting__subtitle" data-aos="fade-in">
           Посмотрите примеры видео
         </div>
-        <div
-          class="shooting__video"
-        >
+        <div class="shooting__video">
           <div class="shooting__video-left">
-            <div data-aos="fade-right" class="shooting__video-item video__item-one">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-one"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2072,7 +2082,10 @@
                 />
               </a>
             </div>
-            <div data-aos="fade-right" class="shooting__video-item video__item-two">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-two"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2098,7 +2111,10 @@
               </a>
             </div>
 
-            <div data-aos="fade-right" class="shooting__video-item video__item-three">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-three"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2124,7 +2140,10 @@
               </a>
             </div>
 
-            <div data-aos="fade-right" class="shooting__video-item video__item-foor">
+            <div
+              data-aos="fade-right"
+              class="shooting__video-item video__item-foor"
+            >
               <a class="video__link" href="#">
                 <picture>
                   <source
@@ -2643,7 +2662,8 @@
                 <source srcset="./img/protection/car1.webp" type="image/webp" />
                 <source srcset="./img/protection/car1.png" type="image/png" />
                 <img
-                  data-aos="fade-left" data-aos-delay="300"
+                  data-aos="fade-left"
+                  data-aos-delay="300"
                   class="protection__car-img1"
                   src="./img/protection/car1.png"
                   alt="car"
@@ -2662,7 +2682,8 @@
                 <source srcset="./img/protection/bang.webp" type="image/webp" />
                 <source srcset="./img/protection/bang.png" type="image/png" />
                 <img
-                data-aos="zoom-in" data-aos-delay="700"
+                  data-aos="zoom-in"
+                  data-aos-delay="700"
                   class="protection__bang-img"
                   src="./img/protection/bang.png"
                   alt="car"
@@ -4608,7 +4629,7 @@
 
       <!-- -----------------------------SUPPORT---------------------------------------- -->
 
-      <section class="support container"   data-aos="fade-in">
+      <section class="support container" data-aos="fade-in">
         <div class="support__left">
           <div class="support__title">Техподдержка на связи 24/7</div>
           <div class="support__subtitle">
@@ -4645,8 +4666,8 @@
 
       <!-- ----------------------- step ------------------------------ -->
       <section class="step container">
-        <div class="step__title"   data-aos="fade-in">Шаги для покупки</div>
-        <div class="step__items update__items"   data-aos="fade-in">
+        <div class="step__title" data-aos="fade-in">Шаги для покупки</div>
+        <div class="step__items update__items" data-aos="fade-in">
           <div class="update__item">
             <div class="update__number step__number1">01</div>
             <div class="update__info">
@@ -4704,8 +4725,10 @@
       </section>
       <!------------------------------- purchase -----------------------------------  -->
       <section class="purchase container">
-        <div class="purchase__title"   data-aos="fade-in">Остались вопросы перед покупкой?</div>
-        <div class="purchase__items"   data-aos="fade-in">
+        <div class="purchase__title" data-aos="fade-in">
+          Остались вопросы перед покупкой?
+        </div>
+        <div class="purchase__items" data-aos="fade-in">
           <div class="purchase__item">
             Узнайте, подойдет ли устройство <span>к вашему авто</span>
           </div>
@@ -4732,7 +4755,8 @@
         <picture>
           <source srcset="./img/purchase/purchase-img.webp" type="image/webp" />
           <source srcset="./img/purchase/purchase-img.png" type="image/png" />
-          <img   data-aos="fade-in"
+          <img
+            data-aos="fade-in"
             class="purchase__img"
             src="./img/purchase/purchase-img.png"
             alt="bg"
@@ -5055,6 +5079,8 @@
     </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/just-validate.min.js"></script>
     <script src="js/main.js"></script>
     <script>
       AOS.init();
