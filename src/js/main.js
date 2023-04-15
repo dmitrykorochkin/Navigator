@@ -37,6 +37,26 @@ forms.forEach(form => {
   });
 });
 
+// slider 
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 3,
+  
+ 
+
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: 'bullets'
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
+
+
+
+
 //accordion
 
 let accordion = document.querySelector(".answerblock__items");
