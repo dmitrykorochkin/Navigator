@@ -80,4 +80,33 @@ itemLeft.forEach((item, index) => {
   });
 });
 
+// tabs 4 режима
+
+const itemTop = document.querySelectorAll(".tabs__item");
+const imgBlock = document.querySelectorAll(".tabs__container");
+
+itemTop.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    imgBlock.forEach(i => {
+      i.classList.remove("active");
+    });
+    imgBlock[index].classList.add("active");
+  });
+});
+
+// tabs интерфейс 
+
+
+const itemIntLeft = document.querySelectorAll(".interface__item");
+const imgIntBlock = document.querySelectorAll(".interface__img");
+
+
+itemIntLeft.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    imgIntBlock.forEach(i => {
+      i.classList.remove("active");
+    });
+    imgIntBlock[index].classList.add("active");
+  });
+});
 
