@@ -40,8 +40,8 @@ forms.forEach(form => {
 // slider 
 const swiper = new Swiper(".swiper", {
   slidesPerView: 3,
+  spaceBetween: 70,
   
- 
 
 
   pagination: {
