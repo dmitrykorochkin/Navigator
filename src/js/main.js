@@ -111,6 +111,7 @@ itemTop.forEach((item, index) => {
       i.classList.remove("active");
     });
     imgBlock[index].classList.add("active");
+
   });
 });
 
@@ -130,3 +131,17 @@ itemIntLeft.forEach((item, index) => {
   });
 });
 
+// alert 
+
+const alertTabs = document.querySelectorAll('.alert__tab');
+const alertImgBlock = document.querySelectorAll('.alert__animation');
+
+alertTabs.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    alertImgBlock.forEach(item => {
+      item.classList.remove("active");
+    });
+    alertImgBlock[index].classList.add("active");
+    
+  });
+});
