@@ -145,3 +145,18 @@ alertTabs.forEach((item, index) => {
     
   });
 });
+
+
+//hover доставка и ответы 
+
+const itemHover = document.querySelectorAll(".answer__pay");
+const sectionHover = document.querySelectorAll(".section__hover");
+
+itemHover.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    sectionHover.forEach(item => {
+      item.classList.remove("active");
+    });
+    sectionHover[index].classList.add("active");
+  });
+});

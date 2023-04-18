@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>title</title>
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -2136,7 +2140,7 @@
           </div>
         </div>
         <div class="alert__tabs-wrapper">
-          <div class="alert__animation ">
+          <div class="alert__animation">
             <div class="alert__left">
               <picture>
                 <source srcset="./img/alert/road.webp" type="image/webp" />
@@ -2149,10 +2153,7 @@
                 />
               </picture>
               <picture>
-                <source
-                  srcset="./img/alert/arrow1.webp"
-                  type="image/webp"
-                />
+                <source srcset="./img/alert/arrow1.webp" type="image/webp" />
                 <source srcset="./img/alert/arrow1.png" type="image/png" />
                 <img
                   class="alert__img-road-arrow"
@@ -2178,7 +2179,6 @@
                 <source srcset="./img/alert/car.webp" type="image/webp" />
                 <source srcset="./img/alert/car.png" type="image/png" />
                 <img
-                 
                   class="alert__img-car"
                   loading="lazy"
                   src="./img/alert/car.png"
@@ -2236,7 +2236,7 @@
               </picture>
             </div>
           </div>
-          <div class="alert__animation active">
+          <div class="alert__animation ">
             <div class="alert__left">
               <picture>
                 <source srcset="./img/alert/road.webp" type="image/webp" />
@@ -2262,10 +2262,7 @@
                 />
               </picture>
               <picture>
-                <source
-                  srcset="./img/alert/arrow1.webp"
-                  type="image/webp"
-                />
+                <source srcset="./img/alert/arrow1.webp" type="image/webp" />
                 <source srcset="./img/alert/arrow1.png" type="image/png" />
                 <img
                   class="alert__img-road-arrow2"
@@ -2275,7 +2272,10 @@
                 />
               </picture>
               <picture>
-                <source srcset="./img/alert/alert-sign.webp" type="image/webp" />
+                <source
+                  srcset="./img/alert/alert-sign.webp"
+                  type="image/webp"
+                />
                 <source srcset="./img/alert/alert-sign.png" type="image/png" />
                 <img
                   class="alert__img-sign3"
@@ -2288,7 +2288,6 @@
                 <source srcset="./img/alert/car2.webp" type="image/webp" />
                 <source srcset="./img/alert/car2.png" type="image/png" />
                 <img
-                  
                   class="alert__img-car2"
                   loading="lazy"
                   src="./img/alert/car2.png"
@@ -2296,7 +2295,6 @@
                 />
               </picture>
 
-              
               <picture>
                 <source
                   srcset="./img/alert/alert-name2.webp"
@@ -2325,7 +2323,7 @@
               </picture>
             </div>
           </div>
-          <div class="alert__animation">
+          <div class="alert__animation active">
             <div class="alert__left">
               <picture>
                 <source srcset="./img/alert/road.webp" type="image/webp" />
@@ -2351,13 +2349,13 @@
                 />
               </picture>
               <picture>
-                <source srcset="./img/alert/car.webp" type="image/webp" />
-                <source srcset="./img/alert/car.png" type="image/png" />
+                <source srcset="./img/alert/car3.webp" type="image/webp" />
+                <source srcset="./img/alert/car3.png" type="image/png" />
                 <img
                   data-aos="fade-up"
                   class="alert__img-car"
                   loading="lazy"
-                  src="./img/alert/car.png"
+                  src="./img/alert/car3.png"
                   alt="background"
                 />
               </picture>
@@ -3264,6 +3262,8 @@
         <div class="shooting__video">
           <div class="shooting__video-left">
             <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
               data-aos="fade-right"
               class="shooting__video-item video__item-one"
             >
@@ -3293,6 +3293,8 @@
               </a>
             </div>
             <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
               data-aos="fade-right"
               class="shooting__video-item video__item-two"
             >
@@ -3322,6 +3324,8 @@
             </div>
 
             <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
               data-aos="fade-right"
               class="shooting__video-item video__item-three"
             >
@@ -3351,6 +3355,8 @@
             </div>
 
             <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
               data-aos="fade-right"
               class="shooting__video-item video__item-foor"
             >
@@ -3395,67 +3401,79 @@
                 alt="shooting"
               />
             </picture>
-            <picture>
-              <source
-                srcset="./img/shooting/shooting-bg-play.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./img/shooting/shooting-bg-play.png"
-                type="image/png"
-              />
-              <img
-                class="shooting__video-play active"
-                src="./img/shooting/shooting-bg-play.png"
-                alt="shooting"
-              />
-            </picture>
-            <picture>
-              <source
-                srcset="./img/shooting/shooting-bg-play1.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./img/shooting/shooting-bg-play1.png"
-                type="image/png"
-              />
-              <img
-                class="shooting__video-play"
-                z
-                src="./img/shooting/shooting-bg-play1.png"
-                alt="shooting"
-              />
-            </picture>
-            <picture>
-              <source
-                srcset="./img/shooting/shooting-bg-play2.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./img/shooting/shooting-bg-play2.png"
-                type="image/png"
-              />
-              <img
-                class="shooting__video-play"
-                src="./img/shooting/shooting-bg-play2.png"
-                alt="shooting"
-              />
-            </picture>
-            <picture>
-              <source
-                srcset="./img/shooting/shooting-bg-play3.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./img/shooting/shooting-bg-play3.png"
-                type="image/png"
-              />
-              <img
-                class="shooting__video-play"
-                src="./img/shooting/shooting-bg-play3.png"
-                alt="shooting"
-              />
-            </picture>
+
+            <div data-fancybox data-src="https://youtu.be/YfYgnHy06Ls">
+              <picture>
+                <source
+                  srcset="./img/shooting/shooting-bg-play.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/shooting/shooting-bg-play.png"
+                  type="image/png"
+                />
+                <img
+                  class="shooting__video-play active"
+                  src="./img/shooting/shooting-bg-play.png"
+                  alt="shooting"
+                />
+              </picture>
+            </div>
+
+            <div data-fancybox data-src="https://youtu.be/YfYgnHy06Ls">
+              <picture>
+                <source
+                  srcset="./img/shooting/shooting-bg-play1.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/shooting/shooting-bg-play1.png"
+                  type="image/png"
+                />
+                <img
+                  class="shooting__video-play"
+                  z
+                  src="./img/shooting/shooting-bg-play1.png"
+                  alt="shooting"
+                />
+              </picture>
+            </div>
+            <div data-fancybox data-src="https://youtu.be/YfYgnHy06Ls">
+              <picture>
+                <source
+                  srcset="./img/shooting/shooting-bg-play.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/shooting/shooting-bg-play.png"
+                  type="image/png"
+                />
+                <img
+                  class="shooting__video-play active"
+                  src="./img/shooting/shooting-bg-play.png"
+                  alt="shooting"
+                />
+              </picture>
+            </div>
+
+            <div data-fancybox data-src="https://youtu.be/YfYgnHy06Ls">
+              <picture>
+                <source
+                  srcset="./img/shooting/shooting-bg-play1.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/shooting/shooting-bg-play1.png"
+                  type="image/png"
+                />
+                <img
+                  class="shooting__video-play"
+                  z
+                  src="./img/shooting/shooting-bg-play1.png"
+                  alt="shooting"
+                />
+              </picture>
+            </div>
           </div>
         </div>
       </section>
@@ -4801,7 +4819,7 @@
             Технические характеристики Onlooker R5
           </div>
           <div class="characteristics__check">
-            <div class="characteristic__briefly">Кратко</div>
+            <div class="characteristic__briefly _active">Кратко</div>
             <div class="check">
               <!-- Rounded switch -->
               <label class="switch">
@@ -4919,6 +4937,279 @@
             </div>
           </div>
         </div>
+
+        <div class="eleventh__tabl">
+          <h3 class="eleventh__tabl-title">Компоненты изделия</h3>
+          <div class="eleventh__tabl-body">
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Дисплей:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">3″, IPS, 640×360</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Видео сенсор:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">GC2053</div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Объектив:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  6-слойная линза, угол обзора 170°, съемный CPL-фильтр​
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Тип антенны:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Микрополосковая, фазированная антенна
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="eleventh__tabl-title">Камеры и съёмка</h3>
+          <div class="eleventh__tabl-body">
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Поддержка технологии WDR:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Есть</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Оптическая стабилизация:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Есть</div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Циклическая запись:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Есть. 1 мин, 3 мин, 5 мин</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Автостарт записи:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  При подаче питания, при ударе (датчик удара)
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="eleventh__tabl-title">Возможности устройства</h3>
+          <div class="eleventh__tabl-body">
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Интеграция с аудиосистемой авто:
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Есть (вывод звука на аудиосистему авто).
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Тип оповещения о камерах и радарах:
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Краткие и понятные звуковые оповещения на русском языке
+                </div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Оповещение и определение камер:
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Самая полная и точная база камер России, СНГ, Европы.
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Регулировка яркости:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Есть</div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Поддержка ассистента парковки (парковочная трапеция):
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Да</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Регулировка громкости:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Есть</div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Интеграция с аудиосистемой авто:
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Есть (вывод звука на аудиосистему)
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Обновление базы:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Вручную</div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">ADAS:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">FCWS, LDWS, FVMA</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Режим фотосъёмки:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">Есть</div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Типы обнаруживаемых радаров:
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Возможные засады, Полицейские радары, посты ДПС, камеры
+                  видеофиксации, камеры контроля перекрестков, камеры контроля
+                  автобусной полосы, малошумные камеры, парные камеры, камеры
+                  безрадарного блока в т.ч. «Стрелка», «Кречет», «Robot»,
+                  «Автоураган», «Поток», «Автодория», «Крис», «Арена», «Лира»,
+                  «Кордон»
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Диапазоны сигналов:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  K, Сигнатура, Лазер, Стрелка
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="eleventh__tabl-title">Размеры устройства</h3>
+          <div class="eleventh__tabl-body">
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Вес планшета:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  320 г. Вес с полной комплектацией в упаковке: 1530 г.
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Размеры планшета:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">183 мм * 105 мм</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="eleventh__tabl-title">Другие характеристики</h3>
+          <div class="eleventh__tabl-body">
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Ёмкость батареи:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  1200mAH Li-ion (Батарея предназначена для работы в режиме
+                  ожидания/парковки с выключенным дисплеем, и для корректного
+                  завершения работы).
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Питание:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  от автомобильной сети DC 5V~3A
+                </div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">
+                  Рекомендуемая температура окружающей среды:
+                </div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">-20/+60 °С</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Другое:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Датчик удара, Bluetooth, WI-FI точка доступа, Мультиязычность,
+                  датчик движения
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="eleventh__tabl-title">Характеристики записи</h3>
+          <div class="eleventh__tabl-body">
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Формат видео:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">H.264/MP4</div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Иформация на записи:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Время, дата, скорость, GPS данные
+                </div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Мультимедиа:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  поддержка приложений Google Play, FM трансмиттер, Облако
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Звук:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  Встроенный микрофон 40дб, встроенный динамик 8 Ом/2,0 Вт
+                </div>
+              </div>
+            </div>
+            <div class="eleventh__body-rows">
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Интернет соединения:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  WCDMA: B1/B8; LTE FDD: B1/B3/B7 (все операторы РФ); LTE TDD:
+                  B38/B40/B41; Wi-Fi (2.4г, 802.11 b/g/n).
+                </div>
+              </div>
+              <div class="eleventh__tabl-block">
+                <div class="eleventh__descrip">Карты памяти:</div>
+                <div class="eleventh__line"></div>
+                <div class="eleventh__charact">
+                  MicroSD от 8 до 128 Гб, не ниже 10-го класса, приобретается
+                  отдельно
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- ----------------------examination ---------------------------- -->
@@ -4963,7 +5254,11 @@
         </div>
         <div class="swiper">
           <div class="swiper-wrapper examination__slider">
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -4996,7 +5291,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5029,7 +5328,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5062,7 +5365,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5095,7 +5402,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5128,7 +5439,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5161,7 +5476,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5195,7 +5514,11 @@
               </div>
             </div>
 
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5228,7 +5551,11 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide slider__item">
+            <div
+              data-fancybox
+              data-src="https://youtu.be/YfYgnHy06Ls"
+              class="swiper-slide slider__item"
+            >
               <div class="slider__item-title">
                 Видео-отзыв о покупке устройства Onlooker R5
               </div>
@@ -5265,49 +5592,49 @@
 
           <div class="swiper-pagination"></div>
         </div>
-                  <div class="swiper-button-prev arrow-left">
-            <svg
-              width="11"
-              height="21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                opacity=".8"
-                d="M.225 10.139L9.36.914a.76.76 0 011.083.001.782.782 0 01-.002 1.097L1.85 10.687l8.592 8.676c.299.303.3.793.001 1.097a.76.76 0 01-1.083.001L.225 11.236a.78.78 0 010-1.097z"
-                fill="#333"
-              />
-            </svg>
-          </div>
-          <div class="swiper-button-next arrow-right">
-            <svg width="11" height="21" xmlns="http://www.w3.org/2000/svg">
-              <path
-                opacity=".8"
-                d="M10.775 10.139L1.64.914A.76.76 0 00.557.915a.782.782 0 00.002 1.097l8.591 8.675-8.592 8.676c-.3.303-.3.793-.001 1.097a.76.76 0 001.083.001l9.135-9.225a.78.78 0 000-1.097z"
-                fill="#333"
-              />
-            </svg>
-          </div>
+        <div class="swiper-button-prev arrow-left">
+          <svg
+            width="11"
+            height="21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              opacity=".8"
+              d="M.225 10.139L9.36.914a.76.76 0 011.083.001.782.782 0 01-.002 1.097L1.85 10.687l8.592 8.676c.299.303.3.793.001 1.097a.76.76 0 01-1.083.001L.225 11.236a.78.78 0 010-1.097z"
+              fill="#333"
+            />
+          </svg>
+        </div>
+        <div class="swiper-button-next arrow-right">
+          <svg width="11" height="21" xmlns="http://www.w3.org/2000/svg">
+            <path
+              opacity=".8"
+              d="M10.775 10.139L1.64.914A.76.76 0 00.557.915a.782.782 0 00.002 1.097l8.591 8.675-8.592 8.676c-.3.303-.3.793-.001 1.097a.76.76 0 001.083.001l9.135-9.225a.78.78 0 000-1.097z"
+              fill="#333"
+            />
+          </svg>
+        </div>
         <div class="examination__btn">
           <a href="#" class="examination__button button">Оставить отзыв</a>
         </div>
       </section>
       <!-- -------------------------- payment------------------------------------- -->
-      <section class="payment container">
-        <div class="payment__top" data-aos="fade-in">
-          <div class="pay">
-            <img src="./img/payment/pay.svg" alt="pay" class="pay__icon" />
-            <div class="pay__text">Доставка, оплата</div>
-          </div>
-          <div class="answers">
-            <img
-              src="./img/payment/answer.svg"
-              alt="answer"
-              class="answers__icon"
-            />
-            <div class="answers__text">Ответы на популярные вопросы</div>
-          </div>
+      <div class="payment__top" data-aos="fade-in">
+        <div class="pay answer__pay">
+          <img src="./img/payment/pay.svg" alt="pay" class="pay__icon" />
+          <div class="pay__text">Доставка, оплата</div>
         </div>
+        <div class="answers answer__pay">
+          <img
+            src="./img/payment/answer.svg"
+            alt="answer"
+            class="answers__icon"
+          />
+          <div class="answers__text">Ответы на популярные вопросы</div>
+        </div>
+      </div>
+      <section class="payment container section__hover active">
         <div class="payment__title" data-aos="fade-in">
           Оплату товара производите только после получения и осмотра
         </div>
@@ -5499,26 +5826,11 @@
             />
           </picture>
         </div>
-
-        <div class="payment__top">
-          <div class="pay">
-            <img src="./img/payment/pay.svg" alt="pay" class="pay__icon" />
-            <div class="pay__text">Доставка, оплата</div>
-          </div>
-          <div class="answers">
-            <img
-              src="./img/payment/answer.svg"
-              alt="answer"
-              class="answers__icon"
-            />
-            <div class="answers__text">Ответы на популярные вопросы</div>
-          </div>
-        </div>
       </section>
 
       <!-- --------------------------------- answerblock -------------------------------------------- -->
 
-      <section class="answerblock container">
+      <section class="answerblock container section__hover">
         <div class="answerblock__title" data-aos="fade-in">
           Мы подготовили ответы на часто задаваемые вопросы
         </div>
@@ -5528,11 +5840,7 @@
               <div class="answerblock__item-title">
                 Товар точно соответствует характеристикам?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5553,11 +5861,7 @@
               <div class="answerblock__item-title">
                 Как я могу проверить, что товар качественный?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+                             <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5578,11 +5882,7 @@
               <div class="answerblock__item-title">
                 GPS-модуль хорошо ловит связь?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5603,11 +5903,7 @@
               <div class="answerblock__item-title">
                 Есть ли проблемы с картами памяти у Вашего устройства?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5629,11 +5925,7 @@
                 Радарный комплекс определит все радары и камеры? Я точно не
                 получу штрафов?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5654,11 +5946,7 @@
               <div class="answerblock__item-title">
                 Как часто нужно обновлять видеорегистратор?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5679,11 +5967,7 @@
               <div class="answerblock__item-title">
                 Как ведёт себя устройство в мороз и жару?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -5704,11 +5988,7 @@
               <div class="answerblock__item-title">
                 Какая нужна карта памяти для видеорегистратора?
               </div>
-              <img
-                src="./img/answers/plus.svg"
-                alt=""
-                class="answerblock__icon"
-              />
+               <svg class="answerblock__icon" width="38" height="39" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.937 29.121V20.18H9v-2.118h8.937v-8.94h2.078v8.94H29v2.118h-8.985v8.941h-2.078z" fill="#3a3a3a" /><rect x=".5" y=".621" width="37" height="37" rx="18.5" stroke="#3a3a3a" /></svg>
               <img
                 src="./img/answers/close.svg"
                 alt=""
@@ -6608,9 +6888,10 @@
       </picture>
     </section>
 
-    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="js/inputmask.min.js"></script>
     <script src="js/just-validate.min.js"></script>
     <script src="js/main.js"></script>
