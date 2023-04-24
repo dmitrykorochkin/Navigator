@@ -41,12 +41,19 @@ forms.forEach(form => {
 const swiper = new Swiper(".swiper", {
   slidesPerView: 3,
   spaceBetween: 70,
-  
-
 
   pagination: {
     el: ".swiper-pagination",
-    type: 'bullets'
+    type: "bullets"
+  },
+  autoplay: {
+    delay: 3000
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",
