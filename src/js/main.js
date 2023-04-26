@@ -167,3 +167,41 @@ itemHover.forEach((item, index) => {
     sectionHover[index].classList.add("active");
   });
 });
+
+
+// переключатель checkbox 
+
+const toggleCheckbox = document.querySelector('input[type="checkbox"]');
+const briefly = document.querySelector(".charachterisitc__wrapper");
+const detail = document.querySelector(".elevanth__tabl-wrapper");
+
+
+toggleCheckbox.addEventListener('change', () => {
+  if(toggleCheckbox.checked) {
+    briefly.style.display = 'none';
+    detail.style.display = "block";
+  } else {
+      briefly.style.display = "block";
+      detail.style.display = "none";
+  }
+})
+
+
+// бургер меню 
+
+
+const navbarMenu = document.querySelector('.navbar');
+const buttonBurger = document.querySelector('.header__burger');
+const buttonBurgerClose = document.querySelector(".header__burger-close");
+
+buttonBurger.addEventListener("click", () => {
+  navbarMenu.classList.add("navbar__visible");
+  buttonBurger.style.display = "none";
+  buttonBurgerClose.style.display = "block";
+});
+
+buttonBurgerClose.addEventListener("click", () => {
+  navbarMenu.classList.remove("navbar__visible");
+  buttonBurger.style.display = "block";
+  buttonBurgerClose.style.display = "none";
+});
