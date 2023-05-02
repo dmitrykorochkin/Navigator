@@ -2894,7 +2894,7 @@
                 <img loading="lazy"
                   src="./img/interface/icon1.svg"
                   alt=""
-                  class="interface__icon1"
+                  class="interface__icon1  interface__icon"
                 />
                 <div class="interface__text">
                   Работа радара , диапазон излучения
@@ -2904,7 +2904,7 @@
                 <img loading="lazy"
                   src="./img/interface/icon2.svg"
                   alt=""
-                  class="interface__icon2"
+                  class="interface__icon2 interface__icon"
                 />
                 <div class="interface__text">
                   Ограничение скорости и расстояние до камеры
@@ -2914,7 +2914,7 @@
                 <img loading="lazy"
                   src="./img/interface/icon3.svg"
                   alt=""
-                  class="interface__icon3"
+                  class="interface__icon3 interface__icon"
                 />
                 <div class="interface__text">
                   Текущая скорость или средняя скорость
@@ -2924,7 +2924,7 @@
                 <img loading="lazy"
                   src="./img/interface/icon4.svg"
                   alt=""
-                  class="interface__icon4"
+                  class="interface__icon4 interface__icon"
                 />
                 <div class="interface__text">Дополнительные типы контроля</div>
               </div>
@@ -3462,7 +3462,7 @@
               </div>
             </div>
           </div>
-          <div class="shooting__subtitle" data-aos="fade-in">
+          <div class="shooting__subtitle">
             Посмотрите примеры видео
           </div>
           <div class="shooting__video">
@@ -3490,12 +3490,14 @@
                     />
                   </picture>
 
-                  <p>Передняя камера днем</p>
-                  <img loading="lazy"
-                    src="./img/shooting/icon1.svg"
-                    alt=""
-                    class="shooting__video-icon"
-                  />
+                  <div class="video__link-wrap">
+                      <p>Передняя камера днем</p>
+                      <img loading="lazy"
+                        src="./img/shooting/icon1.svg"
+                        alt=""
+                        class="shooting__video-icon"
+                      />
+                  </div>
                 </a>
               </div>
               <div
@@ -3520,12 +3522,14 @@
                       alt=""
                     />
                   </picture>
-                  <p>Передняя камера днем</p>
-                  <img loading="lazy"
-                    src="./img/shooting/icon1.svg"
-                    alt=""
-                    class="shooting__video-icon"
-                  />
+                  <div class="video__link-wrap">
+                    <p>Передняя камера днем</p>
+                    <img loading="lazy"
+                      src="./img/shooting/icon1.svg"
+                      alt=""
+                      class="shooting__video-icon"
+                    />
+                  </div>
                 </a>
               </div>
 
@@ -3551,12 +3555,14 @@
                       alt=""
                     />
                   </picture>
-                  <p>Задняя камера днем</p>
+                  <div class="video__link-wrap">
+                   <p>Задняя камера днем</p>
                   <img
                     src="./img/shooting/icon1.svg"
                     alt=""
                     class="shooting__video-icon"
                   />
+                  </div>
                 </a>
               </div>
 
@@ -3582,12 +3588,14 @@
                       alt=""
                     />
                   </picture>
+                  <div class="video__link-wrap">
                   <p>Задняя камера днем</p>
                   <img
                     src="./img/shooting/icon1.svg"
                     alt=""
                     class="shooting__video-icon"
                   />
+                  </div>
                 </a>
               </div>
             </div>
@@ -3691,7 +3699,7 @@
             170° ОБЗОРА
           </div>
           <div class="deg__text" data-aos="fade-in" data-aos="fade-in">
-            В кадр попадает 6 полос и даже обочина
+            В кадр попадает <span>6 полос и даже обочина</span>
           </div>
           <picture>
             <source srcset="./img/deg/deg.webp" type="image/webp" />
@@ -3898,7 +3906,7 @@
                   </div>
                 </div>
               </div>
-              <div class="memory__descr" data-aos="fade-in">
+              <div class="memory__descr">
                 Характеристики карты памяти: 10 класс скорости microSDXC U-I(3).
                 Чтение: 90 MB/s, запись: 80 MB/s.
               </div>
