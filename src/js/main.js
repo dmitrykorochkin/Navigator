@@ -50,9 +50,11 @@ const swiper = new Swiper(".swiper", {
     delay: 3000
   },
   breakpoints: {
+    1920: {
+      slidesPerView: 3
+    },
     320: {
-      slidesPerView: 1,
-      spaceBetween: 30
+      slidesPerView: 1
     }
   },
   navigation: {
@@ -68,6 +70,8 @@ let tab = document.querySelectorAll(".answerblock__item");
 let answer = document.querySelectorAll(".answerblock__item-text");
 let plus = document.querySelectorAll(".answerblock__icon");
 let close = document.querySelectorAll(".answerblock__icon-close");
+let title = document.querySelectorAll(".answerblock__item-title ");
+
 
 accordion.addEventListener("click", e => {
   const target = e.target.closest(".answerblock__item");
@@ -76,11 +80,13 @@ accordion.addEventListener("click", e => {
     tab.forEach((item, index) => {
       if (item === target && target.classList.toggle("active")) {
         answer[index].classList.add("active");
+        title[index].classList.add("active-item");
         tab[index].classList.add("answerblock__item-active");
         plus[index].style.display = "none";
         close[index].style.display = "block";
       } else {
         answer[index].classList.remove("active");
+         title[index].classList.remove("active-item");
         tab[index].classList.remove("answerblock__item-active");
         plus[index].style.display = "block";
         close[index].style.display = "none";
