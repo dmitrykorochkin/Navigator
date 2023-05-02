@@ -49,14 +49,14 @@ const swiper = new Swiper(".swiper", {
   autoplay: {
     delay: 3000
   },
-  breakpoints: {
-    1920: {
-      slidesPerView: 3
-    },
-    320: {
-      slidesPerView: 1
-    }
-  },
+  // breakpoints: {
+  //   1920: {
+  //     slidesPerView: 3
+  //   },
+  //   320: {
+  //     slidesPerView: 1
+  //   }
+  // },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
@@ -244,3 +244,5 @@ window.onscroll = function() {
     loadMoreData();
   }
 };
+
+
