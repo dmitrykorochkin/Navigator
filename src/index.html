@@ -5217,7 +5217,7 @@
 
           <!-- -------------------- protection ---------------------- -->
 
-          <section class="protection container">
+          <section class="protection container" >
             <div class="protection__icon-wrap">
               <img
                 data-aos="fade-in"
@@ -5232,9 +5232,9 @@
             <div class="protection__subtitle">
               В случае удара или движения в кадре - сразу начинается запись
             </div>
-            <div class="protection__wrap">
+            <div class="protection__wrap"  data-aos="fade-in">
               <div class="protection__left">
-                <div class="protection__items" data-aos="fade-in">
+                <div class="protection__items" data-aos="fade-in" data-aos-delay="100">
                   <div class="protection__item">
                     <img
                       src="./img/protection/icon1.svg"
@@ -5283,7 +5283,7 @@
                   </div>
                 </div>
               </div>
-              <div class="protection__right">
+              <div class="protection__right"> 
                 <div class="smartbox">
                   <img
                     src="./img/protection/smartbox.svg"
@@ -5321,11 +5321,24 @@
                       type="image/png"
                     />
                     <img
-                      data-aos="fade-left"
-                      data-aos-delay="300"
                       class="protection__car-img1"
                       src="./img/protection/car1.png"
                       alt="car"
+                    />
+                  </picture>
+                  <picture>
+                    <source
+                      srcset="./img/protection/defender.webp"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="./img/protection/defender.png"
+                      type="image/png"
+                    />
+                    <img
+                      class="protection__defender"
+                      src="./img/protection/defender.png"
+                      alt="defender"
                     />
                   </picture>
                   <picture>
@@ -5353,8 +5366,6 @@
                       type="image/png"
                     />
                     <img
-                      data-aos="zoom-in"
-                      data-aos-delay="700"
                       class="protection__bang-img"
                       src="./img/protection/bang.png"
                       alt="car"
@@ -5379,7 +5390,7 @@
               </div>
             </div>
           </section>
-          <div class="bg__element"></div>
+          
           <!-- ------------------adapter-------------------------- -->
 
           <section class="adapter container">
@@ -8817,6 +8828,8 @@
         </section>
       </div>
     </div>
+
+    <div class="coursor"></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
