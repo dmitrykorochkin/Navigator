@@ -246,7 +246,7 @@ window.onscroll = function() {
 };
 
 
-  // == Custom cursor ==========
+  // == Custom cursor ==========--
   const cursor = document.querySelector(".coursor");
 
   document.addEventListener("mousemove", function (e) {
