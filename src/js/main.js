@@ -276,3 +276,37 @@ window.onscroll = function() {
       }, 500);
     }
   });
+
+
+  // Modal 
+
+  /* Modal */
+// Получаем все модальные окна
+const modals = document.querySelectorAll('.js-modal-content');
+console.log(modals);
+
+// Добавляем обработчики событий для каждого модального окна
+modals.forEach(modal => {
+  // Получаем кнопку закрытия окна
+  const closeButton = modal.querySelector('.btn-close');
+
+  // Получаем оверлей, который нужен для закрытия окна при клике на область вне окна
+  const overlay = modal.querySelector('.modal-declaration__overlay');
+
+  // Добавляем обработчик события для кнопки закрытия и оверлея
+  [closeButton, overlay].forEach(el => el.addEventListener('click', () => modal.classList.remove('active')));
+});
+
+// Добавляем обработчик событий для кнопки открытия модального окна
+const openModalButtons = document.querySelectorAll('.js-open-modal');
+openModalButtons.forEach(button => {
+  button.addEventListener('click', event => {
+    event.preventDefault();
+
+    // Получаем id модального окна из атрибута data-modal-content
+    const modalId = button.getAttribute('data-modal-content');
+
+    // Находим нужное модальное окно по id и делаем его видимым
+    document.querySelector(`[data-modal-content="${modalId}"]`).classList.add('active');
+  });
+});
