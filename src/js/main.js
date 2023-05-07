@@ -72,7 +72,6 @@ let plus = document.querySelectorAll(".answerblock__icon");
 let close = document.querySelectorAll(".answerblock__icon-close");
 let title = document.querySelectorAll(".answerblock__item-title ");
 
-
 accordion.addEventListener("click", e => {
   const target = e.target.closest(".answerblock__item");
 
@@ -86,7 +85,7 @@ accordion.addEventListener("click", e => {
         close[index].style.display = "block";
       } else {
         answer[index].classList.remove("active");
-         title[index].classList.remove("active-item");
+        title[index].classList.remove("active-item");
         tab[index].classList.remove("answerblock__item-active");
         plus[index].style.display = "block";
         close[index].style.display = "none";
@@ -245,68 +244,61 @@ window.onscroll = function() {
   }
 };
 
+// == Custom cursor ==========--
+const cursor = document.querySelector(".coursor");
 
-  // == Custom cursor ==========--
-  const cursor = document.querySelector(".coursor");
+document.addEventListener("mousemove", function(e) {
+  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+});
 
-  document.addEventListener("mousemove", function (e) {
-    cursor.style.cssText =
-      "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-  });
+document.addEventListener("mouseover", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("_over");
+  }
+});
 
-  document.addEventListener("mouseover", function (e) {
-    if (e.target.closest("button, a")) {
+document.addEventListener("mouseout", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.remove("_over");
+  }
+});
+
+document.addEventListener("mousedown", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("click");
+    cursor.classList.remove("_over");
+    setTimeout(function() {
+      cursor.classList.remove("click");
       cursor.classList.add("_over");
-    }
-  });
-
-  document.addEventListener("mouseout", function (e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.remove("_over");
-    }
-  });
-
-  document.addEventListener("mousedown", function (e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.add("click");
-      cursor.classList.remove("_over");
-      setTimeout(function () {
-        cursor.classList.remove("click");
-        cursor.classList.add("_over");
-      }, 500);
-    }
-  });
-
-
-  // Modal 
-
-  /* Modal */
-// Получаем все модальные окна
-const modals = document.querySelectorAll('.js-modal-content');
-console.log(modals);
-
-// Добавляем обработчики событий для каждого модального окна
-modals.forEach(modal => {
-  // Получаем кнопку закрытия окна
-  const closeButton = modal.querySelector('.btn-close');
-
-  // Получаем оверлей, который нужен для закрытия окна при клике на область вне окна
-  const overlay = modal.querySelector('.modal-declaration__overlay');
-
-  // Добавляем обработчик события для кнопки закрытия и оверлея
-  [closeButton, overlay].forEach(el => el.addEventListener('click', () => modal.classList.remove('active')));
+    }, 500);
+  }
 });
 
-// Добавляем обработчик событий для кнопки открытия модального окна
-const openModalButtons = document.querySelectorAll('.js-open-modal');
-openModalButtons.forEach(button => {
-  button.addEventListener('click', event => {
-    event.preventDefault();
+/* Modal */
+const modalOpen = document.querySelectorAll(".modal-open");
+const modalOverlay = document.querySelector(".modal__overlay");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal__close");
 
-    // Получаем id модального окна из атрибута data-modal-content
-    const modalId = button.getAttribute('data-modal-content');
+function openModal() {
+  modalOverlay.style.display = "block";
+  modal.style.display = "block";
+  document.body.classList.add("modal-open"); // Добавляем класс к body
+}
 
-    // Находим нужное модальное окно по id и делаем его видимым
-    document.querySelector(`[data-modal-content="${modalId}"]`).classList.add('active');
+function closeModal() {
+  modalOverlay.style.display = "none";
+  modal.style.display = "none";
+  document.body.classList.remove("modal-open"); // Удаляем класс у body
+}
+
+modalOpen.forEach(function(item) {
+  item.addEventListener("click", function(event) {
+    event.preventDefault(); // Отменяем стандартное действие при клике на ссылку
+    openModal();
   });
 });
+
+modalClose.addEventListener("click", closeModal);
+
+modalOverlay.addEventListener("click", closeModal);
