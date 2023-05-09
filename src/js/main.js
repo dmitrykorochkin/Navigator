@@ -169,12 +169,18 @@ itemHover.forEach((item, index) => {
 const toggleCheckbox = document.querySelector('input[type="checkbox"]');
 const briefly = document.querySelector(".charachterisitc__wrapper");
 const detail = document.querySelector(".elevanth__tabl-wrapper");
+const brieflyActive = document.querySelector(".characteristic__briefly");
+const detailActive = document.querySelector(".characteristic__detail");
 
 toggleCheckbox.addEventListener("change", () => {
   if (toggleCheckbox.checked) {
+    brieflyActive.classList.remove("_active");
+    detailActive.classList.add("_active");
     briefly.style.display = "none";
     detail.style.display = "block";
   } else {
+    brieflyActive.classList.add("_active");
+    detailActive.classList.remove("_active");
     briefly.style.display = "block";
     detail.style.display = "none";
   }
@@ -300,5 +306,58 @@ modalOpen.forEach(function(item) {
 });
 
 modalClose.addEventListener("click", closeModal);
-
 modalOverlay.addEventListener("click", closeModal);
+
+
+// modal offer 
+
+const buttonOffer = document.querySelectorAll('.button__offer');
+const modalOffer = document.querySelector('.offer');
+const backClose = document.querySelector(".offer__link");
+
+// Функция для открытия модального окна
+function openModal() {
+  modalOffer.style.display = "block";
+}
+
+// Функция для закрытия модального окна
+function closeModal() {
+  modalOffer.style.display = "none";
+}
+
+// Обработчик клика по кнопке открытия модального окна
+buttonOffer.forEach(button => {
+  button.addEventListener('click', openModal);
+});
+
+// Обработчик клика по кнопке закрытия модального окна
+backClose.addEventListener('click', closeModal);
+
+// Обработчик клика по затемненной области, чтобы закрыть модальное окно
+modalOffer.addEventListener('click', (event) => {
+  if (event.target === modalOffer) {
+    closeModal();
+  }
+});
+
+// Обработчик нажатия клавиши Esc, чтобы закрыть модальное окно
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'Escape' && modalOffer.style.display === "block") {
+    closeModal();
+  }
+});
+
+
+
+//  Плавный скролл по якорям
+
+document.querySelectorAll("a.scroll").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
