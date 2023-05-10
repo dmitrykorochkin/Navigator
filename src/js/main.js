@@ -327,35 +327,34 @@ window.onscroll = function() {
 //   }
 // });
 
-  const cursor = document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor");
 
-  document.addEventListener("mousemove", function(e) {
-    cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-  });
+document.addEventListener("mousemove", function(e) {
+  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+});
 
-  document.addEventListener("mouseover", function(e) {
-    if (e.target.closest("button, a")) {
+document.addEventListener("mouseover", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("_over");
+  }
+});
+
+document.addEventListener("mouseout", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.remove("_over");
+  }
+});
+
+document.addEventListener("mousedown", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("click");
+    cursor.classList.remove("_over");
+    setTimeout(function() {
+      cursor.classList.remove("click");
       cursor.classList.add("_over");
-    }
-  });
-
-  document.addEventListener("mouseout", function(e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.remove("_over");
-    }
-  });
-
-  document.addEventListener("mousedown", function(e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.add("click");
-      cursor.classList.remove("_over");
-      setTimeout(function() {
-        cursor.classList.remove("click");
-        cursor.classList.add("_over");
-      }, 500);
-    }
-  });
-
+    }, 500);
+  }
+});
 
 /* Modal */
 const modalOpen = document.querySelectorAll(".modal-open");
@@ -385,48 +384,140 @@ modalOpen.forEach(function(item) {
 modalClose.addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", closeModal);
 
+// ===============================================================================
+// ======================    MODAL OFFER    ======================================
+// ===============================================================================
 
-// modal offer 
+const modalOfferOpen = () => {
+  const buttonOffer = document.querySelectorAll(".button__offer");
+  const modalOffer = document.querySelector(".offer");
+  const backClose = document.querySelector(".offer__link");
 
-const buttonOffer = document.querySelectorAll('.button__offer');
-const modalOffer = document.querySelector('.offer');
-const backClose = document.querySelector(".offer__link");
+  // Функция для открытия модального окна
+  function openModal() {
+    modalOffer.style.display = "block";
+  }
 
-// Функция для открытия модального окна
+  // Функция для закрытия модального окна
+  function closeModal() {
+    modalOffer.style.display = "none";
+  }
+
+  // Обработчик клика по кнопке открытия модального окна
+  buttonOffer.forEach(button => {
+    button.addEventListener("click", openModal);
+  });
+
+  // Обработчик клика по кнопке закрытия модального окна
+  backClose.addEventListener("click", closeModal);
+
+  // Обработчик клика по затемненной области, чтобы закрыть модальное окно
+  modalOffer.addEventListener("click", event => {
+    if (event.target === modalOffer) {
+      closeModal();
+    }
+  });
+  // Обработчик нажатия клавиши Esc, чтобы закрыть модальное окно
+  document.addEventListener("keydown", event => {
+    if (event.code === "Escape" && modalOffer.style.display === "block") {
+      closeModal();
+    }
+  });
+};
+modalOfferOpen();
+
+// ===============================================================================
+// ======================    MODAL ADDITIONAL   ==================================
+// ===============================================================================
+
+const modalAdditional = () => {
+  const openModalAdditionals = document.querySelectorAll(".additional__link");
+  const closeModalAdditionals = document.querySelectorAll(".modal__additional-closest");
+  const modalAdditional = document.querySelector(".modal__additional-wrapper");
+
+  // Открывает модальное окно
+  function openModal() {
+    modalAdditional.style.display = "block";
+    document.addEventListener("keydown", closeModalOnEscape);
+    modalAdditional.addEventListener("click", closeModalOnOutsideClick);
+  }
+
+  // Закрывает модальное окно
+  function closeModal() {
+    modalAdditional.style.display = "none";
+    document.removeEventListener("keydown", closeModalOnEscape);
+    modalAdditional.removeEventListener("click", closeModalOnOutsideClick);
+  }
+
+  // Закрывает модальное окно при нажатии клавиши Escape
+  function closeModalOnEscape(event) {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  }
+
+  // Закрывает модальное окно при клике на область вне модального окна
+  function closeModalOnOutsideClick(event) {
+    if (!event.target.closest(".modal__additional")) {
+      closeModal();
+    }
+  }
+
+  // Добавляет обработчик клика на каждую ссылку для открытия модального окна
+  openModalAdditionals.forEach(link => {
+    link.addEventListener("click", openModal);
+  });
+
+  // Добавляет обработчик клика на каждую кнопку закрытия модального окна
+  closeModalAdditionals.forEach(button => {
+    button.addEventListener("click", closeModal);
+  });
+};
+
+modalAdditional();
+
+
+// ===============================================================================
+// ======================    MODAL ADAPTER   =====================================
+// ===============================================================================
+
+const modalAdapter = () => {
+  const modalAdapterOpen = document.querySelector(".adapter__left-scheme");
+  const modalAdapterClose = document.querySelector(".modal__adapter-close");
+  const modalAdapterOverlay = document.querySelector(".modal__adapter-wrap");
+
+
+
 function openModal() {
-  modalOffer.style.display = "block";
+  modalAdapterOverlay.style.display = "block";
 }
 
-// Функция для закрытия модального окна
 function closeModal() {
-  modalOffer.style.display = "none";
+  modalAdapterOverlay.style.display = "none";
 }
 
-// Обработчик клика по кнопке открытия модального окна
-buttonOffer.forEach(button => {
-  button.addEventListener('click', openModal);
-});
+modalAdapterOpen.addEventListener("click", openModal);
 
-// Обработчик клика по кнопке закрытия модального окна
-backClose.addEventListener('click', closeModal);
+modalAdapterClose.addEventListener("click", closeModal);
 
-// Обработчик клика по затемненной области, чтобы закрыть модальное окно
-modalOffer.addEventListener('click', (event) => {
-  if (event.target === modalOffer) {
+modalAdapterOverlay.addEventListener("click", function(event) {
+  if (event.target === modalAdapterOverlay) {
     closeModal();
   }
 });
 
-// Обработчик нажатия клавиши Esc, чтобы закрыть модальное окно
-document.addEventListener('keydown', (event) => {
-  if (event.code === 'Escape' && modalOffer.style.display === "block") {
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
     closeModal();
   }
 });
+}
 
+modalAdapter();
 
-
-//  Плавный скролл по якорям
+// ==========================================================================
+// ====================   Плавный скролл по якорям  =========================
+// ==========================================================================
 
 document.querySelectorAll("a.scroll").forEach(anchor => {
   anchor.addEventListener("click", function(e) {
@@ -437,4 +528,5 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
     });
   });
 });
+
 
