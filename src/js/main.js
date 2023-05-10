@@ -251,34 +251,111 @@ window.onscroll = function() {
 };
 
 // == Custom cursor ==========--
-const cursor = document.querySelector(".coursor");
+// const cursor = document.querySelector(".coursor");
 
-document.addEventListener("mousemove", function(e) {
-  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-});
+// document.addEventListener("mousemove", function(e) {
+//   cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+// });
 
-document.addEventListener("mouseover", function(e) {
-  if (e.target.closest("button, a")) {
-    cursor.classList.add("_over");
-  }
-});
+// document.addEventListener("mouseover", function(e) {
+//   if (e.target.closest("button, a")) {
+//     cursor.classList.add("_over");
+//   }
+// });
 
-document.addEventListener("mouseout", function(e) {
-  if (e.target.closest("button, a")) {
-    cursor.classList.remove("_over");
-  }
-});
+// document.addEventListener("mouseout", function(e) {
+//   if (e.target.closest("button, a")) {
+//     cursor.classList.remove("_over");
+//   }
+// });
 
-document.addEventListener("mousedown", function(e) {
-  if (e.target.closest("button, a")) {
-    cursor.classList.add("click");
-    cursor.classList.remove("_over");
-    setTimeout(function() {
-      cursor.classList.remove("click");
+// document.addEventListener("mousedown", function(e) {
+//   if (e.target.closest("button, a")) {
+//     cursor.classList.add("click");
+//     cursor.classList.remove("_over");
+//     setTimeout(function() {
+//       cursor.classList.remove("click");
+//       cursor.classList.add("_over");
+//     }, 500);
+//   }
+// });
+
+// const cursor = document.querySelector(".coursor");
+// let cursorSize = 20;
+
+// document.addEventListener("mousemove", function(e) {
+//   // Если курсор над элементом типа "button" или "a", то увеличиваем его размер на 10px
+//   if (e.target.closest("button, a")) {
+//     cursor.style.width = (cursorSize + 10) + "px";
+//     cursor.style.height = (cursorSize + 10) + "px";
+//   } else {
+//     cursor.style.width = cursorSize + "px";
+//     cursor.style.height = cursorSize + "px";
+//   }
+
+//   cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+// });
+
+// document.addEventListener("mouseleave", function(e) {
+//   if (e.target.closest("button, a")) {
+//     cursorSize -= 10;
+//   }
+
+//   cursor.style.width = cursorSize + "px";
+//   cursor.style.height = cursorSize + "px";
+// });
+
+// document.addEventListener("mousedown", function(e) {
+//   if (e.target.closest("button, a")) {
+//     cursor.classList.add("click");
+//     cursor.classList.remove("_over");
+
+//     // Увеличиваем размер курсора на 10px при клике
+//     cursorSize += 10;
+//     cursor.style.width = cursorSize + "px";
+//     cursor.style.height = cursorSize + "px";
+
+//     setTimeout(function() {
+//       cursor.classList.remove("click");
+//       cursor.classList.add("_over");
+
+//       // Возвращаем размер курсора к начальному значению после клика
+//       cursorSize -= 10;
+//       cursor.style.width = cursorSize + "px";
+//       cursor.style.height = cursorSize + "px";
+//     }, 500);
+//   }
+// });
+
+  const cursor = document.querySelector(".cursor");
+
+  document.addEventListener("mousemove", function(e) {
+    cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+  });
+
+  document.addEventListener("mouseover", function(e) {
+    if (e.target.closest("button, a")) {
       cursor.classList.add("_over");
-    }, 500);
-  }
-});
+    }
+  });
+
+  document.addEventListener("mouseout", function(e) {
+    if (e.target.closest("button, a")) {
+      cursor.classList.remove("_over");
+    }
+  });
+
+  document.addEventListener("mousedown", function(e) {
+    if (e.target.closest("button, a")) {
+      cursor.classList.add("click");
+      cursor.classList.remove("_over");
+      setTimeout(function() {
+        cursor.classList.remove("click");
+        cursor.classList.add("_over");
+      }, 500);
+    }
+  });
+
 
 /* Modal */
 const modalOpen = document.querySelectorAll(".modal-open");
