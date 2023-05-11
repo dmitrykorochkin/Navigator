@@ -207,6 +207,15 @@
               </picture>
               <div class="reg__name">Onlooker R5 Combo</div>
             </div>
+            <picture>
+              <source srcset="./img/hero/lines-bg.webp" type="image/webp" />
+              <img
+                class="hero__lines-img1"
+                loading="lazy"
+                src="./img/hero/lines-bg.png"
+                alt="Видеорегистратор"
+              />
+            </picture>
           </section>
           <div class="bg__element__300" data-aos="fade-in"></div>
           <div class="bg__element__1" data-aos="fade-in"></div>
@@ -4212,7 +4221,7 @@
                   </div>
                 </div>
 
-                <form id="form2" data-aos="fade-in" class="form__element">
+                <form action="#" method="POST" id="form2" class="form__element">
                   <label for="name">
                     <div class="label__name">Ваше Фамилия и Имя*</div>
                     <input
@@ -4221,12 +4230,18 @@
                       maxlength="20"
                       name="user-name"
                       id="name"
+                      required
                     />
                   </label>
 
-                  <label for="telephone">
+                  <label for="telephone2">
                     <div class="label__name">Ваш телефон*</div>
-                    <input name="user-tel" type="tel" placeholder=""
+                    <input
+                      id="telephone2"
+                      data-validate-field="tel"
+                      name="user-tel"
+                      type="tel"
+                      placeholder=""
                   /></label>
                   <div class="form__footer" data-aos="fade-in">
                     <div class="form__button-text">
@@ -8252,7 +8267,7 @@
                 <div class="form__click">
                   Закажите устройство с доставкой <span>в 1 клик</span>
                 </div>
-                <form class="form__element">
+                <form action="#" method="POST" id="form3" class="form__element">
                   <label for="name">
                     <div class="label__name">Ваше Фамилия и Имя*</div>
                     <input
@@ -8261,12 +8276,18 @@
                       maxlength="20"
                       name="user-name"
                       id="name2"
+                      required
                     />
                   </label>
 
-                  <label for="telephone">
+                  <label for="telephone3">
                     <div class="label__name">Ваш телефон*</div>
-                    <input type="tel" id="telephone2" placeholder=""
+                    <input
+                      required
+                      data-validate-field="tel"
+                      type="tel"
+                      id="telephone3"
+                      placeholder=""
                   /></label>
                   <div class="form__footer">
                     <div class="form__button-text">
@@ -8440,8 +8461,9 @@
             </div>
             <div class="purchase__form">
               <form action="#" method="POST" class="form__element">
-                <label class="form__label" for="telephone"></label>
+                <label class="form__label" for="telephone4"></label>
                 <input
+                  id="telephone4"
                   name="user-phone"
                   data-validate-field="tel"
                   type="tel"
@@ -9087,9 +9109,14 @@
           </a>
         </div>
         <form class="form__element">
-          <label for="telephone">
+          <label for="telephone5">
             <div class="label__name">Ваш телефон*</div>
-            <input type="tel" id="telephone3" placeholder=""
+            <input
+              data-validate-field="tel"
+              required
+              type="tel"
+              id="telephone5"
+              placeholder=""
           /></label>
           <div class="form__footer">
             <div class="form__button-text">
