@@ -413,6 +413,7 @@
                       type="image/png"
                     />
                     <img
+                    class="video__img"
                       loading="lazy"
                       src="./img/video/video.png"
                       alt="Видео"
@@ -2942,7 +2943,7 @@
               <div class="form__click">
                 Закажите устройство с доставкой <span>в 1 клик</span>
               </div>
-              <form id="form1" action="#" method="POST" class="form__element">
+              <form  id="form1" action="#" method="POST" class="form__element">
                 <label for="name" class="form__label">
                   <div class="label__name">Ваше Фамилия и Имя*</div>
                   <input
@@ -8294,7 +8295,7 @@
                       Нажимая на кнопку, вы даете согласие на обработку
                       персональных данных
                     </div>
-                    <button class="button button__form">Заказать</button>
+                    <button type="submit" class="button button__form">Заказать</button>
                   </div>
                 </form>
               </div>
@@ -8749,7 +8750,7 @@
               <div class="offer__title">Ограниченное предложение</div>
               <a href="#" class="offer__link">
                 <img src="./img/offer/arrow.svg" alt="" class="offer__icon" />
-                <div class="offer__link-text">Вернуться к товару</div>
+                <div class="offer__link-text popup-close">Вернуться к товару</div>
               </a>
             </div>
             <div class="offer__title-bottom">
@@ -8880,19 +8881,24 @@
 
     <!-- MODAL DECLARATION  -->
 
-    <div class="modal__declaration modal__overlay"></div>
+    <div class="modal__declaration modal__overlay">
     <div class="modal">
       <div class="modal__content">
         <img src="img/modal/declaration/1-rus.jpeg" alt="certificate" />
-        <button class="modal__close"></button>
+        <button class="modal__close popup-close">
+          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+        </button>
       </div>
+    </div>
     </div>
 
     <div class="modal__declaration modal__overlay"></div>
     <div class="modal">
       <div class="modal__content">
-        <img src="img/modal/declaration/2-rus.jpeg" alt="certificate" />
-        <button class="modal__close"></button>
+        <img class="modal__content-declaration" src="img/modal/declaration/2-rus.jpeg" alt="certificate" />
+        <button class="modal__close popup-close">
+          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+        </button>
       </div>
     </div>
 
@@ -8900,7 +8906,9 @@
     <div class="modal">
       <div class="modal__content">
         <img src="img/modal/declaration/3-eng.jpeg" alt="certificate" />
-        <button class="modal__close"></button>
+        <button class="modal__close popup-close">
+          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+        </button>
       </div>
     </div>
 
@@ -8935,14 +8943,14 @@
           </div>
         </div>
         <div class="modal__additional-buttons">
-          <button class="additional__button-close modal__additional-closest">
+          <button class="additional__button-close modal__additional-closest popup-close">
             Закрыть
           </button>
           <button class="button additional__button-modal">
             Добавить к заказу
           </button>
         </div>
-        <button class="modal__additional-close modal__additional-closest">
+        <button class="modal__additional-close modal__additional-closest popup-close">
           <img src="img/modal/additional/+.svg" alt="close" />
         </button>
       </div>
@@ -8986,7 +8994,7 @@
             />
           </picture>
         </div>
-        <button class="modal__adapter-close">
+        <button class="modal__adapter-close popup-close">
           <img src="./img/modal/additional/+.svg" alt="close" />
         </button>
       </div>
@@ -9123,7 +9131,7 @@
               Нажимая на кнопку, вы даете согласие на обработку персональных
               данных
             </div>
-            <button class="button button__form">Заказать</button>
+            <button type="submit" class="button button__form">Заказать</button>
           </div>
         </form>
 
@@ -9138,7 +9146,7 @@
             />
           </picture>
         </div>
-        <button class="modal__call-close">
+        <button class="modal__call-close popup-close">
           <img src="./img/modal/additional/+.svg" alt="" />
         </button>
       </div>
@@ -9149,8 +9157,8 @@
         <div class="modal__thanks-title">
           Спасибо, мы скоро свяжемся с Вами!
         </div>
-        <button class="button button__thanks thanks__close">Ок</button>
-        <button class="modal__thanks-close thanks__close">
+        <button class="button button__thanks thanks__close popup-close">Ок</button>
+        <button class="modal__thanks-close thanks__close popup-close">
           <img src="./img/modal/additional/+.svg" alt="" />
         </button>
       </div>
