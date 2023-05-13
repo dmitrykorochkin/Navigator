@@ -734,7 +734,7 @@ formSite();
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
     const trigger = document.querySelectorAll(triggerSelector);
-    const modal = document.querySelectorAll(modalSelector);
+    const modal = document.querySelector(modalSelector);
     const close = document.querySelectorAll(closeSelector);
 
     trigger.forEach(item => {

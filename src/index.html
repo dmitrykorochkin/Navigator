@@ -590,7 +590,9 @@
               <img loading="lazy" src="./img/antenna/line.svg" alt="lines" />
             </div>
             <div class="antenna__bg">
-              <picture>
+
+            </div>
+                          <picture>
                 <source
                   loading="lazy"
                   srcset="./img/antenna/bg.webp"
@@ -602,13 +604,14 @@
                   type="image/png"
                 />
                 <img
+                  class="antenna__bg-line"
                   loading="lazy"
                   src="./img/antenna/bg.png"
                   alt="background"
                 />
               </picture>
-            </div>
           </section>
+          
           <div class="bg__element"></div>
 
           <!-- -------------------------camers ----------------------- -->
@@ -844,7 +847,7 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="camers__ignor-bg">
+            <div class="camers__ignor-bg">
           <picture>
             <source
               srcset="./img/camers/camers-ignor-bg.webp"
@@ -854,11 +857,22 @@
               srcset="./img/camers/camers-ignor-bg.png"
               type="image/png"
             />
-            <img src="./img/camers/camers-ignor-bg.png" alt="background" />
-          </picture> -->
+            <img class="camers__ignor-img" src="./img/camers/camers-ignor-bg.png" alt="background" />
+          </picture> 
+          </div>
+                     <picture>
+            <source
+              srcset="./img/camers/bg-line.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/camers/bg-line.png"
+              type="image/png"
+            />
+            <img class="camers__ignor-img-line" src="./img/camers/bg-line.png" alt="background" />
+          </picture> 
           </section>
 
-          <div class="bg__element-line"></div>
           <div class="bg__element__4" data-aos="fade-in"></div>
           <div class="bg__element__5" data-aos="fade-in"></div>
           <div class="bg__element__6" data-aos="fade-in"></div>
@@ -2996,7 +3010,28 @@
                   alt="background"
                 />
               </picture>
+
             </div>
+
+                          <picture>
+                <source
+                  loading="lazy"
+                  srcset="./img/form/bg-line.webp"
+                  type="image/webp"
+                />
+                <source
+                  loading="lazy"
+                  srcset="./img/form/bg-line.png"
+                  type="image/png"
+                />
+                <img
+                  loading="lazy"
+                  class="form__img-line"
+                  src="./img/form/bg-line.png"
+                  alt="background"
+                />
+              </picture>
+
           </section>
           <div class="bg__element"></div>
 
