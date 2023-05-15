@@ -240,310 +240,7 @@ document.addEventListener("mousedown", function(e) {
   }
 });
 
-/* Modal */
-// const modalOpen = document.querySelectorAll(".modal-open");
-// const modal = document.querySelector(".modal");
-// const modalClose = document.querySelector(".modal__close");
 
-// function openModal() {
-//   modal.style.display = "block";
-//   document.body.classList.add("modal-open"); // Добавляем класс к body
-// }
-
-// function closeModal() {
-//   modal.style.display = "none";
-//   document.body.classList.remove("modal-open"); // Удаляем класс у body
-// }
-
-// modalOpen.forEach(function(item) {
-//   item.addEventListener("click", function(event) {
-//     event.preventDefault(); // Отменяем стандартное действие при клике на ссылку
-//     openModal();
-//   });
-// });
-
-// modalClose.addEventListener("click", closeModal);
-
-
-// // ===============================================================================
-// // ======================    MODAL OFFER    ======================================
-// // ===============================================================================
-
-// const modalOfferOpen = () => {
-//   const buttonOffer = document.querySelectorAll(".button__offer");
-//   const modalOffer = document.querySelector(".offer");
-//   const backClose = document.querySelector(".offer__link");
-
-//   // Функция для открытия модального окна
-//   function openModal() {
-//     modalOffer.style.display = "block";
-//   }
-
-//   // Функция для закрытия модального окна
-//   function closeModal() {
-//     modalOffer.style.display = "none";
-//   }
-
-//   // Обработчик клика по кнопке открытия модального окна
-//   buttonOffer.forEach(button => {
-//     button.addEventListener("click", openModal);
-//   });
-
-//   // Обработчик клика по кнопке закрытия модального окна
-//   backClose.addEventListener("click", closeModal);
-
-//   // Обработчик клика по затемненной области, чтобы закрыть модальное окно
-//   modalOffer.addEventListener("click", event => {
-//     if (event.target === modalOffer) {
-//       closeModal();
-//     }
-//   });
-//   // Обработчик нажатия клавиши Esc, чтобы закрыть модальное окно
-//   document.addEventListener("keydown", event => {
-//     if (event.code === "Escape" && modalOffer.style.display === "block") {
-//       closeModal();
-//     }
-//   });
-// };
-// modalOfferOpen();
-
-// // ===============================================================================
-// // ======================    MODAL ADDITIONAL   ==================================
-// // ===============================================================================
-
-// const modalAdditional = () => {
-//   const openModalAdditionals = document.querySelectorAll(".additional__link");
-//   const closeModalAdditionals = document.querySelectorAll(
-//     ".modal__additional-closest"
-//   );
-//   const modalAdditional = document.querySelector(".modal__additional-wrapper");
-
-//   // Открывает модальное окно
-//   function openModal() {
-//     modalAdditional.style.display = "block";
-//     document.addEventListener("keydown", closeModalOnEscape);
-//     modalAdditional.addEventListener("click", closeModalOnOutsideClick);
-//   }
-
-//   // Закрывает модальное окно
-//   function closeModal() {
-//     modalAdditional.style.display = "none";
-//     document.removeEventListener("keydown", closeModalOnEscape);
-//     modalAdditional.removeEventListener("click", closeModalOnOutsideClick);
-//   }
-
-//   // Закрывает модальное окно при нажатии клавиши Escape
-//   function closeModalOnEscape(event) {
-//     if (event.key === "Escape") {
-//       closeModal();
-//     }
-//   }
-
-//   // Закрывает модальное окно при клике на область вне модального окна
-//   function closeModalOnOutsideClick(event) {
-//     if (!event.target.closest(".modal__additional")) {
-//       closeModal();
-//     }
-//   }
-
-//   // Добавляет обработчик клика на каждую ссылку для открытия модального окна
-//   openModalAdditionals.forEach(link => {
-//     link.addEventListener("click", openModal);
-//   });
-
-//   // Добавляет обработчик клика на каждую кнопку закрытия модального окна
-//   closeModalAdditionals.forEach(button => {
-//     button.addEventListener("click", closeModal);
-//   });
-// };
-
-// modalAdditional();
-
-// // ===============================================================================
-// // ======================    MODAL ADAPTER   =====================================
-// // ===============================================================================
-
-// const modalAdapter = () => {
-//   const modalAdapterOpen = document.querySelector(".adapter__left-scheme");
-//   const modalAdapterClose = document.querySelector(".modal__adapter-close");
-//   const modalAdapterOverlay = document.querySelector(".modal__adapter-wrap");
-
-//   function openModal() {
-//     modalAdapterOverlay.style.display = "block";
-//   }
-
-//   function closeModal() {
-//     modalAdapterOverlay.style.display = "none";
-//   }
-
-//   modalAdapterOpen.addEventListener("click", openModal);
-
-//   modalAdapterClose.addEventListener("click", closeModal);
-
-//   modalAdapterOverlay.addEventListener("click", function(event) {
-//     if (event.target === modalAdapterOverlay) {
-//       closeModal();
-//     }
-//   });
-
-//   document.addEventListener("keydown", function(event) {
-//     if (event.key === "Escape") {
-//       closeModal();
-//     }
-//   });
-// };
-
-// modalAdapter();
-
-// // ===============================================================================
-// // ======================    MODAL CALL   =====================================
-// // ===============================================================================
-
-// const modalCall = () => {
-//   const openModalCall = document.querySelector(".header__button");
-//   const closeModalCall = document.querySelector(".modal__call-close");
-//   const modal = document.querySelector(".modal__call-wrapper");
-
-//   function openModal() {
-//     modal.style.display = "block";
-//   }
-
-//   function closeModal() {
-//     modal.style.display = "none";
-//   }
-
-//   openModalCall.addEventListener("click", openModal);
-
-//   closeModalCall.addEventListener("click", closeModal);
-
-//   window.addEventListener("keydown", function(event) {
-//     if (event.key === "Escape") {
-//       closeModal();
-//     }
-//   });
-
-//   modal.addEventListener("click", function(event) {
-//     if (event.target === modal) {
-//       closeModal();
-//     }
-//   });
-// };
-
-// modalCall();
-
-// // ===============================================================================
-// // ======================    MODAL thanks   =====================================
-// // ===============================================================================
-
-// const modalThanks = () => {
-//   const modalThanksOpen = document.querySelector(".purchase__button");
-//   const modalThanksClose = document.querySelectorAll(".thanks__close");
-//   const modalThanks = document.querySelector(".modal__thanks-wrapper");
-
-//   function openModal() {
-//     modalThanks.style.display = "block";
-//     document.addEventListener("keydown", closeModalOnEscape);
-//   }
-
-//   function closeModal() {
-//     modalThanks.style.display = "none";
-//     document.removeEventListener("keydown", closeModalOnEscape);
-//   }
-
-//   function closeModalOnEscape(event) {
-//     if (event.key === "Escape") {
-//       closeModal();
-//     }
-//   }
-
-//   modalThanksOpen.addEventListener("click", openModal);
-
-//   modalThanksClose.forEach(closeButton => {
-//     closeButton.addEventListener("click", closeModal);
-//   });
-
-//   window.addEventListener("click", event => {
-//     if (event.target === modalThanks) {
-//       closeModal();
-//     }
-//   });
-// }
-// modalThanks();
-
-// class Modal {
-//   constructor(openBtns, closeBtns, modalWrapper) {
-//     this.openBtns = document.querySelectorAll(openBtns);
-//     this.closeBtns = document.querySelectorAll(closeBtns);
-//     this.modalWrapper = document.querySelector(modalWrapper);
-
-//     this.openModal = this.openModal.bind(this);
-//     this.closeModal = this.closeModal.bind(this);
-//     this.closeModalOnEscape = this.closeModalOnEscape.bind(this);
-//     this.closeModalOnOutsideClick = this.closeModalOnOutsideClick.bind(this);
-
-//     this.init();
-//   }
-
-//   init() {
-//     this.openBtns.forEach(button => {
-//       button.addEventListener("click", this.openModal);
-//     });
-
-//     this.closeBtns.forEach(button => {
-//       button.addEventListener("click", this.closeModal);
-//     });
-//   }
-
-//   openModal() {
-//     this.modalWrapper.style.display = "block";
-//     document.addEventListener("keydown", this.closeModalOnEscape);
-//     this.modalWrapper.addEventListener("click", this.closeModalOnOutsideClick);
-//   }
-
-//   closeModal(event) {
-//     event.preventDefault(); // Prevent default behavior
-//     this.modalWrapper.style.display = "none";
-//     document.removeEventListener("keydown", this.closeModalOnEscape);
-//     this.modalWrapper.removeEventListener(
-//       "click",
-//       this.closeModalOnOutsideClick
-//     );
-//   }
-
-//   closeModalOnEscape(event) {
-//     if (event.key === "Escape") {
-//       this.closeModal(event);
-//     }
-//   }
-
-//   closeModalOnOutsideClick(event) {
-//     if (!event.target.closest(".modal")) {
-//       this.closeModal(event);
-//     }
-//   }
-// }
-
-// const modalOffer = new Modal(".button__offer", ".offer__link", ".offer");
-// const modalAdditional = new Modal(
-//   ".additional__link",
-//   ".modal__additional-closest",
-//   ".modal__additional-wrapper"
-// );
-// const modalAdapter = new Modal(
-//   ".adapter__left-scheme",
-//   ".modal__adapter-close",
-//   ".modal__adapter-wrap"
-// );
-// const modalCall = new Modal(
-//   ".header__button",
-//   ".modal__call-close",
-//   ".modal__call-wrapper"
-// );
-// const modalThanks = new Modal(
-//   ".purchase__button",
-//   ".thanks__close",
-//   ".modal__thanks-wrapper"
-// );
 
 // ==========================================================================
 // ====================   Плавный скролл по якорям  =========================
@@ -559,56 +256,23 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
   });
 });
 
-const formSite = () => {
-  const forms = document.querySelectorAll(".form__element");
-  const inputMask = new Inputmask("+7 (999) 999-99-99");
 
-  forms.forEach(form => {
-    const telSelector = form.querySelector('input[type="tel"]');
 
-    inputMask.mask(telSelector);
 
-    new window.JustValidate(".form__element", {
-      rules: {
-        tel: {
-          required: true,
-          function: () => {
-            const phone = telSelector.inputmask.unmaskedvalue();
-            return Number(phone) && phone.length === 10;
-          }
-        }
-      },
-      submitHandler: function(thisForm) {
-        let formData = new FormData(thisForm);
-        let xhr = new XMLHttpRequest();
 
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              console.log("Отправлено");
-            }
-          }
-        };
-        xhr.open("POST", "mail.php", true);
-        xhr.send(formData);
 
-        thisForm.reset();
-      }
-    });
-  });
-};
 
-formSite();
 
 // const formSite = () => {
 //   const forms = document.querySelectorAll(".form__element");
+//   const inputMask = new Inputmask("+7 (999) 999-99-99");
 
 //   forms.forEach(form => {
-//     const inputMask = new Inputmask("+7 (999) 999-99-99");
-//     const telSelector = form.querySelector(".tel-input");
+//     const telSelector = form.querySelector('input[type="tel"]');
+
 //     inputMask.mask(telSelector);
 
-//     new window.JustValidate(`#${form.id}`, {
+//     new window.JustValidate(".form__element", {
 //       rules: {
 //         tel: {
 //           required: true,
@@ -640,96 +304,61 @@ formSite();
 
 // formSite();
 
-// class Modal {
-//   constructor(openBtns, closeBtns, modalWrapper) {
-//     this.openBtns = document.querySelectorAll(openBtns);
-//     this.closeBtns = document.querySelectorAll(closeBtns);
-//     this.modalWrapper = document.querySelector(modalWrapper);
+const forms = () => {
+  const form = document.querySelectorAll('.form__element');
+  const input = document.querySelectorAll('input');
 
-//     this.openModal = this.openModal.bind(this);
-//     this.closeModal = this.closeModal.bind(this);
-//     this.closeModalOnEscape = this.closeModalOnEscape.bind(this);
-//     this.closeModalOnOutsideClick = this.closeModalOnOutsideClick.bind(this);
+  const message = {
+    loading: 'Загрузка...',
+    success: 'Спасибо, с вами скоро свяжутся!',
+    failure: 'Что-то пошло не так...'
+  }
 
-//     this.init();
-//   }
+  const postData = async (url, data) => {
+    document.querySelector('.status').textContent = message.loading;
+    let res = await fetch(url, {
+      method: 'POST',
+      body:data
+    });
 
-//   init() {
-//     this.openBtns.forEach(button => {
-//       button.addEventListener("click", () => {
-//         const form = document.querySelector(".form__element"); // выберите нужную форму
-//         if (form.checkValidity()) {
-//           // проверка на заполненность формы
-//           this.openModal();
-//         }
-//       });
-//     });
+    return await res.text();
+  }
 
-//     this.closeBtns.forEach(button => {
-//       button.addEventListener("click", this.closeModal);
-//     });
-//   }
+  const clearInputs = () => {
+    input.forEach(item => {
+      item.value = '';
+    })
+  }
 
-//   openModal() {
-//     this.modalWrapper.style.display = "block";
-//     document.addEventListener("keydown", this.closeModalOnEscape);
-//     this.modalWrapper.addEventListener("click", this.closeModalOnOutsideClick);
-//   }
+  form.forEach(item => {
+    item.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-//   closeModal(event) {
-//     event.preventDefault(); // Prevent default behavior
-//     this.modalWrapper.style.display = "none";
-//     document.removeEventListener("keydown", this.closeModalOnEscape);
-//     this.modalWrapper.removeEventListener(
-//       "click",
-//       this.closeModalOnOutsideClick
-//     );
-//   }
+      let statusMessage = document.createElement('div');
+      statusMessage.classlist.add('status');
+      item.appendChild(statusMessage);
 
-//   closeModalOnEscape(event) {
-//     if (event.key === "Escape") {
-//       this.closeModal(event);
-//     }
-//   }
+      const formData = new FormData(item)
+      postData("../server.php", formData)
+        .then(res => {
+          console.log(res);
+          statusMessage.textContent = message.success;
+        })
+        .catch(() => statusMessage.textContent = message.failure)
+        .finally(() => {
+          clearInputs();
+          setTimeout(() => {
+            statusMessage.remove();
+          }, 5000)
+        })
 
-//   closeModalOnOutsideClick(event) {
-//     if (!event.target.closest(".modal")) {
-//       this.closeModal(event);
-//     }
-//   }
-// }
+    })
+  })
+}
+forms();
 
-// const modalOffer = new Modal(".button__offer", ".offer__link", ".offer");
-// const openModalAdditional = () => {
-//   const form = document.querySelector(".form__element"); // выберите нужную форму
-//   if (form.checkValidity()) {
-//     // проверка на заполненность формы
-//     modalAdditional.openModal();
-//   }
-// };
-// document
-//   .querySelector(".additional__link")
-//   .addEventListener("click", openModalAdditional);
-// const modalAdditional = new Modal(
-//   ".additional__link",
-//   ".modal__additional-closest",
-//   ".modal__additional-wrapper"
-// );
-// const modalAdapter = new Modal(
-//   ".adapter__left-scheme",
-//   ".modal__adapter-close",
-//   ".modal__adapter-wrap"
-// );
-// const modalCall = new Modal(
-//   ".header__button",
-//   ".modal__call-close",
-//   ".modal__call-wrapper"
-// );
-// const modalThanks = new Modal(
-//   ".purchase__button",
-//   ".thanks__close",
-//   ".modal__thanks-wrapper"
-// );
+
+
 
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
