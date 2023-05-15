@@ -335,7 +335,7 @@ const forms = () => {
       e.preventDefault();
 
       let statusMessage = document.createElement('div');
-      statusMessage.classlist.add('status');
+      statusMessage.classList.add('status');
       item.appendChild(statusMessage);
 
       const formData = new FormData(item)
@@ -343,6 +343,7 @@ const forms = () => {
         .then(res => {
           console.log(res);
           statusMessage.textContent = message.success;
+          debugger;
         })
         .catch(() => statusMessage.textContent = message.failure)
         .finally(() => {
