@@ -1,6 +1,6 @@
 // slider
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 70,
 
   pagination: {
@@ -10,14 +10,11 @@ const swiper = new Swiper(".swiper", {
   autoplay: {
     delay: 3000
   },
-  // breakpoints: {
-  //   1920: {
-  //     slidesPerView: 3
-  //   },
-  //   320: {
-  //     slidesPerView: 1
-  //   }
-  // },
+    breakpoints: {
+      640: {
+        slidesPerView: 3
+      }
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
@@ -240,8 +237,6 @@ document.addEventListener("mousedown", function(e) {
   }
 });
 
-
-
 // ==========================================================================
 // ====================   Плавный скролл по якорям  =========================
 // ==========================================================================
@@ -255,13 +250,6 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
     });
   });
 });
-
-
-
-
-
-
-
 
 // const formSite = () => {
 //   const forms = document.querySelectorAll(".form__element");
@@ -305,61 +293,57 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
 // formSite();
 
 const forms = () => {
-  const form = document.querySelectorAll('.form__element');
-  const input = document.querySelectorAll('input');
+  const form = document.querySelectorAll(".form__element");
+  const input = document.querySelectorAll("input");
 
   const message = {
-    loading: 'Загрузка...',
-    success: 'Спасибо, с вами скоро свяжутся!',
-    failure: 'Что-то пошло не так...'
-  }
+    loading: "Загрузка...",
+    success: "Спасибо, с вами скоро свяжутся!",
+    failure: "Что-то пошло не так..."
+  };
 
   const postData = async (url, data) => {
-    document.querySelector('.status').textContent = message.loading;
+    document.querySelector(".status").textContent = message.loading;
     let res = await fetch(url, {
-      method: 'POST',
-      body:data
+      method: "POST",
+      body: data
     });
 
     return await res.text();
-  }
+  };
 
   const clearInputs = () => {
     input.forEach(item => {
-      item.value = '';
-    })
-  }
+      item.value = "";
+    });
+  };
 
   form.forEach(item => {
-    item.addEventListener('submit', (e) => {
+    item.addEventListener("submit", e => {
       e.preventDefault();
 
-      let statusMessage = document.createElement('div');
-      statusMessage.classList.add('status');
+      let statusMessage = document.createElement("div");
+      statusMessage.classList.add("status");
       item.appendChild(statusMessage);
 
-      const formData = new FormData(item)
+      const formData = new FormData(item);
       postData("../server.php", formData)
         .then(res => {
           console.log(res);
           statusMessage.textContent = message.success;
           debugger;
         })
-        .catch(() => statusMessage.textContent = message.failure)
+        .catch(() => (statusMessage.textContent = message.failure))
         .finally(() => {
           clearInputs();
           setTimeout(() => {
             statusMessage.remove();
-          }, 5000)
-        })
-
-    })
-  })
-}
+          }, 5000);
+        });
+    });
+  });
+};
 forms();
-
-
-
 
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
@@ -384,7 +368,7 @@ const modals = () => {
       });
     });
 
-    modal.addEventListener("click", (e) => {
+    modal.addEventListener("click", e => {
       if (e.target === modal) {
         modal.style.display = "none";
         document.body.style.overflow = "";
@@ -407,11 +391,18 @@ const modals = () => {
     ".modal__additional-wrapper",
     ".modal__additional-wrapper .popup-close"
   );
-  bindModal(".adapter__left-scheme", ".modal__adapter-wrap", ".modal__adapter-wrap .popup-close");
+  bindModal(
+    ".adapter__left-scheme",
+    ".modal__adapter-wrap",
+    ".modal__adapter-wrap .popup-close"
+  );
   bindModal(".button__offer", ".offer", ".offer .popup-close");
-  bindModal(".purchase__button", ".modal__thanks-wrapper", ".modal__thanks-wrapper .popup-close");
+  bindModal(
+    ".purchase__button",
+    ".modal__thanks-wrapper",
+    ".modal__thanks-wrapper .popup-close"
+  );
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
-
 };
 
 modals();
