@@ -7,11 +7,11 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     type: "bullets"
   },
-  autoplay: {
-    delay: 3000
-  },
+  // autoplay: {
+  //   delay: 3000
+  // },
     breakpoints: {
-      640: {
+      768: {
         slidesPerView: 3
       }
   },
