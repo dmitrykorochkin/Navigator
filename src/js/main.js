@@ -101,6 +101,11 @@ const alertImgBlock = document.querySelectorAll(".alert__animation");
 
 alertTabs.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    alertTabs.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
+
     alertImgBlock.forEach(item => {
       item.classList.remove("active");
     });
