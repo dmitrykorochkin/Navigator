@@ -1,3 +1,5 @@
+AOS.init();
+
 // slider
 const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
@@ -87,6 +89,7 @@ const imgIntBlock = document.querySelectorAll(".interface__img");
 
 itemIntLeft.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    
     imgIntBlock.forEach(i => {
       i.classList.remove("active");
     });

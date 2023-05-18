@@ -11,7 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/aos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -413,7 +416,7 @@
                       type="image/png"
                     />
                     <img
-                    class="video__img"
+                      class="video__img"
                       loading="lazy"
                       src="./img/video/video.png"
                       alt="Видео"
@@ -589,29 +592,27 @@
             <div class="antenna__line">
               <img loading="lazy" src="./img/antenna/line.svg" alt="lines" />
             </div>
-            <div class="antenna__bg">
-
-            </div>
-                          <picture>
-                <source
-                  loading="lazy"
-                  srcset="./img/antenna/bg.webp"
-                  type="image/webp"
-                />
-                <source
-                  loading="lazy"
-                  srcset="./img/antenna/bg.png"
-                  type="image/png"
-                />
-                <img
-                  class="antenna__bg-line"
-                  loading="lazy"
-                  src="./img/antenna/bg.png"
-                  alt="background"
-                />
-              </picture>
+            <div class="antenna__bg"></div>
+            <picture>
+              <source
+                loading="lazy"
+                srcset="./img/antenna/bg.webp"
+                type="image/webp"
+              />
+              <source
+                loading="lazy"
+                srcset="./img/antenna/bg.png"
+                type="image/png"
+              />
+              <img
+                class="antenna__bg-line"
+                loading="lazy"
+                src="./img/antenna/bg.png"
+                alt="background"
+              />
+            </picture>
           </section>
-          
+
           <div class="bg__element"></div>
 
           <!-- -------------------------camers ----------------------- -->
@@ -848,29 +849,31 @@
               </div>
             </div>
             <div class="camers__ignor-bg">
-          <picture>
-            <source
-              srcset="./img/camers/camers-ignor-bg.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="./img/camers/camers-ignor-bg.png"
-              type="image/png"
-            />
-            <img class="camers__ignor-img" src="./img/camers/camers-ignor-bg.png" alt="background" />
-          </picture> 
-          </div>
-                     <picture>
-            <source
-              srcset="./img/camers/bg-line.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="./img/camers/bg-line.png"
-              type="image/png"
-            />
-            <img class="camers__ignor-img-line" src="./img/camers/bg-line.png" alt="background" />
-          </picture> 
+              <picture>
+                <source
+                  srcset="./img/camers/camers-ignor-bg.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./img/camers/camers-ignor-bg.png"
+                  type="image/png"
+                />
+                <img
+                  class="camers__ignor-img"
+                  src="./img/camers/camers-ignor-bg.png"
+                  alt="background"
+                />
+              </picture>
+            </div>
+            <picture>
+              <source srcset="./img/camers/bg-line.webp" type="image/webp" />
+              <source srcset="./img/camers/bg-line.png" type="image/png" />
+              <img
+                class="camers__ignor-img-line"
+                src="./img/camers/bg-line.png"
+                alt="background"
+              />
+            </picture>
           </section>
 
           <div class="bg__element__4" data-aos="fade-in"></div>
@@ -2957,7 +2960,7 @@
               <div class="form__click">
                 Закажите устройство с доставкой <span>в 1 клик</span>
               </div>
-              <form  id="form1" action="#" method="POST" class="form__element">
+              <form id="form1" action="#" method="POST" class="form__element">
                 <label for="name" class="form__label">
                   <div class="label__name">Ваше Фамилия и Имя*</div>
                   <input
@@ -3010,28 +3013,26 @@
                   alt="background"
                 />
               </picture>
-
             </div>
 
-                          <picture>
-                <source
-                  loading="lazy"
-                  srcset="./img/form/bg-line.webp"
-                  type="image/webp"
-                />
-                <source
-                  loading="lazy"
-                  srcset="./img/form/bg-line.png"
-                  type="image/png"
-                />
-                <img
-                  loading="lazy"
-                  class="form__img-line"
-                  src="./img/form/bg-line.png"
-                  alt="background"
-                />
-              </picture>
-
+            <picture>
+              <source
+                loading="lazy"
+                srcset="./img/form/bg-line.webp"
+                type="image/webp"
+              />
+              <source
+                loading="lazy"
+                srcset="./img/form/bg-line.png"
+                type="image/png"
+              />
+              <img
+                loading="lazy"
+                class="form__img-line"
+                src="./img/form/bg-line.png"
+                alt="background"
+              />
+            </picture>
           </section>
           <div class="bg__element"></div>
 
@@ -5374,7 +5375,11 @@
                     SmartBox
                   </div>
                 </div>
-                <div class="protection__cars">
+                <div
+                  class="protection__cars"
+                  data-aos="fade-in"
+                  data-aos-duration="100"
+                >
                   <picture>
                     <source
                       srcset="./img/protection/road.webp"
@@ -5400,9 +5405,10 @@
                       type="image/png"
                     />
                     <img
-                      class="protection__car-img1 aos-animate"
+                      class="protection__car-img1"
                       src="./img/protection/car1.png"
                       alt="car"
+                      data-aos="fade-in"
                     />
                   </picture>
                   <picture>
@@ -6977,7 +6983,7 @@
             </div>
             <div class="swiper">
               <div class="swiper-wrapper examination__slider">
-                <div class="swiper-slide slider__item" style="width: 40rem;">
+                <div class="swiper-slide slider__item" style="width: 40rem">
                   <div class="slider__item-title">
                     Видео-отзыв о покупке устройства Onlooker R5
                   </div>
@@ -8330,7 +8336,9 @@
                       Нажимая на кнопку, вы даете согласие на обработку
                       персональных данных
                     </div>
-                    <button type="submit" class="button button__form">Заказать</button>
+                    <button type="submit" class="button button__form">
+                      Заказать
+                    </button>
                   </div>
                 </form>
               </div>
@@ -8785,7 +8793,9 @@
               <div class="offer__title">Ограниченное предложение</div>
               <a href="#" class="offer__link">
                 <img src="./img/offer/arrow.svg" alt="" class="offer__icon" />
-                <div class="offer__link-text popup-close">Вернуться к товару</div>
+                <div class="offer__link-text popup-close">
+                  Вернуться к товару
+                </div>
               </a>
             </div>
             <div class="offer__title-bottom">
@@ -8917,22 +8927,34 @@
     <!-- MODAL DECLARATION  -->
 
     <div class="modal__declaration modal__overlay">
-    <div class="modal">
-      <div class="modal__content">
-        <img src="img/modal/declaration/1-rus.jpeg" alt="certificate" />
-        <button class="modal__close popup-close">
-          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
-        </button>
+      <div class="modal">
+        <div class="modal__content">
+          <img src="img/modal/declaration/1-rus.jpeg" alt="certificate" />
+          <button class="modal__close popup-close">
+            <img
+              class="modal__close-img"
+              src="./img/modal/additional/+.svg"
+              alt=""
+            />
+          </button>
+        </div>
       </div>
-    </div>
     </div>
 
     <div class="modal__declaration modal__overlay"></div>
     <div class="modal">
       <div class="modal__content">
-        <img class="modal__content-declaration" src="img/modal/declaration/2-rus.jpeg" alt="certificate" />
+        <img
+          class="modal__content-declaration"
+          src="img/modal/declaration/2-rus.jpeg"
+          alt="certificate"
+        />
         <button class="modal__close popup-close">
-          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+          <img
+            class="modal__close-img"
+            src="./img/modal/additional/+.svg"
+            alt=""
+          />
         </button>
       </div>
     </div>
@@ -8942,7 +8964,11 @@
       <div class="modal__content">
         <img src="img/modal/declaration/3-eng.jpeg" alt="certificate" />
         <button class="modal__close popup-close">
-          <img class="modal__close-img" src="./img/modal/additional/+.svg" alt="">
+          <img
+            class="modal__close-img"
+            src="./img/modal/additional/+.svg"
+            alt=""
+          />
         </button>
       </div>
     </div>
@@ -8978,14 +9004,18 @@
           </div>
         </div>
         <div class="modal__additional-buttons">
-          <button class="additional__button-close modal__additional-closest popup-close">
+          <button
+            class="additional__button-close modal__additional-closest popup-close"
+          >
             Закрыть
           </button>
           <button class="button additional__button-modal">
             Добавить к заказу
           </button>
         </div>
-        <button class="modal__additional-close modal__additional-closest popup-close">
+        <button
+          class="modal__additional-close modal__additional-closest popup-close"
+        >
           <img src="img/modal/additional/+.svg" alt="close" />
         </button>
       </div>
@@ -9192,7 +9222,9 @@
         <div class="modal__thanks-title">
           Спасибо, мы скоро свяжемся с Вами!
         </div>
-        <button class="button button__thanks thanks__close popup-close">Ок</button>
+        <button class="button button__thanks thanks__close popup-close">
+          Ок
+        </button>
         <button class="modal__thanks-close thanks__close popup-close">
           <img src="./img/modal/additional/+.svg" alt="" />
         </button>
@@ -9201,7 +9233,7 @@
 
     <div class="cursor"></div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -9209,8 +9241,8 @@
     <script src="js/just-validate.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
+    <!-- <script>
       AOS.init();
-    </script>
+    </script> -->
   </body>
 </html>
