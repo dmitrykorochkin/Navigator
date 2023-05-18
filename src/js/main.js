@@ -75,6 +75,10 @@ const imgBlock = document.querySelectorAll(".tabs__container");
 
 itemTop.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    itemTop.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
     imgBlock.forEach(i => {
       i.classList.remove("active");
     });
