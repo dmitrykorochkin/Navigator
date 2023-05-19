@@ -418,3 +418,64 @@ const modals = () => {
 };
 
 modals();
+
+
+
+// animation 
+
+const isElementInViewport = el => {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+const elements = document.querySelectorAll(
+  ".protection__defender, .protection__bang-img, .protection__sign-img"
+);
+
+const animateElements = () => {
+  elements.forEach(el => {
+    if (isElementInViewport(el)) {
+      // Определите продолжительность задержки анимации
+      const animationDelay = el.getAttribute("data-delay");
+      // Добавьте класс "animate" к элементу
+      el.classList.add("animate");
+      // Установите определенные стили элемента
+      el.style.opacity = 1;
+      el.style.visibility = "visible";
+      el.style.animationDelay = animationDelay;
+    } else {
+      // Удалите класс "animate" у элемента
+      el.classList.remove("animate");
+      // Сбросьте стили элемента
+      el.style.opacity = 0;
+      el.style.visibility = "hidden";
+    }
+  });
+};
+
+document.addEventListener("scroll", animateElements);
+
+
+// комплектующие 
+
+const itemsComplect = document.querySelectorAll(".equipment__item");
+const itemImg = document.querySelectorAll(".img__equipment");
+const itemImgBlock = document.querySelectorAll(".img__equipment-block"); 
+
+itemsComplect.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    itemImg[index].style.display = "none";
+    itemImgBlock[index].style.display = "block";
+  });
+
+  item.addEventListener("mouseout", () => {
+    itemImg[index].style.display = "block";
+    itemImgBlock[index].style.display = "none";
+  });
+});
