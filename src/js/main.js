@@ -23,6 +23,16 @@ const swiper = new Swiper(".swiper", {
   }
 });
 
+const swiper2 = new Swiper("#swiper2", {
+  slidesPerView: 1,
+  spaceBetween: 70,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets"
+  }
+});
+
 //accordion
 
 let accordion = document.querySelector(".answerblock__items");
@@ -98,6 +108,25 @@ itemIntLeft.forEach((item, index) => {
       i.classList.remove("active");
     });
     imgIntBlock[index].classList.add("active");
+  });
+});
+
+
+//tabs slider 
+
+const itemSlide = document.querySelectorAll(".item-slide");
+const slideBlock = document.querySelectorAll(".swiper");
+
+itemSlide.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    itemSlide.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
+    slideBlock.forEach(i => {
+      i.classList.remove("active");
+    });
+    slideBlock[index].classList.add("active");
   });
 });
 
@@ -415,6 +444,8 @@ const modals = () => {
     ".modal__thanks-wrapper .popup-close"
   );
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
+  bindModal(".review360__button", ".modal__360", ".modal__360 .modal__360-close");
+
 };
 
 modals();
@@ -478,4 +509,26 @@ itemsComplect.forEach((item, index) => {
     itemImg[index].style.display = "block";
     itemImgBlock[index].style.display = "none";
   });
+});
+
+
+const handleIntersection = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible");
+    }
+  });
+};
+
+// Создаем экземпляр IntersectionObserver и передаем ему функцию для обработки изменений видимости элементов.
+const observer = new IntersectionObserver(handleIntersection);
+
+// Получаем все элементы, которые должны быть анимированы.
+const element = document.querySelectorAll(".active_");
+
+element.forEach(item => {
+  // Добавляем каждый элемент в наблюдатель.
+  observer.observe(item);
 });
