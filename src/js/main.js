@@ -19,7 +19,8 @@ const swiper = new Swiper(".swiper", {
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+    prevEl: ".swiper-button-prev",
+    hideOnClick: true
   }
 });
 
@@ -33,7 +34,8 @@ const swiper2 = new Swiper("#swiper2", {
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+    prevEl: ".swiper-button-prev",
+    hideOnClick: true
   },
   autoplay: {
     delay: 5000
