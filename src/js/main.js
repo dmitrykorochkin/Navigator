@@ -9,9 +9,9 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     type: "bullets"
   },
-  // autoplay: {
-  //   delay: 3000
-  // },
+  autoplay: {
+    delay: 5000
+  },
     breakpoints: {
       768: {
         slidesPerView: 3
@@ -30,6 +30,13 @@ const swiper2 = new Swiper("#swiper2", {
   pagination: {
     el: ".swiper-pagination",
     type: "bullets"
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  autoplay: {
+    delay: 5000
   }
 });
 
@@ -156,6 +163,10 @@ const sectionHover = document.querySelectorAll(".section__hover");
 
 itemHover.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
+    itemHover.forEach(item => {
+      item.classList.remove("active-tab");
+    });
+    item.classList.add("active-tab");
     sectionHover.forEach(item => {
       item.classList.remove("active");
     });
