@@ -22,8 +22,25 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
     />
+
+      <!-- Begin Verbox {literal} -->
+<script>
+    (function(){(function c(d,w,m,i) {
+        window.supportAPIMethod = m;
+        var s = d.createElement('script');
+        s.id = 'supportScript'; 
+        var id = 'dcad487be706772763cb3785103abfc4';
+        s.src = (!i ? 'https://admin.verbox.ru/support/support.js' : 'https://static.site-chat.me/support/support.int.js') + '?h=' + id;
+        s.onerror = i ? undefined : function(){c(d,w,m,true)};
+        w[m] = w[m] || function(){(w[m].q = w[m].q || []).push(arguments);};
+        (d.head || d.body).appendChild(s);
+    })(document,window,'Verbox')})();
+</script>
+
+
   </head>
   <body>
+    
     <div class="container__bg">
       <div class="data-container" id="data-container">
         <header class="header" id="header">
@@ -2984,8 +3001,9 @@
                 /></label>
                 <div class="form__footer">
                   <div class="form__button-text">
-                    Нажимая на кнопку, вы даете согласие на обработку
-                    персональных данных
+                    Нажимая на кнопку, вы даете Согласие
+                    <a target="_blank" href="https://on-looker.ru/soglasie"> на обработку
+                    персональных данных</a>
                   </div>
                   <button type="submit" class="btn button button__form">
                     Заказать
@@ -4243,7 +4261,7 @@
           <div class="bg__elem bg__element"></div>
 
           <!-- ------------------- form----------------------------------- -->
-          <section id="form2" class="form" data-aos="fade-in">
+          <section  class="form" data-aos="fade-in">
             <div class="container form__wrapper" data-aos="fade-in">
               <div class="form__left">
                 <div class="form__title form__title2" data-aos="fade-in">
@@ -4259,14 +4277,15 @@
                 </div>
 
                 <form action="#" method="POST" id="form2" class="form__element">
-                  <label for="name">
+                  <label for="name1">
                     <div class="label__name">Ваше Фамилия и Имя*</div>
                     <input
+                     data-validate-field="name"
                       type="text"
                       minlength="3"
                       maxlength="20"
                       name="user-name"
-                      id="name"
+                      id="name1"
                       required
                     />
                   </label>
@@ -4282,8 +4301,8 @@
                   /></label>
                   <div class="form__footer" data-aos="fade-in">
                     <div class="form__button-text">
-                      Нажимая на кнопку, вы даете согласие на обработку
-                      персональных данных
+                      Нажимая на кнопку, вы даете согласие <a target="_blank" href="https://on-looker.ru/soglasie"> на обработку
+                    персональных данных</a>
                     </div>
                     <button
                       type="submit"
@@ -6668,7 +6687,7 @@
                 Узнайте, сможет ли Onlooker R5 помочь вам за рулем
               </div>
               <div class="question__wrap" data-aos="fade-in">
-                <a class="question__button button" href="">Ответить</a>
+                <a  onclick="Verbox('openSupport'); return false;" class="question__button button" href="">Ответить</a>
                 <div class="question__text">
                   Приблизительное время ответов: 3 минуты
                 </div>
@@ -8487,8 +8506,8 @@
                 >Оформить заказ</a
               >
               <div class="cartreader__person">
-                Нажимая на кнопку, вы даете согласие на обработку своих
-                <span>персональных данных</span>
+                Нажимая на кнопку, вы даете согласие <a target="_blank" href="https://on-looker.ru/soglasie"> на обработку
+                    персональных данных</a>
               </div>
             </div>
           </section>
@@ -8874,6 +8893,7 @@
                   <label for="name">
                     <div class="label__name">Ваше Фамилия и Имя*</div>
                     <input
+                    data-validate-field="name"
                       type="text"
                       minlength="3"
                       maxlength="20"
@@ -8894,8 +8914,8 @@
                   /></label>
                   <div class="form__footer">
                     <div class="form__button-text">
-                      Нажимая на кнопку, вы даете согласие на обработку
-                      персональных данных
+                      Нажимая на кнопку, вы даете согласие <a target="_blank" href="https://on-looker.ru/soglasie"> на обработку
+                    персональных данных</a>
                     </div>
                     <button type="submit" class="button button__form">
                       Заказать
@@ -9065,7 +9085,7 @@
               </div>
             </div>
             <div class="purchase__form">
-              <form action="#" method="POST" class="form__element">
+              <form id="form4" action="#" method="POST" class="form__element">
                 <label class="form__label" for="telephone4"></label>
                 <input
                   id="telephone4"
@@ -9743,7 +9763,7 @@
             <p>Viber</p>
           </a>
         </div>
-        <form class="form__element">
+        <form id="form5" class="form__element">
           <label for="telephone5">
             <div class="label__name">Ваш телефон*</div>
             <input
@@ -9755,8 +9775,8 @@
           /></label>
           <div class="form__footer">
             <div class="form__button-text">
-              Нажимая на кнопку, вы даете согласие на обработку персональных
-              данных
+              Нажимая на кнопку, вы даете согласие <a target="_blank" href="https://on-looker.ru/soglasie"> на обработку
+                    персональных данных</a>
             </div>
             <button type="submit" class="button button__form">Заказать</button>
           </div>

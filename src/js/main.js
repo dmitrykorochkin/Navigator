@@ -305,99 +305,133 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
   });
 });
 
-// const formSite = () => {
-//   const forms = document.querySelectorAll(".form__element");
-//   const inputMask = new Inputmask("+7 (999) 999-99-99");
 
-//   forms.forEach(form => {
-//     const telSelector = form.querySelector('input[type="tel"]');
 
-//     inputMask.mask(telSelector);
 
-//     new window.JustValidate(".form__element", {
-//       rules: {
-//         tel: {
-//           required: true,
-//           function: () => {
-//             const phone = telSelector.inputmask.unmaskedvalue();
-//             return Number(phone) && phone.length === 10;
-//           }
-//         }
-//       },
-//       submitHandler: function(thisForm) {
-//         let formData = new FormData(thisForm);
-//         let xhr = new XMLHttpRequest();
 
-//         xhr.onreadystatechange = function() {
-//           if (xhr.readyState === 4) {
-//             if (xhr.status === 200) {
-//               console.log("Отправлено");
-//             }
-//           }
-//         };
-//         xhr.open("POST", "mail.php", true);
-//         xhr.send(formData);
 
-//         thisForm.reset();
-//       }
-//     });
-//   });
-// };
+const formSite = () => {
+  const inputMask = new Inputmask("+7 (999) 999-99-99");
 
-// formSite();
+  const forms = document.querySelectorAll(".form__element");
 
-const forms = () => {
-  const form = document.querySelectorAll(".form__element");
-  const input = document.querySelectorAll("input");
+  forms.forEach(form => {
+  
+    const telSelector = form.querySelector('input[type="tel"]');
 
-  const message = {
-    loading: "Загрузка...",
-    success: "Спасибо, с вами скоро свяжутся!",
-    failure: "Что-то пошло не так..."
-  };
+    
 
-  const postData = async (url, data) => {
-    document.querySelector(".status").textContent = message.loading;
-    let res = await fetch(url, {
-      method: "POST",
-      body: data
-    });
+    inputMask.mask(telSelector);
 
-    return await res.text();
-  };
 
-  const clearInputs = () => {
-    input.forEach(item => {
-      item.value = "";
-    });
-  };
 
-  form.forEach(item => {
-    item.addEventListener("submit", e => {
-      e.preventDefault();
+    new window.JustValidate(`#${form.id}`, {
+      rules: {
+        tel: {
+          required: true,
+          function: () => {
+            const phone = telSelector.inputmask.unmaskedvalue();
+            return Number(phone) && phone.length === 10;
+          }
+        }
+      },
+      submitHandler: function(form) {
+        let formData = new FormData(form);
+        let xhr = new XMLHttpRequest();
 
-      let statusMessage = document.createElement("div");
-      statusMessage.classList.add("status");
-      item.appendChild(statusMessage);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log("Отправлено");
+              // Отправка почты
+              const xhrMail = new XMLHttpRequest();
+              xhrMail.onreadystatechange = function() {
+                if (xhrMail.readyState === 4) {
+                  if (xhrMail.status === 200) {
+                    console.log(xhrMail.responseText);
+                  }
+                }
+              };
+              xhrMail.open("POST", "mail.php", true);
+              xhrMail.setRequestHeader(
+                "Content-type",
+                "application/x-www-form-urlencoded"
+              );
+              xhrMail.send(new URLSearchParams(formData).toString());
+            }
+          }
+        };
+        xhr.open("POST", "mail.php", true);
+        xhr.send(formData);
 
-      const formData = new FormData(item);
-      postData("../server.php", formData)
-        .then(res => {
-          console.log(res);
-          statusMessage.textContent = message.success;
-          debugger;
-        })
-        .catch(() => (statusMessage.textContent = message.failure))
-        .finally(() => {
-          clearInputs();
-          setTimeout(() => {
-            statusMessage.remove();
-          }, 5000);
-        });
+        form.reset();
+      }
     });
   });
 };
-forms();
+
+formSite();
+
+
+
+
+
+
+
+
+
+// const forms = () => {
+//   const form = document.querySelectorAll(".form__element");
+//   const input = document.querySelectorAll("input");
+
+//   const message = {
+//     loading: "Загрузка...",
+//     success: "Спасибо, с вами скоро свяжутся!",
+//     failure: "Что-то пошло не так..."
+//   };
+
+//   const postData = async (url, data) => {
+//     document.querySelector(".status").textContent = message.loading;
+//     let res = await fetch(url, {
+//       method: "POST",
+//       body: data
+//     });
+
+//     return await res.text();
+//   };
+
+//   const clearInputs = () => {
+//     input.forEach(item => {
+//       item.value = "";
+//     });
+//   };
+
+//   form.forEach(item => {
+//     item.addEventListener("submit", e => {
+//       e.preventDefault();
+
+//       let statusMessage = document.createElement("div");
+//       statusMessage.classList.add("status");
+//       item.appendChild(statusMessage);
+
+//       const formData = new FormData(item);
+//       postData("../server.php", formData)
+//         .then(res => {
+//           console.log(res);
+//           statusMessage.textContent = message.success;
+//           debugger;
+//         })
+//         .catch(() => (statusMessage.textContent = message.failure))
+//         .finally(() => {
+//           clearInputs();
+//           setTimeout(() => {
+//             statusMessage.remove();
+//           }, 5000);
+//         });
+//     });
+//   });
+// };
+// forms();
 
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
@@ -450,12 +484,12 @@ const modals = () => {
     ".modal__adapter-wrap",
     ".modal__adapter-wrap .popup-close"
   );
-  bindModal(".button__offer", ".offer", ".offer .popup-close");
-  bindModal(
-    ".purchase__button",
-    ".modal__thanks-wrapper",
-    ".modal__thanks-wrapper .popup-close"
-  );
+
+  // bindModal(
+  //   ".purchase__button",
+  //   ".modal__thanks-wrapper",
+  //   ".modal__thanks-wrapper .popup-close"
+  // );
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
   bindModal(".review360__button", ".modal__360", ".modal__360 .modal__360-close");
 
