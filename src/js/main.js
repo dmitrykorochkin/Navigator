@@ -366,77 +366,23 @@ formSite();
 
 
 
-// const forms = () => {
-//   const form = document.querySelectorAll(".form__element");
-//   const input = document.querySelectorAll("input");
-
-//   const message = {
-//     loading: "Загрузка...",
-//     success: "Спасибо, с вами скоро свяжутся!",
-//     failure: "Что-то пошло не так..."
-//   };
-
-//   const postData = async (url, data) => {
-//     document.querySelector(".status").textContent = message.loading;
-//     let res = await fetch(url, {
-//       method: "POST",
-//       body: data
-//     });
-
-//     return await res.text();
-//   };
-
-//   const clearInputs = () => {
-//     input.forEach(item => {
-//       item.value = "";
-//     });
-//   };
-
-//   form.forEach(item => {
-//     item.addEventListener("submit", e => {
-//       e.preventDefault();
-
-//       let statusMessage = document.createElement("div");
-//       statusMessage.classList.add("status");
-//       item.appendChild(statusMessage);
-
-//       const formData = new FormData(item);
-//       postData("../server.php", formData)
-//         .then(res => {
-//           console.log(res);
-//           statusMessage.textContent = message.success;
-//           debugger;
-//         })
-//         .catch(() => (statusMessage.textContent = message.failure))
-//         .finally(() => {
-//           clearInputs();
-//           setTimeout(() => {
-//             statusMessage.remove();
-//           }, 5000);
-//         });
-//     });
-//   });
-// };
-// forms();
-
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
     const trigger = document.querySelectorAll(triggerSelector);
     const modal = document.querySelector(modalSelector);
-    const close = document.querySelectorAll(closeSelector);
+    const close = modal.querySelectorAll(closeSelector);
 
     trigger.forEach(item => {
       item.addEventListener("click", e => {
-        if (e.target) {
-          e.preventDefault();
-        }
-
+        e.preventDefault();
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
       });
     });
+
     close.forEach(item => {
-      item.addEventListener("click", () => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
         modal.style.display = "none";
         document.body.style.overflow = "";
       });
@@ -449,6 +395,7 @@ const modals = () => {
       }
     });
   }
+
   const callBtn = document.querySelector(".header__button");
   const callModal = document.querySelector(".modal__call-wrapper");
   const callModalClose = document.querySelector(
@@ -470,12 +417,7 @@ const modals = () => {
     ".modal__adapter-wrap",
     ".modal__adapter-wrap .popup-close"
   );
-
-  // bindModal(
-  //   ".purchase__button",
-  //   ".modal__thanks-wrapper",
-  //   ".modal__thanks-wrapper .popup-close"
-  // );
+  bindModal(".cartreader__button", ".offer", ".offer .popup-close");
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
   bindModal(
     ".review360__button",
@@ -485,6 +427,7 @@ const modals = () => {
 };
 
 modals();
+
 
 // animation
 
