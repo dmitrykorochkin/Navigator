@@ -322,38 +322,28 @@ const formSite = () => {
         }
       },
       submitHandler: async function(form) {
-        let formData = new FormData(form);
+        const formData = new FormData(form);
 
         try {
           const response = await fetch("mail.php", {
             method: "POST",
-            headers: { "Content-Type": "multipart/form-data" },
-            body: formData
-          })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
-              return response.json();
-            })
-            .catch(error => {
-              console.error(
-                "There was a problem with the fetch operation:",
-                error
-              );
-            });
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData)
+          });
 
-          if (response) {
+          if (response.ok) {
             console.log("Отправлено");
 
             // Отправка почты
-            const mailData = new FormData(form);
+            const mailData = new FormData();
+            mailData.append("name", formData.get("name"));
+            mailData.append("phone", formData.get("phone"));
             mailData.append("type", "mail");
 
             const mailResponse = await fetch("mail.php", {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(mailData)
+              headers: { "Content-Type": "multipart/form-data" },
+              body: mailData
             });
 
             if (mailResponse.ok) {
@@ -373,6 +363,7 @@ const formSite = () => {
 };
 
 formSite();
+
 
 
 // const forms = () => {
