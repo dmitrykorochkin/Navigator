@@ -1,29 +1,53 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-require_once '/path/to/vendor/autoload.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+require 'phpmailer/Exception.php';
 
-// Задайте параметры SMTP-сервера
-$mail = new PHPMailer(true);
-$mail->isSMTP();
-$mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-$mail->Username   = 'abramslost@gmail.com'; // Логин на почте
-$mail->Password   = 'ohskwfjqwzqrodlo'; // Пароль 
-$mail->SMTPSecure = 'ssl';
-$mail->Port       = 465;
+// Получаем данные из формы
+$name = $_POST['name'];
+$phone = $_POST['phone'];
 
-// Задайте параметры письма
-$mail->setFrom('abramslost@gmail.com'); // здесь должен быть ваш email
-$mail->addAddress('kunica.prosto@yandex.ru'); // здесь должен быть адрес получателя
-$mail->Subject = 'Новая заявка с сайта';
-$mail->isHTML(true);
-$mail->Body = '<p>Имя: '.$_POST['name'].'</p><p>Телефон: '.$_POST['tel'].'</p>';
+// Формируем содержимое письма
+$body = "<h2>Новое письмо</h2>";
+$body .= "<p><strong>Имя:</strong> {$name}</p>";
+$body .= "<p><strong>Телефон:</strong> {$phone}</p>";
 
-// Отправьте письмо
+$body = "<table style='width: 100%;'>$body</table>";
+
+// Настраиваем PHPMailer
+$mail = new PHPMailer\PHPMailer\PHPMailer();
+
 try {
-    $mail->send();
-    echo 'Письмо отправлено.';
-} catch (Exception $e) {
-    echo 'Письмо не отправлено. Ошибка: ', $mail->ErrorInfo;
-}
+    $mail->isSMTP();
+    $mail->CharSet = "UTF-8";
+    $mail->SMTPAuth   = true;
+    $mail->SMTPDebug = 4;
+    $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
+  
+    // Настройки вашей почты
+    $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
+    $mail->Username   = 'd_korochkin@inbox.ru'; // Логин на почте
+    $mail->Password   = 'gndgpS16Gga8hnpTNXAQ'; // Пароль 
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port       = 465;
+  
+    $mail->setFrom('d_korochkin@inbox.ru', 'Dmitry Korochkin'); // Адрес самой почты и имя отправителя
+  
+    // Получатель письма
+    $mail->addAddress('abramslost@gmail.com');
+    $mail->addAddress('kunica.prosto@yandex.ru');
+    $mail->addAddress('d_korochkin@inbox.ru');
+  
+    // Отправка сообщения
+    $mail->isHTML(true);
+    $mail->Subject = 'Заголовок письма';
+    $mail->Body = $body;
+    $result = $mail->send() ? "success" : "error";
+  } catch (Exception $e) {
+    $result = "error";
+    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+  }
+
+// Отображаем результат
+echo json_encode(["result" => $result, "status" => $status]);

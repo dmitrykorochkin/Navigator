@@ -12,10 +12,10 @@ const swiper = new Swiper(".swiper", {
   autoplay: {
     delay: 5000
   },
-    breakpoints: {
-      768: {
-        slidesPerView: 3
-      }
+  breakpoints: {
+    768: {
+      slidesPerView: 3
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",
@@ -112,7 +112,6 @@ const imgIntBlock = document.querySelectorAll(".interface__img");
 
 itemIntLeft.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
-    
     imgIntBlock.forEach(i => {
       i.classList.remove("active");
     });
@@ -120,8 +119,7 @@ itemIntLeft.forEach((item, index) => {
   });
 });
 
-
-//tabs slider 
+//tabs slider
 
 const itemSlide = document.querySelectorAll(".item-slide");
 const slideBlock = document.querySelectorAll(".swiper");
@@ -305,25 +303,13 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
   });
 });
 
-
-
-
-
-
 const formSite = () => {
   const inputMask = new Inputmask("+7 (999) 999-99-99");
-
   const forms = document.querySelectorAll(".form__element");
 
   forms.forEach(form => {
-  
     const telSelector = form.querySelector('input[type="tel"]');
-
-    
-
     inputMask.mask(telSelector);
-
-
 
     new window.JustValidate(`#${form.id}`, {
       rules: {
@@ -335,34 +321,50 @@ const formSite = () => {
           }
         }
       },
-      submitHandler: function(form) {
+      submitHandler: async function(form) {
         let formData = new FormData(form);
-        let xhr = new XMLHttpRequest();
 
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              console.log("Отправлено");
-              // Отправка почты
-              const xhrMail = new XMLHttpRequest();
-              xhrMail.onreadystatechange = function() {
-                if (xhrMail.readyState === 4) {
-                  if (xhrMail.status === 200) {
-                    console.log(xhrMail.responseText);
-                  }
-                }
-              };
-              xhrMail.open("POST", "mail.php", true);
-              xhrMail.setRequestHeader(
-                "Content-type",
-                "application/x-www-form-urlencoded"
+        try {
+          const response = await fetch("mail.php", {
+            method: "POST",
+            headers: { "Content-Type": "multipart/form-data" },
+            body: formData
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.json();
+            })
+            .catch(error => {
+              console.error(
+                "There was a problem with the fetch operation:",
+                error
               );
-              xhrMail.send(new URLSearchParams(formData).toString());
+            });
+
+          if (response) {
+            console.log("Отправлено");
+
+            // Отправка почты
+            const mailData = new FormData(form);
+            mailData.append("type", "mail");
+
+            const mailResponse = await fetch("mail.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(mailData)
+            });
+
+            if (mailResponse.ok) {
+              console.log(await mailResponse.text());
             }
+          } else {
+            console.error("Ошибка при отправке формы");
           }
-        };
-        xhr.open("POST", "mail.php", true);
-        xhr.send(formData);
+        } catch (error) {
+          console.error(error);
+        }
 
         form.reset();
       }
@@ -371,13 +373,6 @@ const formSite = () => {
 };
 
 formSite();
-
-
-
-
-
-
-
 
 
 // const forms = () => {
@@ -491,15 +486,16 @@ const modals = () => {
   //   ".modal__thanks-wrapper .popup-close"
   // );
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
-  bindModal(".review360__button", ".modal__360", ".modal__360 .modal__360-close");
-
+  bindModal(
+    ".review360__button",
+    ".modal__360",
+    ".modal__360 .modal__360-close"
+  );
 };
 
 modals();
 
-
-
-// animation 
+// animation
 
 const isElementInViewport = el => {
   const rect = el.getBoundingClientRect();
@@ -539,12 +535,11 @@ const animateElements = () => {
 
 document.addEventListener("scroll", animateElements);
 
-
-// комплектующие 
+// комплектующие
 
 const itemsComplect = document.querySelectorAll(".equipment__item");
 const itemImg = document.querySelectorAll(".img__equipment");
-const itemImgBlock = document.querySelectorAll(".img__equipment-block"); 
+const itemImgBlock = document.querySelectorAll(".img__equipment-block");
 
 itemsComplect.forEach((item, index) => {
   item.addEventListener("mouseover", () => {
@@ -557,7 +552,6 @@ itemsComplect.forEach((item, index) => {
     itemImgBlock[index].style.display = "none";
   });
 });
-
 
 const handleIntersection = (entries, observer) => {
   entries.forEach(entry => {

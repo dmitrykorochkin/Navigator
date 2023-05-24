@@ -47,16 +47,18 @@ function browsersync() {
 }
 
 function styles() {
-  return src(paths.styles.src)
-    .pipe(eval(preprocessor)())
-    .pipe(concat(paths.cssOutputName))
-    .pipe(autoprefixer({
-      cascade: false,
-      overrideBrowserslist: ['last 10 versions']
-    }))
-    .pipe(cleanCss())
-    .pipe(dest(paths.styles.dest))
-    .pipe(browserSync.stream())
+  return (src(paths.styles.src)
+      .pipe(eval(preprocessor)())
+      .pipe(concat(paths.cssOutputName))
+      .pipe(autoprefixer({
+          cascade: false,
+          overrideBrowserslist: ["last 10 versions"]
+        }))
+      // .pipe(cleanCss())
+      .pipe(src(paths.styles.src))
+      .pipe(concat(paths.cssOutputName))
+      .pipe(dest(paths.styles.dest))
+      .pipe(browserSync.stream()) );
 }
 
 function images() {
