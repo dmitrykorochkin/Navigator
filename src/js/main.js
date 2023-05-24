@@ -364,8 +364,6 @@ const formSite = () => {
 
 formSite();
 
-
-
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
     const trigger = document.querySelectorAll(triggerSelector);
@@ -381,7 +379,7 @@ const modals = () => {
     });
 
     close.forEach(item => {
-      item.addEventListener("click", (e) => {
+      item.addEventListener("click", e => {
         e.preventDefault();
         modal.style.display = "none";
         document.body.style.overflow = "";
@@ -418,7 +416,10 @@ const modals = () => {
     ".modal__adapter-wrap .popup-close"
   );
   bindModal(".cartreader__button", ".offer", ".offer .popup-close");
+  bindModal(".adapter__button", ".offer", ".offer .popup-close");
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
+  bindModal(".promotion__button", ".offer", ".offer .popup-close");
+  bindModal(".additional__button", ".offer", ".offer .popup-close");
   bindModal(
     ".review360__button",
     ".modal__360",
@@ -427,7 +428,6 @@ const modals = () => {
 };
 
 modals();
-
 
 // animation
 

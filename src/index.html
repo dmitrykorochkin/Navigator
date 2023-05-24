@@ -7904,7 +7904,7 @@
               </svg>
             </div>
             <div class="examination__btn">
-              <a href="#" class="examination__button button">Оставить отзыв</a>
+              <a onclick="Verbox('openSupport'); return false;" href="#" class="examination__button button">Оставить отзыв</a>
             </div>
           </section>
           <div class="bg__elem bg__element"></div>
@@ -9091,7 +9091,7 @@
             </div>
 
             <div class="purchase__chat">
-              Или напишите нам <span><a  href="#">в онлайн чат</a></span>
+              Или напишите нам <span><a onclick="Verbox('openSupport'); return false;" href="#">в онлайн чат</a></span>
             </div>
             <picture>
               <source
@@ -9847,18 +9847,7 @@
     </div>
 
     <div class="cursor"></div>
-        <script>
-        (function(){(function c(d,w,m,i) {
-            window.supportAPIMethod = m;
-            var s = d.createElement('script');
-            s.id = 'supportScript'; 
-            var id = 'dcad487be706772763cb3785103abfc4';
-            s.src = (!i ? 'https://admin.verbox.ru/support/support.js' : 'https://static.site-chat.me/support/support.int.js') + '?h=' + id;
-            s.onerror = i ? undefined : function(){c(d,w,m,true)};
-            w[m] = w[m] || function(){(w[m].q = w[m].q || []).push(arguments);};
-            (d.head || d.body).appendChild(s);
-        })(document,window,'Verbox')})();
-    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
@@ -9866,8 +9855,6 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="js/inputmask.min.js"></script>
     <script src="js/just-validate.min.js"></script>
-              <!-- Begin Verbox {literal} -->
-
     <script src="js/main.js"></script>
 
     <!-- <script>
