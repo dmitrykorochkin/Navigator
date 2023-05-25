@@ -306,6 +306,7 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
 const formSite = () => {
   const inputMask = new Inputmask("+7 (999) 999-99-99");
   const forms = document.querySelectorAll(".form__element");
+  const formsLast = document.querySelector(".purchase__button-form");
 
   forms.forEach(form => {
     const telSelector = form.querySelector('input[type="tel"]');
@@ -359,6 +360,43 @@ const formSite = () => {
         form.reset();
       }
     });
+  });
+
+  formsLast.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const form = e.target; // Выбираем форму
+    const formData = new FormData(form); // Получаем данные из формы
+
+    fetch("../mail.php", {
+      // Отправляем данные на сервер
+      method: "POST",
+      body: formData
+    })
+      .then(response => {
+        if (response.ok) {
+          // Если ответ от сервера получен успешно, показываем модальное окно благодарности
+          const modalThanksWrapper = document.querySelector(
+            ".modal__thanks-wrapper"
+          );
+
+          console.log(modalThanksWrapper);
+          modalThanksWrapper.classList.add("modal-show");
+
+          // Обработчик для закрытия модального окна
+          const modalCloseButtons = document.querySelectorAll(".popup-close");
+          modalCloseButtons.forEach(closeButton => {
+            closeButton.addEventListener("click", () => {
+              modalThanksWrapper.classList.remove("modal-show");
+            });
+          });
+        } else {
+          console.error("Ошибка при отправке формы");
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
   });
 };
 
@@ -429,46 +467,6 @@ const modals = () => {
 
 modals();
 
-// animation
-
-// const isElementInViewport = el => {
-//   const rect = el.getBoundingClientRect();
-//   return (
-//     rect.top >= 0 &&
-//     rect.left >= 0 &&
-//     rect.bottom <=
-//       (window.innerHeight || document.documentElement.clientHeight) &&
-//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//   );
-// };
-
-// const elements = document.querySelectorAll(
-//   ".protection__defender, .protection__bang-img, .protection__sign-img"
-// );
-
-// const animateElements = () => {
-//   elements.forEach(el => {
-//     if (isElementInViewport(el)) {
-//       // Определите продолжительность задержки анимации
-//       const animationDelay = el.getAttribute("data-delay");
-//       // Добавьте класс "animate" к элементу
-//       el.classList.add("animate");
-//       // Установите определенные стили элемента
-//       el.style.opacity = 1;
-//       el.style.visibility = "visible";
-//       el.style.animationDelay = animationDelay;
-//     } else {
-//       // Удалите класс "animate" у элемента
-//       el.classList.remove("animate");
-//       // Сбросьте стили элемента
-//       el.style.opacity = 0;
-//       el.style.visibility = "hidden";
-//     }
-//   });
-// };
-
-// document.addEventListener("scroll", animateElements);
-
 // комплектующие
 
 const itemsComplect = document.querySelectorAll(".equipment__item");
@@ -487,26 +485,7 @@ itemsComplect.forEach((item, index) => {
   });
 });
 
-// const handleIntersection = (entries, observer) => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add("visible");
-//     } else {
-//       entry.target.classList.remove("visible");
-//     }
-//   });
-// };
-
-// // Создаем экземпляр IntersectionObserver и передаем ему функцию для обработки изменений видимости элементов.
-// const observer = new IntersectionObserver(handleIntersection);
-
-// // Получаем все элементы, которые должны быть анимированы.
-// const element = document.querySelectorAll(".active_");
-
-// element.forEach(item => {
-//   // Добавляем каждый элемент в наблюдатель.
-//   observer.observe(item);
-// });
+// ************************  АНИМАЦИЯ *****************************
 
 let index = 0;
 // Функция, вызываемая при появлении элемента в области видимости
@@ -584,7 +563,7 @@ const alertAnimation = () => {
   // Начинаем отслеживать элемент
   observer.observe(targetElement);
 };
-alertAnimation()
+alertAnimation();
 
 //*******************************  Анимация машинок и аварии *********************************
 

@@ -39,7 +39,6 @@ if (isset($_POST['phone'])) {
             $mail->addAddress('abramslost@gmail.com');
             $mail->addAddress('kunica.prosto@yandex.ru');
             $mail->addAddress('d_korochkin@inbox.ru');
-            $mail->addAddress('zakaz@on-looker.ru');
           
             $mail->isHTML(true);
             $mail->Subject = 'Заголовок письма';

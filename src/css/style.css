@@ -14482,6 +14482,10 @@ input:checked + .slider:before {
   transform: rotate(90deg);
 }
 
+.modal-show {
+  display: block !important;
+}
+
 .offer {
   background-color: #000000;
   position: fixed;
