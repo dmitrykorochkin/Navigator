@@ -3177,8 +3177,8 @@ img {
   top: 5rem;
   left: 6rem;
   opacity: 0;
-  -webkit-animation: tabs__block-car1 0.8s linear 2.1s 1 normal forwards;
-  animation: tabs__block-car1 0.8s linear 2.1s 1 normal forwards;
+  -webkit-animation: tabs__block-car1 0.8s linear 0.7s 1 normal forwards;
+  animation: tabs__block-car1 0.8s linear 0.7s 1 normal forwards;
 }
 
 @-webkit-keyframes tabs__block-car1 {
@@ -3213,8 +3213,8 @@ img {
   top: 32rem;
   left: 6rem;
   opacity: 0;
-  -webkit-animation: tabs__block-car2 0.8s linear 2.4s 1 normal forwards;
-  animation: tabs__block-car2 0.8s linear 2.4s 1 normal forwards;
+  -webkit-animation: tabs__block-car2 0.8s linear 0.9s 1 normal forwards;
+  animation: tabs__block-car2 0.8s linear 0.9s 1 normal forwards;
 }
 
 @-webkit-keyframes tabs__block-car2 {
@@ -3255,8 +3255,8 @@ img {
   top: 19rem;
   left: 14rem;
   opacity: 0;
-  -webkit-animation: tabs__block-sign 1s linear 3.1s 5 normal forwards;
-  animation: tabs__block-sign 1s linear 3.1s 5 normal forwards;
+  -webkit-animation: tabs__block-sign 1s linear 1.8s 5 normal forwards;
+  animation: tabs__block-sign 1s linear 1.8s 5 normal forwards;
 }
 
 @-webkit-keyframes tabs__block-sign {
@@ -6464,9 +6464,9 @@ input:hover {
   width: 0;
   height: 0;
   border: 0 solid transparent;
-  border-bottom-width: 16px;
-  border-top-width: 16px;
-  border-left: 24px solid #0abd92;
+  border-bottom-width: 1.6rem;
+  border-top-width: 1.6rem;
+  border-left: 2.4rem solid #0abd92;
 }
 
 .shooting__video-left {
@@ -7707,8 +7707,6 @@ input:hover {
   top: 14rem;
   right: -8rem;
   opacity: 0;
-  -webkit-animation: move_down_rotate 0.8s linear 0.5s 1 normal forwards;
-  animation: move_down_rotate 0.8s linear 0.5s 1 normal forwards;
 }
 
 @-webkit-keyframes move_down_rotate {
@@ -7751,9 +7749,6 @@ input:hover {
   top: -8rem;
   left: -96rem;
   opacity: 0;
-  visibility: hidden;
-  -webkit-animation: appearance-opacity 0.1s linear 1.3s 1 normal infinite;
-  animation: appearance-opacity 0.1s linear 1.3s 1 normal infinite;
 }
 
 @-webkit-keyframes appearance-opacity {
@@ -7775,13 +7770,11 @@ input:hover {
 }
 .protection__bang-img {
   position: absolute;
-  width: 36.5rem;
-  height: 23.9rem;
-  top: 13rem;
-  right: 22rem;
+  width: 42.5rem;
+  height: 33.9rem;
+  top: 10rem;
+  right: 19rem;
   opacity: 0;
-  -webkit-animation: appearance-opacity 0.1s linear 1.3s 1 normal forwards;
-  animation: appearance-opacity 0.1s linear 1.3s 1 normal forwards;
 }
 
 @keyframes appearance-opacity {
@@ -7799,8 +7792,6 @@ input:hover {
   top: 15rem;
   right: 36rem;
   opacity: 0;
-  -webkit-animation: protection__sign-img 1s linear 1.8s 5 normal forwards;
-  animation: protection__sign-img 1s linear 1.8s 5 normal forwards;
 }
 
 @-webkit-keyframes protection__sign-img {
@@ -7826,6 +7817,26 @@ input:hover {
     opacity: 1;
   }
 }
+.protection__cars.custom-active .protection__car-img1 {
+  -webkit-animation: move_down_rotate 0.8s linear 0.5s 1 normal forwards;
+  animation: move_down_rotate 0.8s linear 0.5s 1 normal forwards;
+}
+
+.protection__cars.custom-active .protection__defender {
+  -webkit-animation: appearance-opacity 0.1s linear 1.3s 1 normal infinite;
+  animation: appearance-opacity 0.1s linear 1.3s 1 normal forwards;
+}
+
+.protection__cars.custom-active .protection__bang-img {
+  -webkit-animation: appearance-opacity 0.1s linear 1.3s 1 normal forwards;
+  animation: appearance-opacity 0.1s linear 1.3s 1 normal forwards;
+}
+
+.protection__cars.custom-active .protection__sign-img {
+  -webkit-animation: protection__sign-img 1s linear 1.8s 5 normal forwards;
+  animation: protection__sign-img 1s linear 1.8s 5 normal forwards;
+}
+
 @media (max-width: 48em) {
   .protection__icon-wrap {
     display: block;
