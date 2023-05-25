@@ -306,7 +306,6 @@ document.querySelectorAll("a.scroll").forEach(anchor => {
 const formSite = () => {
   const inputMask = new Inputmask("+7 (999) 999-99-99");
   const forms = document.querySelectorAll(".form__element");
-  const formsLast = document.querySelector(".purchase__button-form");
 
   forms.forEach(form => {
     const telSelector = form.querySelector('input[type="tel"]');
@@ -361,46 +360,52 @@ const formSite = () => {
       }
     });
   });
+};
 
-  formsLast.addEventListener("submit", e => {
-    e.preventDefault();
+formSite();
 
-    const form = e.target; // Выбираем форму
-    const formData = new FormData(form); // Получаем данные из формы
+const lastForm = () => {
+  const lastForms = document.querySelector(".purchase__button");
+  const forms = document.querySelectorAll("#form4");
 
-    fetch("../mail.php", {
-      // Отправляем данные на сервер
+  lastForms.addEventListener("click", () => {
+    // Получим данные формы
+    const formData = new FormData(forms[0]);
+
+    // Отправим данные на сервер через AJAX запрос
+    fetch(forms[0].action, {
       method: "POST",
       body: formData
     })
       .then(response => {
         if (response.ok) {
-          // Если ответ от сервера получен успешно, показываем модальное окно благодарности
+          // Показываем модальное окно с сообщением об успехе
           const modalThanksWrapper = document.querySelector(
             ".modal__thanks-wrapper"
           );
-
-          console.log(modalThanksWrapper);
-          modalThanksWrapper.classList.add("modal-show");
-
-          // Обработчик для закрытия модального окна
-          const modalCloseButtons = document.querySelectorAll(".popup-close");
-          modalCloseButtons.forEach(closeButton => {
-            closeButton.addEventListener("click", () => {
-              modalThanksWrapper.classList.remove("modal-show");
-            });
-          });
-        } else {
-          console.error("Ошибка при отправке формы");
+          modalThanksWrapper.style.display = "block";
         }
       })
       .catch(error => {
-        console.error(error);
+        // Показываем модальное окно с сообщением об ошибке
+        console.log("Ошибка при отправке формы");
       });
+  });
+
+  // Найдем кнопку закрытия модального окна
+  const closeButtons = document.querySelectorAll(".thanks__close");
+  Array.from(closeButtons).forEach(button => {
+    button.addEventListener("click", () => {
+      const modalThanksWrapper = document.querySelector(
+        ".modal__thanks-wrapper"
+      );
+      modalThanksWrapper.style.display = "none";
+    });
   });
 };
 
-formSite();
+lastForm();
+
 
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
