@@ -431,43 +431,43 @@ modals();
 
 // animation
 
-const isElementInViewport = el => {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
+// const isElementInViewport = el => {
+//   const rect = el.getBoundingClientRect();
+//   return (
+//     rect.top >= 0 &&
+//     rect.left >= 0 &&
+//     rect.bottom <=
+//       (window.innerHeight || document.documentElement.clientHeight) &&
+//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//   );
+// };
 
-const elements = document.querySelectorAll(
-  ".protection__defender, .protection__bang-img, .protection__sign-img"
-);
+// const elements = document.querySelectorAll(
+//   ".protection__defender, .protection__bang-img, .protection__sign-img"
+// );
 
-const animateElements = () => {
-  elements.forEach(el => {
-    if (isElementInViewport(el)) {
-      // Определите продолжительность задержки анимации
-      const animationDelay = el.getAttribute("data-delay");
-      // Добавьте класс "animate" к элементу
-      el.classList.add("animate");
-      // Установите определенные стили элемента
-      el.style.opacity = 1;
-      el.style.visibility = "visible";
-      el.style.animationDelay = animationDelay;
-    } else {
-      // Удалите класс "animate" у элемента
-      el.classList.remove("animate");
-      // Сбросьте стили элемента
-      el.style.opacity = 0;
-      el.style.visibility = "hidden";
-    }
-  });
-};
+// const animateElements = () => {
+//   elements.forEach(el => {
+//     if (isElementInViewport(el)) {
+//       // Определите продолжительность задержки анимации
+//       const animationDelay = el.getAttribute("data-delay");
+//       // Добавьте класс "animate" к элементу
+//       el.classList.add("animate");
+//       // Установите определенные стили элемента
+//       el.style.opacity = 1;
+//       el.style.visibility = "visible";
+//       el.style.animationDelay = animationDelay;
+//     } else {
+//       // Удалите класс "animate" у элемента
+//       el.classList.remove("animate");
+//       // Сбросьте стили элемента
+//       el.style.opacity = 0;
+//       el.style.visibility = "hidden";
+//     }
+//   });
+// };
 
-document.addEventListener("scroll", animateElements);
+// document.addEventListener("scroll", animateElements);
 
 // комплектующие
 
@@ -487,23 +487,129 @@ itemsComplect.forEach((item, index) => {
   });
 });
 
+// const handleIntersection = (entries, observer) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add("visible");
+//     } else {
+//       entry.target.classList.remove("visible");
+//     }
+//   });
+// };
+
+// // Создаем экземпляр IntersectionObserver и передаем ему функцию для обработки изменений видимости элементов.
+// const observer = new IntersectionObserver(handleIntersection);
+
+// // Получаем все элементы, которые должны быть анимированы.
+// const element = document.querySelectorAll(".active_");
+
+// element.forEach(item => {
+//   // Добавляем каждый элемент в наблюдатель.
+//   observer.observe(item);
+// });
+
+let index = 0;
+// Функция, вызываемая при появлении элемента в области видимости
 const handleIntersection = (entries, observer) => {
+  const items = document.querySelectorAll(".tabs__item");
+  const images = document.querySelectorAll(".tabs__container");
+
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+      items.forEach(item => item.classList.remove("active-tab"));
+
+      items[index].classList.add("active-tab");
+
+      images.forEach(image => image.classList.remove("active"));
+
+      images[index].classList.add("active");
     } else {
-      entry.target.classList.remove("visible");
+      items.forEach(function(item, i) {
+        if (item.classList.contains("active-tab")) {
+          index = i;
+        }
+      });
+
+      items.forEach(item => item.classList.remove("active-tab"));
+      images.forEach(image => image.classList.remove("active"));
     }
   });
 };
 
-// Создаем экземпляр IntersectionObserver и передаем ему функцию для обработки изменений видимости элементов.
+// Создаем экземпляр Observer
 const observer = new IntersectionObserver(handleIntersection);
 
-// Получаем все элементы, которые должны быть анимированы.
-const element = document.querySelectorAll(".active_");
+// Элемент, который мы хотим отслеживать
+const targetElement = document.querySelector("#mode");
 
-element.forEach(item => {
-  // Добавляем каждый элемент в наблюдатель.
-  observer.observe(item);
-});
+// Начинаем отслеживать элемент
+observer.observe(targetElement);
+
+// *******************************************************************************************
+
+const alertAnimation = () => {
+  // Функция, вызываемая при появлении элемента в области видимости
+  const handleIntersection = (entries, observer) => {
+    const items = document.querySelectorAll(".alert__tab");
+    const images = document.querySelectorAll(".alert__animation");
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        items.forEach(item => item.classList.remove("active-tab"));
+
+        items[index].classList.add("active-tab");
+
+        images.forEach(image => image.classList.remove("active"));
+
+        images[index].classList.add("active");
+      } else {
+        items.forEach(function(item, i) {
+          if (item.classList.contains("active-tab")) {
+            index = i;
+          }
+        });
+
+        items.forEach(item => item.classList.remove("active-tab"));
+        images.forEach(image => image.classList.remove("active"));
+      }
+    });
+  };
+
+  // Создаем экземпляр Observer
+  const observer = new IntersectionObserver(handleIntersection);
+
+  // Элемент, который мы хотим отслеживать
+  const targetElement = document.querySelector("#alert");
+
+  // Начинаем отслеживать элемент
+  observer.observe(targetElement);
+};
+alertAnimation()
+
+//*******************************  Анимация машинок и аварии *********************************
+
+const protections = document.querySelectorAll(
+  ".protection__defender, .protection__bang-img, .protection__sign-img"
+);
+
+const handleProtection = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log("protection is visible");
+      document
+        .querySelector(".protection__cars")
+        .classList.add("custom-active");
+    } else {
+      console.log("protection is not visible");
+      document
+        .querySelector(".protection__cars")
+        .classList.remove("custom-active");
+    }
+  });
+};
+
+const observerProtection = new IntersectionObserver(handleProtection);
+
+const protection = document.querySelector("#protection");
+
+observerProtection.observe(protection);
