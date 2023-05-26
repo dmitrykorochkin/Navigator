@@ -406,7 +406,6 @@ const lastForm = () => {
 
 lastForm();
 
-
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
     const trigger = document.querySelectorAll(triggerSelector);
@@ -462,7 +461,9 @@ const modals = () => {
   bindModal(".adapter__button", ".offer", ".offer .popup-close");
   bindModal(".certificate__one", ".modal", ".modal .popup-close");
   bindModal(".promotion__button", ".offer", ".offer .popup-close");
+  bindModal(".button__hero", ".offer", ".offer .popup-close");
   bindModal(".additional__button", ".offer", ".offer .popup-close");
+  bindModal(".button__video ", ".offer", ".offer .popup-close");
   bindModal(
     ".review360__button",
     ".modal__360",
@@ -471,6 +472,64 @@ const modals = () => {
 };
 
 modals();
+
+const modalPromotion = () => {
+  const buttonProm = document.querySelectorAll(".offer__wrap-link");
+  const modalsProm = document.querySelectorAll(".modal__promotion-one");
+
+  const openModal = modal => {
+    console.log("Открытие модального окна");
+    modal.style.display = "block";
+    document.addEventListener("keydown", closeModalOnESC);
+  };
+
+  const closeModal = modal => {
+    console.log("Закрытие модального окна");
+    modal.style.display = "none";
+    document.removeEventListener("keydown", closeModalOnESC);
+  };
+
+  const closeModalOnESC = event => {
+    if (event.keyCode === 27) {
+      const openModal = document.querySelector(
+        '.modal__promotion-one[style*="display: block"]'
+      );
+      closeModal(openModal);
+    }
+  };
+
+document.addEventListener("click", event => {
+  const target = event.target;
+
+  // Проверяем, был ли клик на кнопке открытия модального окна
+  for (let i = 0; i < buttonProm.length; i++) {
+    if (target === buttonProm[i]) {
+      event.preventDefault();
+      openModal(modalsProm[i]);
+      return;
+    }
+  }
+
+  // Проверяем, был ли клик на кнопке закрытия модального окна
+  if (target.classList.contains("button__promotion-close")) {
+    console.log("Клик на кнопке закрытия модального окна");
+    const modal = target.closest(".modal__promotion-one");
+    closeModal(modal);
+    console.log("Функция closeModal выполнена");
+  }
+
+  // Проверяем, был ли клик вне модального окна
+  for (let i = 0; i < modalsProm.length; i++) {
+    if (target === modalsProm[i]) {
+      closeModal(target);
+      return;
+    }
+  }
+});
+};
+
+
+modalPromotion();
 
 // комплектующие
 
