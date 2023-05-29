@@ -3123,6 +3123,7 @@ img {
 }
 .mode {
   margin-bottom: 20rem;
+  height: 80rem;
 }
 
 @media (max-width: 48em) {

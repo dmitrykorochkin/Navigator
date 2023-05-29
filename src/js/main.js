@@ -603,22 +603,22 @@ const handleIntersection = (entries, observer) => {
       images.forEach(image => image.classList.remove("active"));
       images[index].classList.add("active");
     } else {
-      items.forEach(function(item, i) {
-        if (item.classList.contains("active-tab")) {
-          index = i;
-        }
-      });
-      items.forEach(item => item.classList.remove("active-tab"));
-      images.forEach(image => image.classList.remove("active"));
+      let activeTab = document.querySelector(".active-tab");
+      let activeImage = document.querySelector(".alert__animation.active");
 
-      // Добавляем проверку на scrollY, чтобы удалить класс через 600px
-      if (window.scrollY > 600) {
-        items[index].classList.remove("active-tab");
+      // Удаление классов только если элементы не активны
+      if (
+        !activeTab ||
+        !activeTab.closest(".alert") ||
+        !activeImage ||
+        !activeImage.closest(".alert")
+      ) {
+        items.forEach(item => item.classList.remove("active-tab"));
+        images.forEach(image => image.classList.remove("active"));
       }
     }
   });
 };
-
 
   const observer = new IntersectionObserver(handleIntersection);
   const targetElement = document.querySelector(".alert");
