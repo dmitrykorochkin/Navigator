@@ -1,4 +1,4 @@
-// AOS.init();
+AOS.init();
 
 // slider
 const swiper = new Swiper(".swiper", {
