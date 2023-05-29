@@ -5953,14 +5953,18 @@ input:hover {
 
 .modal__360-wrap {
   position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 137rem;
-  height: 85rem;
+  width: 139rem;
+  height: 90rem;
   margin: auto auto;
   padding: 14rem 33rem 21rem;
-  background: #0C0C0C;
+  background: #ffffff;
   border-radius: 2rem;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
@@ -5970,13 +5974,25 @@ input:hover {
 }
 
 .modal__360-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   margin: 0 auto;
-  width: 71.7rem;
-  height: 50.3rem;
-  margin-bottom: 13rem;
+  width: 90rem;
+  height: 90rem;
 }
 
 .buttons {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  bottom: 5%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5995,7 +6011,7 @@ input:hover {
 }
 .modal__360-prev svg {
   display: inline-block;
-  stroke: #fff;
+  stroke: #0c0c0c;
 }
 .modal__360-prev svg:hover {
   stroke: #009DB8;
@@ -6014,10 +6030,11 @@ input:hover {
   width: 3rem;
   height: 3rem;
   display: inline-block;
+  fill: #656565;
 }
 .modal__360-next svg {
   display: inline-block;
-  stroke: #fff;
+  stroke: #0c0c0c;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);

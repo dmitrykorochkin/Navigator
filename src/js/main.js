@@ -54,13 +54,15 @@ const images = document.querySelectorAll(".modal__360-img");
 
 let currentIndex = 0;
 let intervalId = null;
+let isPlaying = false;
 
 function showSlide(index) {
   images.forEach(image => (image.style.display = "none"));
   images[index].style.display = "block";
 }
 
-function goToPrev() {
+function goToPrev(event) {
+  event.preventDefault();
   if (currentIndex === 0) {
     currentIndex = images.length - 1;
   } else {
@@ -69,7 +71,8 @@ function goToPrev() {
   showSlide(currentIndex);
 }
 
-function goToNext() {
+function goToNext(event) {
+  event.preventDefault();
   if (currentIndex === images.length - 1) {
     currentIndex = 0;
   } else {
@@ -78,12 +81,20 @@ function goToNext() {
   showSlide(currentIndex);
 }
 
-function togglePlay() {
-  if (!intervalId) {
-    intervalId = setInterval(goToNext, 100);
+function togglePlay(event) {
+  event.preventDefault();
+  if (!isPlaying) {
+    // если проигрывание не запущено
+    intervalId = setInterval(() => {
+      goToNext(event);
+    }, 100);
     playBtn.innerHTML = '<img src="./img/360/360/pause.svg" alt="pause" />';
+    isPlaying = true;
   } else {
+    // если проигрывание запущено
+    clearInterval(intervalId);
     playBtn.innerHTML = '<img src="./img/360/play.svg" alt="play" />';
+    isPlaying = false;
   }
 }
 
@@ -92,6 +103,10 @@ nextBtn.addEventListener("click", goToNext);
 playBtn.addEventListener("click", togglePlay);
 
 showSlide(currentIndex);
+
+
+
+
 
 
 
