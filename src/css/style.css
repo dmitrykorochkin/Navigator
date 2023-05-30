@@ -180,7 +180,7 @@ img {
     -webkit-text-size-adjust: none;
   }
   .container {
-    padding: 0 3.2rem;
+    padding: 0 2rem;
     width: 100%;
     overflow-x: hidden;
   }
@@ -869,8 +869,8 @@ img {
 
 @media (max-width: 48em) {
   .button__hero {
-    font-size: 2.7rem;
-    padding: 2.8rem 3.3rem;
+    font-size: 2.8rem;
+    padding: 4rem 3.3rem;
   }
 }
 .button__video {
@@ -1538,7 +1538,7 @@ img {
     margin-top: 0rem;
   }
   .hero__title span {
-    font-size: 5rem;
+    font-size: 5.2rem;
   }
 }
 .advantages {
@@ -1667,14 +1667,14 @@ img {
 
 @media (max-width: 48em) {
   .hero__play div {
-    width: 10rem;
-    height: 10rem;
+    width: 11.2rem;
+    height: 11.2rem;
   }
   .hero__play div img {
     width: 6.2rem;
     height: 5.2rem;
-    top: 2rem;
-    left: 2.2rem;
+    top: 2.4rem;
+    left: 2.7rem;
   }
 }
 .hero__order {
@@ -1686,6 +1686,13 @@ img {
   align-items: center;
 }
 
+@media (max-width: 48em) {
+  .hero__order {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
 .hero__bg {
   position: absolute;
   top: -20rem;
@@ -1748,7 +1755,24 @@ img {
   .about {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 3rem;
+    gap: 5rem;
+  }
+}
+@media (max-width: 48em) {
+  .about__item:nth-child(1) {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .about__item:nth-child(2) {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  .about__item:nth-child(4) {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
   }
 }
 .about__title {
@@ -1912,6 +1936,9 @@ img {
   .device__bg {
     display: none;
   }
+  .device__bg1 {
+    display: none;
+  }
   .device__img {
     width: 12.2rem;
     height: 12.2rem;
@@ -2023,9 +2050,13 @@ img {
   }
   .video__preview-title {
     font-size: 2.5rem;
+    left: 22rem;
   }
   .video__button {
     text-align: center;
+  }
+  .video__preview-subtitle {
+    left: 9rem;
   }
 }
 .video__price {
@@ -8079,6 +8110,7 @@ input:hover {
   }
   .adapter__left-wrap {
     background: none;
+    width: 60rem;
   }
   .adapter__left-scheme {
     font-size: 1.9rem;
