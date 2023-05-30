@@ -44,6 +44,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
+
+
+if (window.innerWidth <= 767) {
+  const swiper3 = new Swiper("#swiper3", {
+    slidesPerView: 1,
+    spaceBetween: 70,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets"
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+      hideOnClick: true
+    },
+    autoplay: {
+      delay: 5000
+    }
+  });
+}
+
+
+
+
+
     //  Slider 360
 
 const slider = document.querySelector(".modal__360-wrap");

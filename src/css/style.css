@@ -884,7 +884,8 @@ img {
 
 @media (max-width: 48em) {
   .button__video {
-    font-size: 2.2rem;
+    width: 55rem;
+    font-size: 2.8rem;
     padding: 2.9rem 15rem;
   }
 }
@@ -1987,6 +1988,7 @@ img {
 
 @media (max-width: 48em) {
   .video {
+    padding: 0;
     border-radius: none;
     background: none;
   }
@@ -2039,10 +2041,10 @@ img {
 @media (max-width: 48em) {
   .video__preview {
     position: absolute;
-    width: 55rem;
+    width: 60rem;
     height: 25rem;
-    top: 23rem;
-    left: 5rem;
+    top: 13rem;
+    left: 2rem;
   }
   .video__preview-icon {
     width: 20rem;
@@ -2050,6 +2052,7 @@ img {
   }
   .video__preview-title {
     font-size: 2.5rem;
+    top: 2rem;
     left: 22rem;
   }
   .video__button {
@@ -2067,6 +2070,7 @@ img {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 3.2rem;
+  margin-left: 2rem;
 }
 
 .price__new {
@@ -2096,6 +2100,9 @@ img {
   .video__price {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .price__new {
     font-size: 6rem;
@@ -2123,6 +2130,7 @@ img {
   .video__subtitle {
     font-size: 2.3rem;
     text-align: center;
+    opacity: 0.6;
   }
 }
 .video__title {
@@ -2162,7 +2170,7 @@ img {
 
 @media (max-width: 48em) {
   .tech__img {
-    top: 45rem;
+    top: 47rem;
     left: 5rem;
   }
 }
@@ -2257,10 +2265,9 @@ img {
 
 @media (max-width: 48em) {
   .tech__title {
-    font-size: 4.2rem;
+    font-size: 5rem;
     text-align: center;
     margin-top: 3rem;
-    max-width: 70rem;
     margin-bottom: 3rem;
   }
 }
@@ -2281,7 +2288,7 @@ img {
 
 @media (max-width: 48em) {
   .tech__subtitle {
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     margin-bottom: 60rem;
   }
@@ -2323,7 +2330,7 @@ img {
 
 @media (max-width: 48em) {
   .tech__gps {
-    right: 0px;
+    right: 1rem;
     top: 36rem;
     padding: 0;
     width: 60rem;
@@ -2332,8 +2339,8 @@ img {
     display: none;
   }
   .tech__gps-text {
-    font-size: 2.6rem;
-    padding: 0;
+    font-size: 2.2rem;
+    padding: 2.6rem 4.6rem;
   }
 }
 .tech__arrow-one {
@@ -2394,8 +2401,8 @@ img {
   content: "";
   position: absolute;
   left: -1.7rem;
-  width: 0.2rem;
-  height: 6.8rem;
+  width: 0.3rem;
+  height: 9.8rem;
   background: -o-linear-gradient(314.86deg, #0ABD92 0%, #009DB8 102.25%);
   background: linear-gradient(135.14deg, #0ABD92 0%, #009DB8 102.25%);
 }
@@ -2487,7 +2494,7 @@ img {
   }
   .antena__about-item {
     margin-right: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
   }
 }
 .antenna__img {
@@ -2665,6 +2672,66 @@ img {
     height: 11.5rem;
     margin-right: 2rem;
   }
+  .img1 {
+    width: 6.6rem;
+    height: 9rem;
+    margin-bottom: 2.3rem;
+  }
+  .img2 {
+    width: 6.6rem;
+    height: 9rem;
+    margin-bottom: 1rem;
+  }
+  .img3 {
+    width: 10.8rem;
+    height: 7.3rem;
+    margin-bottom: 2.5rem;
+  }
+  .img4 {
+    width: 8.4rem;
+    height: 8.4rem;
+    margin-bottom: 2rem;
+  }
+  .img5 {
+    width: 8.2rem;
+    height: 8.2rem;
+    margin-bottom: 2rem;
+  }
+  .img6 {
+    width: 8.7rem;
+    height: 7.7rem;
+    margin-bottom: 2rem;
+  }
+  .img7 {
+    width: 8.9rem;
+    height: 8.9rem;
+    margin-bottom: 2.4rem;
+  }
+  .img8 {
+    width: 8.6rem;
+    height: 8.6rem;
+    margin-bottom: 2.3rem;
+  }
+  .img9 {
+    width: 9.2rem;
+    height: 8.9rem;
+    margin-bottom: 2rem;
+  }
+  .img10 {
+    width: 8.4rem;
+    height: 8.4rem;
+    margin-bottom: 2.3rem;
+  }
+  .img11 {
+    width: 8.6rem;
+    height: 8.6rem;
+    margin-bottom: 2.1rem;
+  }
+  .img12 {
+    width: 9.1rem;
+    height: 5.2rem;
+    margin-bottom: 2.6rem;
+  }
 }
 .camers__info {
   display: -webkit-box;
@@ -2703,8 +2770,7 @@ img {
 }
 .camers__list {
   display: grid;
-  grid-template-columns: repeat(6, auto);
-  gap: 1.6rem;
+  grid-template-columns: repeat(6, 1fr);
   margin-bottom: 7.1rem;
 }
 
@@ -2717,6 +2783,15 @@ img {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.camers__list-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+.camers__list-wrap:last-child {
+  margin-right: 0;
 }
 
 .camers__list-item {
@@ -2742,6 +2817,7 @@ img {
   background: #121212;
   border: 0.1rem solid rgba(255, 255, 255, 0.08);
   border-radius: 0.9rem;
+  margin: 0.5rem;
 }
 .camers__list-item:hover {
   border: 0.1rem solid #009DB8;
@@ -2751,21 +2827,38 @@ img {
 }
 
 @media (max-width: 48em) {
+  #swiper3 {
+    width: 50rem;
+    margin: 0 auto;
+  }
+  #swiper3 .swiper-button-next {
+    top: 56rem;
+  }
+  #swiper3 .swiper-button-prev {
+    top: 56rem;
+  }
+  #swiper3 .swiper-pagination {
+    display: block;
+    bottom: 170rem;
+  }
+  .swiper-slide {
+    width: 30rem;
+  }
   .camers__list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 3.6rem;
     margin-bottom: 7.1rem;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  }
+  .camers__list .swiper-slide {
+    width: 30rem;
   }
   .camers__list-item {
     width: 24rem;
     height: 21.7rem;
+  }
+  .camers__list-item--text {
+    font-size: 2.1rem;
   }
 }
 .camers__title {
@@ -3069,6 +3162,66 @@ img {
     width: 11.3rem;
     height: 11.5rem;
     margin-right: 2rem;
+  }
+  .img1 {
+    width: 6.6rem;
+    height: 9rem;
+    margin-bottom: 2.3rem;
+  }
+  .img2 {
+    width: 6.6rem;
+    height: 9rem;
+    margin-bottom: 1rem;
+  }
+  .img3 {
+    width: 10.8rem;
+    height: 7.3rem;
+    margin-bottom: 2.5rem;
+  }
+  .img4 {
+    width: 8.4rem;
+    height: 8.4rem;
+    margin-bottom: 2rem;
+  }
+  .img5 {
+    width: 8.2rem;
+    height: 8.2rem;
+    margin-bottom: 2rem;
+  }
+  .img6 {
+    width: 8.7rem;
+    height: 7.7rem;
+    margin-bottom: 2rem;
+  }
+  .img7 {
+    width: 8.9rem;
+    height: 8.9rem;
+    margin-bottom: 2.4rem;
+  }
+  .img8 {
+    width: 8.6rem;
+    height: 8.6rem;
+    margin-bottom: 2.3rem;
+  }
+  .img9 {
+    width: 9.2rem;
+    height: 8.9rem;
+    margin-bottom: 2rem;
+  }
+  .img10 {
+    width: 8.4rem;
+    height: 8.4rem;
+    margin-bottom: 2.3rem;
+  }
+  .img11 {
+    width: 8.6rem;
+    height: 8.6rem;
+    margin-bottom: 2.1rem;
+  }
+  .img12 {
+    width: 9.1rem;
+    height: 5.2rem;
+    margin-bottom: 2.6rem;
   }
 }
 .sensor {
