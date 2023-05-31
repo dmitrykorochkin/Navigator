@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter/Inter-Bold.eot");
@@ -182,7 +183,6 @@ img {
   .container {
     padding: 0 2rem;
     width: 100%;
-    overflow-x: hidden;
   }
 }
 .cursor {
@@ -904,6 +904,7 @@ img {
     font-size: 2.6rem;
     margin-top: 3rem;
     margin-bottom: 1rem;
+    width: 60rem;
   }
 }
 .memory__button {
@@ -2839,7 +2840,7 @@ img {
   }
   #swiper3 .swiper-pagination {
     display: block;
-    bottom: 170rem;
+    bottom: 168rem;
   }
   .swiper-slide {
     width: 30rem;
@@ -2877,7 +2878,7 @@ img {
   font-weight: 700;
   font-size: 3.2rem;
   line-height: 147.5%;
-  margin: 0 auto 5rem auto;
+  margin: 16rem auto 5rem auto;
   text-align: center;
   max-width: 78rem;
 }
@@ -2898,7 +2899,7 @@ img {
 @media (max-width: 48em) {
   .camers__subtitle {
     font-weight: 400;
-    font-size: 3.2rem;
+    font-size: 3.8rem;
     line-height: 147.5%;
     text-align: left;
   }
@@ -3244,7 +3245,7 @@ img {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin: 0 2rem;
+    margin: 0 2rem 10rem 0;
   }
 }
 .sensor__item {
@@ -4272,6 +4273,11 @@ img {
     left: -2rem;
     z-index: 1;
   }
+  .tabs__item-img {
+    width: 5.1rem;
+    height: 5.1rem;
+    margin-right: 1rem;
+  }
 }
 .mode__nav {
   display: -webkit-box;
@@ -4282,8 +4288,12 @@ img {
 
 @media (max-width: 48em) {
   .mode__nav {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    width: 60rem;
+    overflow-y: scroll;
+  }
+  .mode__nav::-webkit-scrollbar {
+    display: none;
+    /* Убирает линию скролла */
   }
 }
 .tabs__item {
@@ -4295,7 +4305,7 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 1.7rem 5.4rem;
+  padding: 3.7rem 6.4rem;
   background: none;
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   border-radius: 1.2rem;
@@ -4312,7 +4322,7 @@ img {
 }
 
 .tabs__item-signature {
-  padding: 1.7rem 2.4rem;
+  padding: 3.7rem 4.4rem;
 }
 
 .tabs__block {
@@ -4382,6 +4392,11 @@ img {
   color: #fff;
 }
 
+@media (max-width: 48em) {
+  .tabs__item-text {
+    font-size: 2rem;
+  }
+}
 .notification {
   position: relative;
   margin-bottom: 16.9rem;
@@ -4889,7 +4904,7 @@ input:hover {
 
 @media (max-width: 48em) {
   input {
-    width: 57.5rem;
+    width: 60rem;
   }
   #form1 input {
     height: 10rem;
@@ -5017,6 +5032,7 @@ input:hover {
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
     margin-bottom: 10rem;
+    max-width: 60rem;
   }
 }
 .form__price {
@@ -5267,7 +5283,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .coldstart__item-img {
-    width: 57.5rem;
+    width: 60rem;
+    height: 35.6rem;
   }
   .info__img1 {
     width: 5.9rem;
@@ -5520,7 +5537,7 @@ input:hover {
     font-size: 3.7rem;
   }
   .radar__setting-text {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .radar__setting {
     margin-bottom: 5rem;
@@ -5614,8 +5631,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .interface__img-bg {
-    width: 56.6rem;
-    height: 32.1rem;
+    width: 60rem;
+    height: 34.1rem;
   }
   .interface__icon1 {
     width: 8.5rem;
@@ -5786,6 +5803,10 @@ input:hover {
 }
 
 @media (max-width: 48em) {
+  .screen__img2 {
+    width: 60rem;
+    height: 35.5rem;
+  }
   .screen__img1 {
     display: none;
   }
@@ -6085,6 +6106,8 @@ input:hover {
   font-weight: 400;
   font-size: 4rem;
   line-height: 120%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .review360__title span {
   font-weight: 800;
@@ -6104,8 +6127,8 @@ input:hover {
   -ms-flex-align: center;
   align-items: center;
   padding: 1rem;
-  width: 28.9rem;
-  height: 5.6rem;
+  width: 36.9rem;
+  height: 7.6rem;
   border: 0.1rem solid #FFFFFF;
   border-radius: 6rem;
 }
@@ -6120,6 +6143,23 @@ input:hover {
   margin-right: 1rem;
 }
 
+@media (max-width: 48em) {
+  .review360 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 60rem;
+    border-radius: 3rem;
+  }
+  .review360__button {
+    font-size: 2.3rem;
+  }
+  .review360__button::before {
+    width: 5.3rem;
+    height: 4.8rem;
+  }
+}
 .modal__360 {
   position: fixed;
   width: 100%;
@@ -6524,8 +6564,8 @@ input:hover {
   .shooting__video-play {
     border-radius: 0.9rem;
     border: 0.5rem solid #0ABD92;
-    width: 55rem;
-    height: 31.5rem;
+    width: 60rem;
+    height: 33.5rem;
     top: -38rem;
     left: 0rem;
   }
@@ -6695,14 +6735,15 @@ input:hover {
     height: 22.8rem;
   }
   .video__link {
+    width: 60rem;
     padding: 8.5rem 2.9rem 4.5rem 3rem;
   }
   .video__link p {
     font-size: 3rem;
   }
   .shooting__video-right .play__icon {
-    top: -27rem;
-    left: 24rem;
+    top: -25rem;
+    left: 26rem;
   }
   .shooting__video-right .play__icon::after {
     top: 50%;
@@ -6710,6 +6751,9 @@ input:hover {
     border-bottom-width: 11px;
     border-top-width: 11px;
     border-left: 18px solid #0abd92;
+  }
+  .video__link-bg {
+    width: 60rem;
   }
 }
 .shooting__subtitle {
@@ -7319,6 +7363,11 @@ input:hover {
   text-fill-color: transparent;
 }
 
+@media (max-width: 48em) {
+  .memory__right p {
+    text-align: center;
+  }
+}
 .memory__text {
   font-weight: 500;
   font-size: 1.8rem;
@@ -7386,12 +7435,25 @@ input:hover {
   margin-bottom: 3.7rem;
 }
 
+@media (max-width: 48em) {
+  .cart__subtitle {
+    text-align: center;
+  }
+  .cart__subtitle-one {
+    text-align: center;
+  }
+}
 .cart__title {
   font-weight: 400;
   font-size: 2.8rem;
   line-height: 128%;
 }
 
+@media (max-width: 48em) {
+  .cart__title {
+    text-align: center;
+  }
+}
 .accessory {
   position: absolute;
   top: 53rem;
@@ -7430,6 +7492,7 @@ input:hover {
 }
 
 .accessory__price-new {
+  font-family: "Montserrat";
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 140%;
@@ -7439,9 +7502,16 @@ input:hover {
 @media (max-width: 48em) {
   .accessory {
     top: 137rem;
-    left: 6rem;
+    left: 2rem;
     display: inline-block;
     padding: 1.4rem 10.2rem 1rem 1.8rem;
+  }
+  .accessory p {
+    position: absolute;
+    right: -12.7rem;
+    top: 12.1rem;
+    font-size: 1.4rem;
+    opacity: 0.6;
   }
   .accessory__wrapper {
     display: -webkit-box;
@@ -7455,8 +7525,8 @@ input:hover {
     font-size: 2.6rem;
   }
   .memory__accessory {
-    top: -1.3rem;
-    right: 31rem;
+    top: 24.7rem;
+    right: 35rem;
   }
 }
 .cartreader {
@@ -13087,8 +13157,8 @@ input:checked + .slider:before {
     width: 3.8rem;
     height: 4.3rem;
     position: absolute;
-    top: 1.1rem;
-    left: 14rem;
+    top: -4.9rem;
+    left: 15rem;
   }
   .alert__img-sign5 {
     width: 7rem;
@@ -13178,7 +13248,7 @@ input:checked + .slider:before {
   cursor: default;
 }
 .alert__tab .text {
-  width: 19rem;
+  width: 40rem;
 }
 .alert__tab .text3 {
   width: 30rem;
@@ -13210,7 +13280,10 @@ input:checked + .slider:before {
 
 @media (max-width: 48em) {
   .alert__tab {
-    width: 26rem;
+    width: 60rem;
+  }
+  .alert__tab-text {
+    width: 30rem;
   }
 }
 .alert__tabs {
@@ -13233,8 +13306,12 @@ input:checked + .slider:before {
     margin-bottom: 50rem;
   }
   .alert__tabs {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    width: 60rem;
+    overflow-y: scroll;
+  }
+  .alert__tabs::-webkit-scrollbar {
+    display: none;
+    /* Убирает линию скролла */
   }
 }
 .alert__left {
