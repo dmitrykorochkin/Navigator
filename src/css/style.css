@@ -920,6 +920,7 @@ img {
   .memory__button {
     padding: 3.7rem 13.45rem;
     font-size: 2.4rem;
+    width: 60rem;
   }
 }
 .cartreader__button {
@@ -970,6 +971,13 @@ img {
   padding: 1.6rem 4rem;
 }
 
+@media (max-width: 48em) {
+  .promotion__button {
+    padding: 2.8rem 14rem;
+    font-size: 2.6rem;
+    width: 53rem;
+  }
+}
 .question__button {
   font-weight: 600;
   font-size: 1.6rem;
@@ -983,7 +991,7 @@ img {
   .question__button {
     font-size: 2.6rem;
     line-height: 140%;
-    padding: 2.5rem 21.5rem;
+    padding: 3.5rem 21.5rem;
   }
 }
 .examination__button {
@@ -1023,7 +1031,7 @@ img {
   .additional__button {
     font-size: 2.7rem;
     height: 9.2rem;
-    width: 55.2rem;
+    width: 60rem;
     margin-bottom: 10rem;
   }
 }
@@ -7338,7 +7346,9 @@ input:hover {
   .memory__present {
     border: none;
     font-size: 2.6rem;
-    width: 58rem;
+    width: 60rem;
+    text-align: center;
+    margin-left: 0rem;
   }
 }
 .memory__right {
@@ -7364,6 +7374,9 @@ input:hover {
 }
 
 @media (max-width: 48em) {
+  .memory__right {
+    margin-bottom: 20rem;
+  }
   .memory__right p {
     text-align: center;
   }
@@ -7410,7 +7423,6 @@ input:hover {
   .memory__btn {
     position: absolute;
     top: 180rem;
-    left: 1rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -7569,9 +7581,8 @@ input:hover {
 @media (max-width: 48em) {
   .cartreader__person {
     font-size: 2rem;
-    max-width: 59.5rem;
-    margin-top: 0rem;
-    margin-right: 0;
+    max-width: 60rem;
+    margin: 0 3rem 0 3rem;
     text-align: center;
     font-weight: 400;
   }
@@ -7651,7 +7662,10 @@ input:hover {
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
-    text-align: left;
+    width: 48rem;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
   .cartreader__price2 {
     margin-top: 59rem;
@@ -8157,6 +8171,16 @@ input:hover {
     top: 59rem;
     right: 23rem;
   }
+  .protection__icon {
+    width: 7.6rem;
+    height: 7.4rem;
+  }
+  .protection__defender {
+    width: 52.2rem;
+    height: 65rem;
+    top: 39rem;
+    left: -67.5rem;
+  }
 }
 .protection__wrap {
   display: -webkit-box;
@@ -8184,6 +8208,7 @@ input:hover {
 @media (max-width: 48em) {
   .adapter__title {
     font-size: 4.6rem;
+    margin-bottom: 0;
   }
 }
 .adapter__accessory {
@@ -8765,7 +8790,7 @@ input:hover {
   .adapter__img-one {
     display: block;
     position: absolute;
-    width: 65.5rem;
+    width: 62rem;
     height: 43.7rem;
     left: 1rem;
     top: 30rem;
@@ -8876,6 +8901,7 @@ input:hover {
 
 @media (max-width: 48em) {
   .function__subtitle {
+    font-size: 2.7rem;
     text-align: left;
   }
 }
@@ -8912,7 +8938,7 @@ input:hover {
   .function__temp-plus {
     font-size: 5rem;
     top: 34rem;
-    left: 4rem;
+    left: 46rem;
   }
 }
 .design {
@@ -9095,8 +9121,11 @@ input:hover {
 
 @media (max-width: 48em) {
   .design__system {
+    font-size: 3.2rem;
     top: 136rem;
     right: 17rem;
+    max-width: 34rem;
+    margin: 0 auto;
     text-align: center;
   }
 }
@@ -9181,17 +9210,19 @@ input:hover {
     font-size: 2.2rem;
   }
   .fastening__heading {
-    font-size: 2.5rem;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 112%;
   }
   .fastening__dignity-two {
     max-width: 54.4rem;
     top: 152rem;
-    left: 11rem;
+    left: 6rem;
   }
   .fastening__dignity-three {
     max-width: 44rem;
     top: 215rem;
-    left: 11rem;
+    left: 6rem;
   }
 }
 .fastening__item-img {
@@ -9273,6 +9304,10 @@ input:hover {
     top: 66rem;
     left: 12rem;
   }
+  .fastening__item-img {
+    width: 5.2rem;
+    height: 5.2rem;
+  }
   .fastening__img2 {
     width: 52rem;
     height: 55.5rem;
@@ -9302,8 +9337,8 @@ input:hover {
     position: absolute;
     top: 66rem;
     left: 41rem;
-    width: 7.4rem;
-    height: 4.1rem;
+    width: 12.4rem;
+    height: 10.1rem;
   }
   .fastening__line5 {
     display: block;
@@ -9359,7 +9394,7 @@ input:hover {
 @media (max-width: 48em) {
   .fastening__item {
     margin-bottom: 90rem;
-    max-width: 48rem;
+    max-width: 54em;
   }
 }
 .fastening__text {
@@ -9372,6 +9407,11 @@ input:hover {
   color: #06B0A1;
 }
 
+@media (max-width: 48em) {
+  .fastening__text {
+    font-size: 2.7rem;
+  }
+}
 .fastening__title {
   font-weight: 700;
   font-size: 5.2rem;
@@ -9408,8 +9448,8 @@ input:hover {
     margin-right: 2rem;
   }
   .installation__img {
-    width: 55rem;
-    height: 37rem;
+    width: 60rem;
+    height: 45rem;
   }
 }
 .installation__info {
@@ -9452,7 +9492,9 @@ input:hover {
 
 @media (max-width: 48em) {
   .installation__left span {
-    left: 21rem;
+    left: 42rem;
+    top: 4rem;
+    width: 17rem;
   }
 }
 .installation__right {
@@ -9473,7 +9515,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .installation__right span {
-    left: 21rem;
+    left: 41rem;
+    top: 4rem;
   }
 }
 .installation__wrap {
@@ -9546,6 +9589,11 @@ input:hover {
   position: relative;
 }
 
+@media (max-width: 48em) {
+  .update {
+    margin-top: 10rem;
+  }
+}
 .update__title {
   font-weight: 700;
   font-size: 5.2rem;
@@ -9591,6 +9639,7 @@ input:hover {
   .update__subtitle {
     font-size: 3rem;
     line-height: 125%;
+    margin-bottom: 22rem;
   }
 }
 .update__item {
@@ -9785,13 +9834,13 @@ input:hover {
 
 @media (max-width: 48em) {
   .update__bottom {
-    padding: 7.5rem;
-    width: 57rem;
+    padding: 7rem 1rem 7rem 2rem;
+    width: 60rem;
     border-radius: 11px;
     margin-bottom: 11rem;
   }
   .update__bottom-text {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 }
 .update__bottom {
@@ -9822,13 +9871,13 @@ input:hover {
 
 @media (max-width: 48em) {
   .update__bottom {
-    padding: 7.5rem;
-    width: 57rem;
+    padding: 7rem 1rem 7rem 2rem;
+    width: 60rem;
     border-radius: 11px;
     margin-bottom: 11rem;
   }
   .update__bottom-text {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 }
 .update__one {
@@ -9850,12 +9899,12 @@ input:hover {
 
 @media (max-width: 48em) {
   .update__one {
-    top: 29rem;
+    top: 30rem;
     right: 12rem;
     display: block;
     padding: 2.3rem 2.9rem;
-    width: 40rem;
-    font-size: 2.2rem;
+    width: 41rem;
+    font-size: 2.4rem;
   }
 }
 .equipment {
@@ -9933,10 +9982,49 @@ input:hover {
 
 @media (max-width: 48em) {
   .equipment__img {
-    width: 62.3rem;
-    height: 31.8rem;
+    width: 50.3rem;
+    height: 20.8rem;
     top: 36rem;
-    right: 0rem;
+    right: 4rem;
+  }
+  .equipment__img2 {
+    width: 19.5rem;
+    height: 14.1rem;
+    top: 53rem;
+    left: -11rem;
+    -webkit-transform: rotate(338deg);
+    -ms-transform: rotate(338deg);
+    transform: rotate(338deg);
+  }
+  .equipment__img3 {
+    width: 19.5rem;
+    height: 16.1rem;
+    top: 57rem;
+    left: -1rem;
+  }
+  .equipment__img4 {
+    width: 10.5rem;
+    height: 14.1rem;
+    top: 60rem;
+    left: 14rem;
+  }
+  .equipment__img5 {
+    width: 12.5rem;
+    height: 16.1rem;
+    top: 59rem;
+    left: 22rem;
+  }
+  .equipment__img6 {
+    width: 13.5rem;
+    height: 19.1rem;
+    top: 54rem;
+    left: 31rem;
+  }
+  .equipment__img7 {
+    width: 31.5rem;
+    height: 13.1rem;
+    top: 51rem;
+    left: 31rem;
   }
 }
 @media (max-width: 48em) {
@@ -9984,6 +10072,13 @@ input:hover {
   transition: all 0.5s;
 }
 
+@media (max-width: 48em) {
+  .equipment__number {
+    width: 3.7rem;
+    height: 3.7rem;
+    font-size: 2.4rem;
+  }
+}
 .equipment__title {
   font-weight: 700;
   font-size: 5.2rem;
@@ -10019,12 +10114,6 @@ input:hover {
     flex-direction: column;
     height: 55rem;
     padding: 3rem 0;
-  }
-}
-@media (max-width: 48em) {
-  .promotion__button {
-    padding: 2.6rem 13rem;
-    font-size: 2.2rem;
   }
 }
 .promotion__info {
@@ -10088,6 +10177,16 @@ input:hover {
     flex-direction: row-reverse;
     gap: 2rem;
   }
+  .promotion__price-new {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 140%;
+  }
+  .promotion__price-old {
+    font-weight: 600;
+    font-size: 3.6rem;
+    line-height: 140%;
+  }
 }
 .promotion__text {
   font-weight: 400;
@@ -10103,9 +10202,9 @@ input:hover {
 
 @media (max-width: 48em) {
   .promotion__text {
-    font-size: 2.2em;
+    font-size: 2.5em;
     margin-bottom: 2rem;
-    max-width: 37.9rem;
+    max-width: 42.9rem;
   }
 }
 .promotion__title {
@@ -10116,7 +10215,6 @@ input:hover {
 
 @media (max-width: 48em) {
   .promotion__title {
-    font-size: 4.2rem;
     margin-bottom: 2rem;
   }
 }
@@ -10132,6 +10230,11 @@ input:hover {
   margin-bottom: 3rem;
 }
 
+@media (max-width: 48em) {
+  .combo__heading {
+    margin-bottom: 6rem;
+  }
+}
 .combo__img {
   width: 52.9rem;
   height: 29.2rem;
@@ -10141,8 +10244,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .combo__img {
-    width: 55.9rem;
-    height: 31.2rem;
+    width: 60rem;
+    height: 33.2rem;
   }
 }
 .combo__list {
@@ -10173,7 +10276,9 @@ input:hover {
 
 @media (max-width: 48em) {
   .combo__list-item {
-    font-size: 2rem;
+    font-size: 2.3rem;
+    max-width: 47rem;
+    margin-bottom: 5rem;
   }
 }
 .combo__subtitle {
@@ -10258,7 +10363,7 @@ input:hover {
 
 @media (max-width: 48em) {
   .combo__item {
-    width: 56rem;
+    width: 60rem;
     margin-bottom: 3rem;
   }
 }
@@ -10298,7 +10403,7 @@ input:hover {
     -ms-flex-direction: column;
     flex-direction: column;
     width: 60rem;
-    height: 73rem;
+    height: 78rem;
     padding: 3.9rem 3.5rem 3.9rem 3.5rem;
     margin-bottom: 10rem;
   }
@@ -10335,6 +10440,7 @@ input:hover {
 @media (max-width: 48em) {
   .question__subtitle {
     text-align: center;
+    font-size: 3.2rem;
   }
 }
 .question__item {
@@ -10370,7 +10476,7 @@ input:hover {
   .question__text {
     font-size: 2rem;
     width: 47rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 }
 .question__icon {
@@ -10793,6 +10899,16 @@ input:checked + .slider:before {
   gap: 3rem;
 }
 
+@media (max-width: 48em) {
+  .examination__wrap {
+    width: 60rem;
+    overflow-y: scroll;
+  }
+  .examination__wrap::-webkit-scrollbar {
+    display: none;
+    /* Убирает линию скролла */
+  }
+}
 .slider__thesis-wrap {
   padding-left: 4rem;
 }
@@ -10891,6 +11007,15 @@ input:checked + .slider:before {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 48em) {
+  .examination__reviews-text {
+    width: 20rem;
+    font-size: 2.3rem;
+  }
+  .examination__reviews {
+    border-radius: 6rem;
+  }
+}
 .examination__article-text {
   font-weight: 600;
   font-size: 1.6rem;
@@ -10970,6 +11095,10 @@ input:checked + .slider:before {
     width: 57.6rem;
     height: 33.9rem;
   }
+  .examination__video-icon {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 .examination__subtitle {
   font-weight: 400;
@@ -11033,6 +11162,16 @@ input:checked + .slider:before {
   -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(120%) contrast(96%);
 }
 
+@media (max-width: 48em) {
+  .examination__video {
+    padding: 1.8rem 2.1rem;
+    border-radius: 3.2rem;
+  }
+  .examination__video-text {
+    width: 20rem;
+    font-size: 2.4rem;
+  }
+}
 .swiper-button-prev {
   position: absolute;
   width: 4rem;
@@ -11296,6 +11435,14 @@ input:checked + .slider:before {
   height: 14.2rem;
 }
 
+@media (max-width: 48em) {
+  .additional__img {
+    padding: 4.7rem 4.5rem;
+  }
+  .additional__img-adapter {
+    padding: 4rem 3.8rem 1.2rem 1.2rem;
+  }
+}
 .additional__title {
   font-weight: 700;
   font-size: 5.2rem;
@@ -11416,7 +11563,7 @@ input:checked + .slider:before {
 
 @media (max-width: 48em) {
   .additional__text {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     width: 30rem;
     padding-right: 2rem;
   }
