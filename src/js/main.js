@@ -293,21 +293,31 @@ showSlide(currentIndex);
 
   // бургер меню
 
-  const navbarMenu = document.querySelector(".navbar");
-  const buttonBurger = document.querySelector(".header__burger");
-  const buttonBurgerClose = document.querySelector(".header__burger-close");
+const navbarMenu = document.querySelector(".navbar");
+const buttonBurger = document.querySelector(".header__burger");
+const buttonBurgerClose = document.querySelector(".header__burger-close");
+const menuLinks = document.querySelectorAll(".menu__list a");
 
-  buttonBurger.addEventListener("click", () => {
-    navbarMenu.classList.add("navbar__visible");
-    buttonBurger.style.display = "none";
-    buttonBurgerClose.style.display = "block";
-  });
+buttonBurger.addEventListener("click", () => {
+  navbarMenu.classList.add("navbar__visible");
+  buttonBurger.style.display = "none";
+  buttonBurgerClose.style.display = "block";
+});
 
-  buttonBurgerClose.addEventListener("click", () => {
+buttonBurgerClose.addEventListener("click", () => {
+  navbarMenu.classList.remove("navbar__visible");
+  buttonBurger.style.display = "block";
+  buttonBurgerClose.style.display = "none";
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
     navbarMenu.classList.remove("navbar__visible");
     buttonBurger.style.display = "block";
     buttonBurgerClose.style.display = "none";
   });
+});
+
 
   // загрузка страниц при скролле
 
