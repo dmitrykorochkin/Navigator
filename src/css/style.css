@@ -269,6 +269,11 @@ img {
     opacity: 0;
   }
 }
+@media (max-width: 48em) {
+  .cursor {
+    display: none;
+  }
+}
 .bg__element__300 {
   position: absolute;
   width: 43.4rem;
@@ -5007,8 +5012,14 @@ input:hover {
   .form__img-bg {
     width: 62rem;
     height: 54.9rem;
-    top: 51rem;
+    top: 32rem;
     right: 1rem;
+  }
+  .form__img-bg4 {
+    position: absolute;
+    top: -15rem;
+    right: 1rem;
+    width: 60rem;
   }
   .form__img-bg2 {
     width: 75.2rem;
@@ -6317,6 +6328,24 @@ input:hover {
   height: 1.4rem;
 }
 
+@media (max-width: 48em) {
+  .modal__360-wrap {
+    padding: 0;
+    width: 60rem;
+    height: 87rem;
+  }
+  .modal__360-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 66rem;
+    height: 66rem;
+  }
+}
 .filter {
   position: relative;
   margin-bottom: 28.6rem;
@@ -8654,6 +8683,20 @@ input:hover {
   transform: rotate(90deg);
 }
 
+@media (max-width: 48em) {
+  .modal__adapter__img1 {
+    top: 8rem;
+    left: 31rem;
+    width: 31.6rem;
+    height: 43.4rem;
+  }
+  .modal__adapter__img2 {
+    top: 13rem;
+    left: 3rem;
+    width: 45.2rem;
+    height: 46.1rem;
+  }
+}
 .durable {
   position: relative;
   margin-bottom: 18.9rem;
@@ -11798,6 +11841,19 @@ input:checked + .slider:before {
   line-height: 140%;
   width: 32.9rem;
   height: 6rem;
+}
+
+@media (max-width: 48em) {
+  .modal__additional {
+    width: 60rem;
+    height: 74rem;
+  }
+  .additional__button-modal {
+    font-size: 2rem;
+  }
+}
+.additional__button-close {
+  font-size: 2rem;
 }
 
 .payment {
@@ -15078,6 +15134,12 @@ input:checked + .slider:before {
   overflow-y: scroll;
 }
 
+@media (max-width: 48em) {
+  .offer::-webkit-scrollbar {
+    display: none;
+    /* Убирает линию скролла */
+  }
+}
 .offer__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15147,6 +15209,12 @@ input:checked + .slider:before {
   font-weight: 400;
 }
 
+@media (max-width: 48em) {
+  .offer__card {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+}
 .offer__link {
   font-weight: 400;
   font-size: 1.8rem;
@@ -15163,6 +15231,11 @@ input:checked + .slider:before {
   margin-left: 1rem;
 }
 
+@media (max-width: 48em) {
+  .offer__link-text {
+    display: none;
+  }
+}
 .offer__subtitle-top {
   font-weight: 700;
   font-size: 2.6rem;
@@ -15190,6 +15263,18 @@ input:checked + .slider:before {
   opacity: 0.3;
 }
 
+@media (max-width: 48em) {
+  .offer__subtitle-bottom {
+    font-size: 3.6rem;
+    margin-bottom: 46.3rem;
+  }
+  .offer__subtitle-bottom span:last-child {
+    font-size: 3rem;
+  }
+  .offer__subtitle-top {
+    font-size: 3.6rem;
+  }
+}
 .offer__title {
   font-weight: 800;
   font-size: 5.6rem;
@@ -15215,6 +15300,23 @@ input:checked + .slider:before {
   margin-bottom: 4.3rem;
 }
 
+@media (max-width: 48em) {
+  .offer__title {
+    font-size: 3.6rem;
+  }
+  .offer__title-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+  .offer__title-top {
+    margin-top: 5rem;
+  }
+}
 .offer__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15266,6 +15368,17 @@ input:checked + .slider:before {
   gap: 2rem;
 }
 
+@media (max-width: 48em) {
+  .offer__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
 .offer__icon {
   width: 0.7rem;
   height: 1.4rem;
@@ -15323,6 +15436,18 @@ input:checked + .slider:before {
   height: 62rem;
 }
 
+@media (max-width: 48em) {
+  .offer__icon {
+    width: 4.7rem;
+    height: 4.4rem;
+  }
+  .offer__img {
+    top: 44rem;
+    right: 2rem;
+    width: 61.7rem;
+    height: 52rem;
+  }
+}
 .modal__promotion-one {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;

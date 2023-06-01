@@ -366,35 +366,40 @@ menuLinks.forEach(link => {
     }
   };
 
-  const cursor = document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor");
 
-  document.addEventListener("mousemove", function(e) {
-    cursor.style.cssText =
-      "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-  });
+document.addEventListener("mousemove", function(e) {
+  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+});
 
-  document.addEventListener("mouseover", function(e) {
-    if (e.target.closest("button, a")) {
+document.addEventListener("mouseover", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("_over");
+  }
+});
+
+document.addEventListener("mouseout", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.remove("_over");
+    cursor.style.display = "none"; // добавили скрытие курсора
+  }
+});
+
+document.addEventListener("mousedown", function(e) {
+  if (e.target.closest("button, a")) {
+    cursor.classList.add("click");
+    cursor.classList.remove("_over");
+    setTimeout(function() {
+      cursor.classList.remove("click");
       cursor.classList.add("_over");
-    }
-  });
+    }, 500);
+  }
+});
 
-  document.addEventListener("mouseout", function(e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.remove("_over");
-    }
-  });
+document.addEventListener("mouseenter", function(e) {
+  cursor.style.display = "block"; // добавили отображение курсора
+});
 
-  document.addEventListener("mousedown", function(e) {
-    if (e.target.closest("button, a")) {
-      cursor.classList.add("click");
-      cursor.classList.remove("_over");
-      setTimeout(function() {
-        cursor.classList.remove("click");
-        cursor.classList.add("_over");
-      }, 500);
-    }
-  });
 
   // ==========================================================================
   // ====================   Плавный скролл по якорям  =========================
@@ -569,6 +574,7 @@ menuLinks.forEach(link => {
     bindModal(".certificate__one", ".modal", ".modal .popup-close");
     bindModal(".promotion__button", ".offer", ".offer .popup-close");
     bindModal(".button__hero", ".offer", ".offer .popup-close");
+    bindModal(".memory__button", ".offer", ".offer .popup-close");
     bindModal(".additional__button", ".offer", ".offer .popup-close");
     bindModal(".button__video ", ".offer", ".offer .popup-close");
     bindModal(
