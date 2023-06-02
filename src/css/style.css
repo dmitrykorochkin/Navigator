@@ -1109,7 +1109,7 @@ img {
   .step__button {
     font-size: 2rem;
     padding: 2rem 6.4rem;
-    width: 50rem;
+    width: 54rem;
     height: 7.4rem;
   }
 }
@@ -2825,10 +2825,15 @@ img {
   transition: all 0.5s ease;
 }
 
+.camers .swiper-slide {
+  width: 45.6rem;
+}
+
 .camers__list-wrap {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  width: 45rem;
 }
 .camers__list-wrap:last-child {
   margin-right: 0;
@@ -2866,15 +2871,33 @@ img {
   color: #0ABD92;
 }
 
+.camers .swiper-button-prev,
+.camers .swiper-button-next {
+  display: none;
+}
+
 @media (max-width: 48em) {
+  .camers .swiper-button-prev,
+  .camers .swiper-button-next {
+    display: block;
+  }
+  .camers .swiper-button-prev svg,
+  .camers .swiper-button-next svg {
+    margin: 0.5rem 1.45rem;
+  }
+  .camers .swiper-slide {
+    width: 45.6rem;
+  }
   #swiper3 {
     width: 50rem;
     margin: 0 auto;
   }
   #swiper3 .swiper-button-next {
+    display: block;
     top: 56rem;
   }
   #swiper3 .swiper-button-prev {
+    display: block;
     top: 56rem;
   }
   #swiper3 .swiper-pagination {
@@ -4964,6 +4987,7 @@ input:hover {
 }
 
 .form__img-line {
+  display: none;
   position: absolute;
   width: 201rem;
   height: 91.6rem;
@@ -5006,6 +5030,13 @@ input:hover {
 
 .form__img-bg3 {
   display: none;
+}
+
+.form__img-bg4 {
+  position: absolute;
+  top: -7rem;
+  right: 1rem;
+  width: 68rem;
 }
 
 @media (max-width: 48em) {
@@ -9747,7 +9778,7 @@ input:hover {
     margin-bottom: 21rem;
   }
   .update__item-mob {
-    width: 57.9rem;
+    width: 60rem;
     height: 41.5rem;
     margin-bottom: 3rem;
   }
@@ -14692,8 +14723,8 @@ input:checked + .slider:before {
 }
 
 .dzen {
-  width: 3.9rem;
-  height: 1.5rem;
+  width: 5.2rem;
+  height: 2rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14725,8 +14756,8 @@ input:checked + .slider:before {
 
 .footer__icons-item {
   position: relative;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   border: 0.1rem solid #4c4c4c;
   border-radius: 8rem;
   -webkit-transition: 0.3s ease;
@@ -15530,6 +15561,12 @@ input:checked + .slider:before {
   background-size: contain;
 }
 
+@media (max-width: 48em) {
+  .modal__promotion-block {
+    width: 60rem;
+    font-size: 2rem;
+  }
+}
 .navbar {
   display: none;
   -webkit-box-pack: end;

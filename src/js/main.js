@@ -576,6 +576,7 @@ document.addEventListener("mouseenter", function(e) {
     bindModal(".button__hero", ".offer", ".offer .popup-close");
     bindModal(".memory__button", ".offer", ".offer .popup-close");
     bindModal(".additional__button", ".offer", ".offer .popup-close");
+    bindModal(".step__button", ".offer", ".offer .popup-close");
     bindModal(".button__video ", ".offer", ".offer .popup-close");
     bindModal(
       ".review360__button",
