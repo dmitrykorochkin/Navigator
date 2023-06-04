@@ -12746,8 +12746,8 @@ input:checked + .slider:before {
   top: 1rem;
   left: 1rem;
   opacity: 0;
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -12795,8 +12795,49 @@ input:checked + .slider:before {
   position: absolute;
   top: 1rem;
   left: 25rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-name: sign-one;
+  animation-name: sign-one;
 }
 
+@-webkit-keyframes sign-one {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+@keyframes sign-one {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
 .alert__img-sign2 {
   width: 7.2rem;
   height: 7.2rem;
@@ -13065,8 +13106,36 @@ input:checked + .slider:before {
   position: absolute;
   left: 22rem;
   bottom: -60rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-name: sign-one;
+  animation-name: sign-one;
 }
 
+@keyframes sign-one {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
 .alert__img-car3 {
   width: 12.5rem;
   height: 21.3rem;
@@ -13194,16 +13263,72 @@ input:checked + .slider:before {
   position: absolute;
   top: 12.1rem;
   left: 22rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-name: sign-one;
+  animation-name: sign-one;
 }
 
+@keyframes sign-one {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
 .alert__img-sign5 {
   width: 7rem;
   height: 7.5rem;
   position: absolute;
   top: 30rem;
   left: 1rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-name: sign-one;
+  animation-name: sign-one;
 }
 
+@keyframes sign-one {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
 .alert__img-road-green3 {
   width: 17rem;
   height: 55rem;
@@ -13344,8 +13469,36 @@ input:checked + .slider:before {
   position: absolute;
   top: 5rem;
   left: -2rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-name: sign-one;
+  animation-name: sign-one;
 }
 
+@keyframes sign-one {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
 .alert__img-name4 {
   width: 20.5rem;
   height: 3.7rem;
