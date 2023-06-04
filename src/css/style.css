@@ -9926,7 +9926,7 @@ input:hover {
   -ms-flex-align: center;
   align-items: center;
   padding: 1.5rem;
-  width: 119rem;
+  width: 120rem;
   height: 5.2rem;
   margin: 0 auto;
   opacity: 0.6;
@@ -9963,7 +9963,7 @@ input:hover {
   -ms-flex-align: center;
   align-items: center;
   padding: 1.5rem;
-  width: 119rem;
+  width: 120rem;
   height: 5.2rem;
   margin: 0 auto;
   opacity: 0.6;
@@ -11211,6 +11211,12 @@ input:checked + .slider:before {
   height: 24.9rem;
   margin-bottom: 2.6rem;
   cursor: pointer;
+}
+
+.examination__img-article {
+  width: 39.3rem;
+  height: 23rem;
+  margin-bottom: 2rem;
 }
 
 .examination__img-mob {
