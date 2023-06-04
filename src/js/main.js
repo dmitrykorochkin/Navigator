@@ -415,108 +415,215 @@ document.addEventListener("mouseenter", function(e) {
     });
   });
 
-  const formSite = () => {
-    const inputMask = new Inputmask("+7 (999) 999-99-99");
-    const forms = document.querySelectorAll(".form__element");
+  // const formSite = () => {
+  //   const inputMask = new Inputmask("+7 (999) 999-99-99");
+  //   const forms = document.querySelectorAll(".form__element");
 
-    forms.forEach(form => {
-      const telSelector = form.querySelector('input[type="tel"]');
-      inputMask.mask(telSelector);
+  //   forms.forEach(form => {
+  //     const telSelector = form.querySelector('input[type="tel"]');
+  //     inputMask.mask(telSelector);
 
-      new window.JustValidate(`#${form.id}`, {
-        rules: {
-          tel: {
-            required: true,
-            function: () => {
-              const phone = telSelector.inputmask.unmaskedvalue();
-              return Number(phone) && phone.length === 10;
-            }
-          }
-        },
-        submitHandler: async function(form) {
-          const formData = new FormData(form);
+  //     new window.JustValidate(`#${form.id}`, {
+  //       rules: {
+  //         tel: {
+  //           required: true,
+  //           function: () => {
+  //             const phone = telSelector.inputmask.unmaskedvalue();
+  //             return Number(phone) && phone.length === 10;
+  //           }
+  //         }
+  //       },
+  //       submitHandler: async function(form) {
+  //         const formData = new FormData(form);
 
-          try {
-            const response = await fetch("mail.php", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams(formData)
-            });
+  //         try {
+  //           const response = await fetch("mail.php", {
+  //             method: "POST",
+  //             headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //             body: new URLSearchParams(formData)
+  //           });
 
-            if (response.ok) {
-              console.log("Отправлено");
+  //           if (response.ok) {
+  //             console.log("Отправлено");
 
-              // Отправка почты
-              const mailData = new FormData();
-              mailData.append("name", formData.get("name"));
-              mailData.append("phone", formData.get("phone"));
-              mailData.append("type", "mail");
+  //             // Отправка почты
+  //             const mailData = new FormData();
+  //             mailData.append("name", formData.get("name"));
+  //             mailData.append("phone", formData.get("phone"));
+  //             mailData.append("type", "mail");
 
-              const mailResponse = await fetch("mail.php", {
-                method: "POST",
-                headers: { "Content-Type": "multipart/form-data" },
-                body: mailData
-              });
+  //             const mailResponse = await fetch("mail.php", {
+  //               method: "POST",
+  //               headers: { "Content-Type": "multipart/form-data" },
+  //               body: mailData
+  //             });
 
-              if (mailResponse.ok) {
-                console.log(await mailResponse.text());
-              }
-            } else {
-              console.error("Ошибка при отправке формы");
-            }
-          } catch (error) {
-            console.error(error);
-          }
+  //             if (mailResponse.ok) {
+  //               console.log(await mailResponse.text());
+  //             }
+  //           } else {
+  //             console.error("Ошибка при отправке формы");
+  //           }
+  //         } catch (error) {
+  //           console.error(error);
+  //         }
 
-          form.reset();
+  //         form.reset();
+  //       }
+  //     });
+  //   });
+  // };
+
+  // formSite();
+
+  // const lastForm = () => {
+  //   const lastForms = document.querySelector(".purchase__button");
+  //   const forms = document.querySelectorAll("#form4");
+
+  //   lastForms.addEventListener("click", () => {
+  //     // Получим данные формы
+  //     const formData = new FormData(forms[0]);
+
+  //     // Отправим данные на сервер через AJAX запрос
+  //     fetch(forms[0].action, {
+  //       method: "POST",
+  //       body: formData
+  //     })
+  //       .then(response => {
+  //         if (response.ok) {
+  //           // Показываем модальное окно с сообщением об успехе
+  //           const modalThanksWrapper = document.querySelector(
+  //             ".modal__thanks-wrapper"
+  //           );
+  //           modalThanksWrapper.style.display = "block";
+  //         }
+  //       })
+  //       .catch(error => {
+  //         // Показываем модальное окно с сообщением об ошибке
+  //         console.log("Ошибка при отправке формы");
+  //       });
+  //   });
+
+  //   // Найдем кнопку закрытия модального окна
+  //   const closeButtons = document.querySelectorAll(".thanks__close");
+  //   Array.from(closeButtons).forEach(button => {
+  //     button.addEventListener("click", () => {
+  //       const modalThanksWrapper = document.querySelector(
+  //         ".modal__thanks-wrapper"
+  //       );
+  //       modalThanksWrapper.style.display = "none";
+  //     });
+  //   });
+  // };
+
+  // lastForm();
+
+
+const inputMask = new Inputmask("+7 (999) 999-99-99");
+const forms = document.querySelectorAll(".form__element");
+
+forms.forEach(form => {
+  const telSelector = form.querySelector('input[type="tel"]');
+  inputMask.mask(telSelector);
+
+  new window.JustValidate(`#${form.id}`, {
+    rules: {
+      tel: {
+        required: true,
+        function: () => {
+          const phone = telSelector.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
         }
-      });
-    });
-  };
+      }
+    },
+    submitHandler: async function(form) {
+      const formData = new FormData(form);
 
-  formSite();
-
-  const lastForm = () => {
-    const lastForms = document.querySelector(".purchase__button");
-    const forms = document.querySelectorAll("#form4");
-
-    lastForms.addEventListener("click", () => {
-      // Получим данные формы
-      const formData = new FormData(forms[0]);
-
-      // Отправим данные на сервер через AJAX запрос
-      fetch(forms[0].action, {
-        method: "POST",
-        body: formData
-      })
-        .then(response => {
-          if (response.ok) {
-            // Показываем модальное окно с сообщением об успехе
-            const modalThanksWrapper = document.querySelector(
-              ".modal__thanks-wrapper"
-            );
-            modalThanksWrapper.style.display = "block";
-          }
-        })
-        .catch(error => {
-          // Показываем модальное окно с сообщением об ошибке
-          console.log("Ошибка при отправке формы");
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData)
         });
-    });
 
-    // Найдем кнопку закрытия модального окна
-    const closeButtons = document.querySelectorAll(".thanks__close");
-    Array.from(closeButtons).forEach(button => {
-      button.addEventListener("click", () => {
+        if (response.ok) {
+          console.log("Отправлено");
+
+          // Отправка почты
+          const mailData = new FormData();
+          mailData.append("name", formData.get("name"));
+          mailData.append("phone", formData.get("phone"));
+          mailData.append("type", "mail");
+
+          const mailResponse = await fetch("mail.php", {
+            method: "POST",
+            headers: { "Content-Type": "multipart/form-data" },
+            body: mailData
+          });
+
+          if (mailResponse.ok) {
+            console.log(await mailResponse.text());
+          }
+
+          // Показываем модальное окно с сообщением об успехе
+          const modalThanksWrapper = document.querySelector(
+            ".modal__thanks-wrapper"
+          );
+          modalThanksWrapper.style.display = "block";
+        } else {
+          console.error("Ошибка при отправке формы");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+
+      form.reset();
+    }
+  });
+});
+
+const lastForms = document.querySelector(".purchase__button");
+const form4 = document.querySelector("#form4");
+
+lastForms.addEventListener("click", () => {
+  // Получим данные формы
+  const formData = new FormData(form4);
+
+  // Отправим данные на сервер через AJAX запрос
+  fetch(form4.action, {
+    method: "POST",
+    body: formData
+  })
+    .then(response => {
+      if (response.ok) {
+        // Показываем модальное окно с сообщением об успехе
         const modalThanksWrapper = document.querySelector(
           ".modal__thanks-wrapper"
         );
-        modalThanksWrapper.style.display = "none";
-      });
+        modalThanksWrapper.style.display = "block";
+      }
+    })
+    .catch(error => {
+      // Показываем модальное окно с сообщением об ошибке
+      console.log("Ошибка при отправке формы");
     });
-  };
+});
 
-  lastForm();
+// Найдем кнопку закрытия модального окна
+const closeButtons = document.querySelectorAll(".thanks__close");
+Array.from(closeButtons).forEach(button => {
+  button.addEventListener("click", () => {
+    const modalThanksWrapper = document.querySelector(".modal__thanks-wrapper");
+    modalThanksWrapper.style.display = "none";
+  });
+});
+
+
+
+
+
+
+
 
   const modals = () => {
     function bindModal(triggerSelector, modalSelector, closeSelector) {

@@ -10008,6 +10008,9 @@ input:hover {
   line-height: 139%;
   opacity: 0.6;
 }
+.update__one span {
+  font-weight: 800;
+}
 
 @media (max-width: 48em) {
   .update__one {
@@ -11204,6 +11207,11 @@ input:checked + .slider:before {
   width: 3.5rem;
   height: 2.8rem;
   margin-right: 1.3rem;
+}
+
+.examination__img-otzov {
+  position: absolute;
+  top: -10rem;
 }
 
 .examination__img {
@@ -14706,8 +14714,8 @@ input:checked + .slider:before {
 }
 
 .vk {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14718,8 +14726,8 @@ input:checked + .slider:before {
 }
 
 .youtube {
-  width: 2rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3.5rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14730,8 +14738,8 @@ input:checked + .slider:before {
 }
 
 .dzen {
-  width: 4rem;
-  height: 1.5rem;
+  width: 3.8rem;
+  height: 1.35rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14742,8 +14750,8 @@ input:checked + .slider:before {
 }
 
 .call {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14763,8 +14771,8 @@ input:checked + .slider:before {
 
 .footer__icons-item {
   position: relative;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   border: 0.1rem solid #4c4c4c;
   border-radius: 8rem;
   -webkit-transition: 0.3s ease;
