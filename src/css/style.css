@@ -4367,7 +4367,7 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 3.7rem 6.4rem;
+  padding: 3.7rem 5.4rem;
   background: none;
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   border-radius: 1.2rem;
@@ -4384,7 +4384,7 @@ img {
 }
 
 .tabs__item-signature {
-  padding: 3.7rem 4.4rem;
+  padding: 3.7rem 3.4rem;
 }
 
 .tabs__block {
@@ -10054,6 +10054,7 @@ input:hover {
   height: 21.1rem;
   top: 27rem;
   left: -24rem;
+  opacity: 0.5;
 }
 
 .equipment__img4 {
@@ -14723,8 +14724,8 @@ input:checked + .slider:before {
 }
 
 .dzen {
-  width: 5.2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 1.5rem;
   fill: #4c4c4c;
   position: absolute;
   top: 50%;
@@ -14756,8 +14757,8 @@ input:checked + .slider:before {
 
 .footer__icons-item {
   position: relative;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border: 0.1rem solid #4c4c4c;
   border-radius: 8rem;
   -webkit-transition: 0.3s ease;

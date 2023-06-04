@@ -664,42 +664,42 @@ document.addEventListener("mouseenter", function(e) {
 
   // ************************  АНИМАЦИЯ *****************************
 
-  let index = 0;
-  // Функция, вызываемая при появлении элемента в области видимости
-  const handleIntersection = (entries, observer) => {
-    const items = document.querySelectorAll(".tabs__item");
-    const images = document.querySelectorAll(".tabs__container");
+let index = 0;
 
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        items.forEach(item => item.classList.remove("active-tab"));
+// Функция, вызываемая при появлении элемента в области видимости
+const handleIntersection = (entries, observer) => {
+  const items = document.querySelectorAll(".tabs__item");
+  const images = document.querySelectorAll(".tabs__container");
 
-        items[index].classList.add("active-tab");
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      items.forEach(item => item.classList.remove("active-tab"));
 
-        images.forEach(image => image.classList.remove("active"));
+      items[index].classList.add("active-tab");
 
-        images[index].classList.add("active");
-      } else {
-        items.forEach(function(item, i) {
-          if (item.classList.contains("active-tab")) {
-            index = i;
-          }
-        });
+      images.forEach(image => image.classList.remove("active"));
 
-        items.forEach(item => item.classList.remove("active-tab"));
-        images.forEach(image => image.classList.remove("active"));
-      }
-    });
-  };
+      images[index].classList.add("active");
+    } else {
+      items.forEach(function(item, i) {
+        if (item.classList.contains("active-tab")) {
+          index = i;
+        }
+      });
 
-  // Создаем экземпляр Observer
-  const observer = new IntersectionObserver(handleIntersection);
+      items.forEach(item => item.classList.remove("active-tab"));
+      images.forEach(image => image.classList.remove("active"));
+    }
+  });
+};
 
-  // Элемент, который мы хотим отслеживать
-  const targetElement = document.querySelector("#mode");
+const observer = new IntersectionObserver(handleIntersection);
+const targetElement = document.querySelector("#mode");
+observer.observe(targetElement);
 
-  // Начинаем отслеживать элемент
-  observer.observe(targetElement);
+window.addEventListener("scroll", function() {
+  index = 0;
+});
 
   // *******************************************************************************************
 
@@ -736,6 +736,10 @@ document.addEventListener("mouseenter", function(e) {
     const observer = new IntersectionObserver(handleIntersection);
     const targetElement = document.querySelector(".alert");
     observer.observe(targetElement);
+
+    window.addEventListener("scroll", function() {
+      index = 0;
+    });
   };
   alertAnimation();
 
