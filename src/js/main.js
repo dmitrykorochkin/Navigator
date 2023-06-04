@@ -743,6 +743,11 @@ window.addEventListener("scroll", function() {
   };
   alertAnimation();
 
+
+
+
+
+
   //*******************************  Анимация машинок и аварии *********************************
 
   const protections = document.querySelectorAll(
