@@ -10044,6 +10044,7 @@ input:hover {
 }
 
 .equipment__img2 {
+  position: absolute;
   width: 30.5rem;
   height: 23.1rem;
   top: 20rem;
@@ -10173,7 +10174,7 @@ input:hover {
   display: inline-block;
   font-weight: 800;
   font-size: 1.4rem;
-  line-height: 140%;
+  line-height: 160%;
   width: 2.3rem;
   height: 2.3rem;
   border: 0.1rem solid #FFFFFF;
@@ -12610,12 +12611,12 @@ input:checked + .slider:before {
   top: 35rem;
   left: 2rem;
   opacity: 0;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: 1.5s;
-  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.1s;
+  animation-delay: 1.1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-direction: normal;
@@ -12624,11 +12625,11 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: alert__img-car;
-  animation-name: alert__img-car;
+  -webkit-animation-name: alert__img-car2;
+  animation-name: alert__img-car2;
 }
 
-@-webkit-keyframes alert__img-car {
+@-webkit-keyframes alert__img-car2 {
   0% {
     opacity: 0;
     -webkit-transform: translate(0%, 50%);
@@ -12641,7 +12642,7 @@ input:checked + .slider:before {
   }
 }
 
-@keyframes alert__img-car {
+@keyframes alert__img-car2 {
   0% {
     opacity: 0;
     -webkit-transform: translate(0%, 50%);
@@ -12744,8 +12745,8 @@ input:checked + .slider:before {
   top: 1rem;
   left: 1rem;
   opacity: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -12793,8 +12794,8 @@ input:checked + .slider:before {
   position: absolute;
   top: 1rem;
   left: 25rem;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -12843,8 +12844,8 @@ input:checked + .slider:before {
   top: 8rem;
   left: 10rem;
   opacity: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 2s;
@@ -12989,19 +12990,6 @@ input:checked + .slider:before {
   animation-name: alert__img-car2;
 }
 
-@-webkit-keyframes alert__img-car2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0%, 50%);
-    transform: translate(0%, 50%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-}
-
 @keyframes alert__img-car2 {
   0% {
     opacity: 0;
@@ -13104,8 +13092,8 @@ input:checked + .slider:before {
   position: absolute;
   left: 22rem;
   bottom: -60rem;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -13261,8 +13249,8 @@ input:checked + .slider:before {
   position: absolute;
   top: 12.1rem;
   left: 22rem;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -13297,8 +13285,8 @@ input:checked + .slider:before {
   position: absolute;
   top: 30rem;
   left: 1rem;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -13467,8 +13455,8 @@ input:checked + .slider:before {
   position: absolute;
   top: 5rem;
   left: -2rem;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-delay: 0.3s;
@@ -13508,8 +13496,8 @@ input:checked + .slider:before {
   animation-duration: 0.3s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-direction: normal;

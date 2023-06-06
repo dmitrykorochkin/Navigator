@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   AOS.init();
 
-  // slider
+  // *********************************   slider  ******************************************
   const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 70,
@@ -70,7 +70,7 @@ if (window.innerWidth <= 767) {
 
 
 
-    //  Slider 360
+    //  *************************   Slider 360  **************************************************
 
 const slider = document.querySelector(".modal__360-wrap");
 const prevBtn = document.querySelector(".modal__360-prev");
@@ -137,7 +137,7 @@ showSlide(currentIndex);
 
 
 
-  //accordion
+  // **************************************  accordion  *****************************************
 
   let accordion = document.querySelector(".answerblock__items");
   let tab = document.querySelectorAll(".answerblock__item");
@@ -181,6 +181,9 @@ showSlide(currentIndex);
       img[index].classList.add("active");
     });
   });
+
+  //**************************  tabs pay answer ***************************** 
+
 
   // tabs 4 режима
 
@@ -559,11 +562,11 @@ Array.from(closeButtons).forEach(button => {
       ".modal__call-wrapper",
       ".modal__call-wrapper .popup-close"
     );
-    bindModal(
-      ".additional__link",
-      ".modal__additional-wrapper",
-      ".modal__additional-wrapper .popup-close"
-    );
+    // bindModal(
+    //   ".additional__link",
+    //   ".modal__additional-wrapper",
+    //   ".modal__additional-wrapper .popup-close"
+    // );
     bindModal(
       ".adapter__left-scheme",
       ".modal__adapter-wrap",
@@ -592,13 +595,11 @@ Array.from(closeButtons).forEach(button => {
     const modalsProm = document.querySelectorAll(".modal__promotion-one");
 
     const openModal = modal => {
-      console.log("Открытие модального окна");
       modal.style.display = "block";
       document.addEventListener("keydown", closeModalOnESC);
     };
 
     const closeModal = modal => {
-      console.log("Закрытие модального окна");
       modal.style.display = "none";
       document.removeEventListener("keydown", closeModalOnESC);
     };
@@ -644,6 +645,66 @@ Array.from(closeButtons).forEach(button => {
 
   modalPromotion();
 
+const modalAdditional = () => {
+  const buttonAdditionalList = document.querySelectorAll(".additional__link");
+  const modalAdditionalList = document.querySelectorAll(
+    ".modal__additional-wrapper"
+  );
+
+ const openModal = modal => {
+      modal.style.display = "block";
+      document.addEventListener("keydown", closeModalOnESC);
+    };
+
+    const closeModal = modal => {
+      modal.style.display = "none";
+      document.removeEventListener("keydown", closeModalOnESC);
+    };
+
+    const closeModalOnESC = event => {
+      if (event.keyCode === 27) {
+        const openModal = document.querySelector('.modal__additional-wrapper[style*="display: block"]');
+        closeModal(openModal);
+      }
+    };
+
+    document.addEventListener("click", event => {
+      const target = event.target;
+
+      // Проверяем, был ли клик на кнопке открытия модального окна
+      for (let i = 0; i < buttonAdditionalList.length; i++) {
+        if (target === buttonAdditionalList[i]) {
+          event.preventDefault();
+          openModal(modalAdditionalList[i]);
+          return;
+        }
+      }
+
+      // Проверяем, был ли клик на кнопке закрытия модального окна
+      if (target.classList.contains("popup-close")) {
+        console.log("Клик на кнопке закрытия модального окна");
+        const modal = target.closest(".modal__additional-wrapper");
+        closeModal(modal);
+        console.log("Функция closeModal выполнена");
+      }
+
+      // Проверяем, был ли клик вне модального окна
+      for (let i = 0; i < modalAdditionalList.length; i++) {
+        if (target === modalAdditionalList[i]) {
+          closeModal(target);
+          return;
+        }
+      }
+    });
+  }
+
+modalAdditional();
+
+
+
+
+
+
   // комплектующие
 
   const itemsComplect = document.querySelectorAll(".equipment__item");
@@ -661,6 +722,79 @@ Array.from(closeButtons).forEach(button => {
       itemImgBlock[index].style.display = "none";
     });
   });
+
+
+  // modal additional  
+      //   ".additional__link",
+    //   ".modal__additional-wrapper",
+    //   ".modal__additional-wrapper .popup-close"
+
+    // const buttonAdditional = document.querySelectorAll(".additional__link");
+    // const modalAdditionalOverlay = document.querySelectorAll(".modal__additional-wrapper");
+    // const modalAdditional = document.querySelector(".modal__additional");
+    // const overlay = document.querySelector(".overlay");
+    // let activeModal = null;
+
+    // buttonAdditional.forEach(button => {
+    //   button.addEventListener("click", event => {
+    //     event.preventDefault();
+    //     const index = event.target.getAttribute("data-index");
+    //     const modal = document.querySelector(`.modal__additional-wrapper[data-index="${index}"]`);
+    //     if (modal) {
+    //       showModal(modal);
+    //     }
+    //   });
+    // });
+
+    // function showModal(modal) {
+    //   modal.style.display = "block";
+    //   overlay.style.display = "block";
+
+    //   // Add event listeners to close buttons
+    //   const closeButtons = modal.querySelectorAll(".popup-close");
+    //   closeButtons.forEach(button => {
+    //     button.addEventListener("click", () => {
+    //       hideModal(modal);
+    //     });
+    //   });
+
+    //   overlay.addEventListener("click", outsideClickHandler);
+    //   document.addEventListener("keydown", keyDownHandler);
+
+    //   activeModal = modal;
+    // }
+
+    // function hideModal(modal) {
+    //   modal.style.display = "none";
+    //   overlay.style.display = "none";
+
+    //   // Remove event listeners from close buttons
+    //   const closeButtons = modal.querySelectorAll(".popup-close");
+    //   closeButtons.forEach(button => {
+    //     button.removeEventListener("click", () => {
+    //       hideModal(modal);
+    //     });
+    //   });
+
+    //   overlay.removeEventListener("click", outsideClickHandler);
+    //   document.removeEventListener("keydown", keyDownHandler);
+
+    //   activeModal = null;
+    // }
+
+    // function outsideClickHandler(event) {
+    //   if (event.target == overlay && activeModal !== null) {
+    //     hideModal(activeModal);
+    //   }
+    // }
+
+    // function keyDownHandler(event) {
+    //   if (event.key === "Escape" && activeModal !== null) {
+    //     hideModal(activeModal);
+    //   }
+    // }
+
+
 
   // ************************  АНИМАЦИЯ *****************************
 

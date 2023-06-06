@@ -62,7 +62,7 @@
                 </li>
               </ul>
             </nav>
-            <a href="tel:88006008619" class="header__button">Заказать звонок</a>
+            <a href="tel:88006008619" onclick="Verbox('openSupport'); return false;" class="header__button">Заказать звонок</a>
             <div class="header__burger">
               <img loading="lazy" src="./img/header/button/burger.svg" alt="" />
             </div>
@@ -230,14 +230,15 @@
           <section id="hero" class="hero scroll-to">
             <div class="container">
               <div class="hero__wrap">
-                <h1 class="hero__title">
+                <h1 class="hero__title"    data-aos-offset="200"
+                    data-aos="fade-up">
                   <span>Видеорегистратор</span>
                   <div>с сигнатурным радар-детектором</div>
                 </h1>
-                <div class="hero__advantages advantages">
+                <div class="hero__advantages advantages"    data-aos-offset="100"
+                    data-aos="fade-up">
                   <div
-                    data-aos-offset="200"
-                    data-aos="fade-up"
+                 
                     class="advantages__item"
                   >
                     <img
@@ -255,8 +256,7 @@
                     </div>
                   </div>
                   <div
-                    data-aos-offset="200"
-                    data-aos="fade-up"
+        
                     class="advantages__item"
                   >
                     <img
@@ -272,8 +272,7 @@
                     </div>
                   </div>
                   <div
-                    data-aos-offset="300"
-                    data-aos="fade-up"
+
                     class="advantages__item"
                   >
                     <img
@@ -291,8 +290,7 @@
                     </div>
                   </div>
                   <div
-                    data-aos-offset="300"
-                    data-aos="fade-up"
+
                     class="advantages__item"
                   >
                     <img
@@ -6376,6 +6374,12 @@
                   Крепление-присоска на лобовое стекло
                 </div>
               </div>
+              <div class="equipment__item">
+                <div class="equipment__number">9</div>
+                <div class="equipment__heading">
+                  Адаптер Power SmartBox
+                </div>
+              </div>
             </div>
             <div class="equipment__img">
               <picture>
@@ -6647,7 +6651,7 @@
                     <div class="additional__price-new">24 890₽</div>
                     <div class="additional__price-old">24 890₽</div>
                   </div>
-                  <a href="#" class="additional__link additional__link-big"
+                  <a href="#" class="additional__link additional__link-big" data-index="1"
                     >Подробнее</a
                   >
                 </div>
@@ -6676,7 +6680,7 @@
                     <div class="additional__price-new">24 890₽</div>
                     <div class="additional__price-old">24 890₽</div>
                   </div>
-                  <a href="#" class="additional__link">Подробнее</a>
+                  <a href="#" class="additional__link" data-index="2">Подробнее</a>
                 </div>
               </div>
               <div class="additional__item">
@@ -6703,7 +6707,7 @@
                     <div class="additional__price-new">24 890₽</div>
                     <div class="additional__price-old">17 000₽</div>
                   </div>
-                  <a href="#" class="additional__link">Подробнее</a>
+                  <a href="#" class="additional__link" data-index="3">Подробнее</a>
                 </div>
               </div>
             </div>
@@ -7325,7 +7329,7 @@
                 Рекомендуют <span>97% пользователей!</span>
               </div>
               <div class="examination__wrap">
-                <div class="examination__video item-slide">
+                <div class="examination__video item-slide active-tab">
                   <img
                     src="./img/examination/icon1.svg"
                     alt=""
@@ -8462,7 +8466,7 @@
           <div class="bg__elem bg__element"></div>
           <!-- -------------------------- payment------------------------------------- -->
           <div class="payment__top" data-aos="fade-in">
-            <div class="pay answer__pay">
+            <div class="pay answer__pay active-tab">
               <img src="./img/payment/pay.svg" alt="pay" class="pay__icon" />
               <div class="pay__text">Доставка, оплата</div>
             </div>
@@ -10226,7 +10230,7 @@
 
     <!-- MODAL ADDATIONAL -->
 
-    <div class="modal__additional-wrapper">
+    <div class="modal__additional-wrapper" data-index="1">
       <div class="modal__additional container">
         <div class="modal__additional-title">
           Подробнее о комплекте Onlooker M84 Pro 4G с базовой задней камерой
@@ -10265,12 +10269,103 @@
           </button>
         </div>
         <button
-          class="modal__additional-close modal__additional-closest popup-close"
+          class="modal__additional-close modal__additional-closest popup-close btn-close-modal"
         >
-          <img src="img/modal/additional/+.svg" alt="close" />
+          <img class="popup-close" src="img/modal/additional/+.svg" alt="close" />
         </button>
       </div>
     </div>
+    <div class="modal__additional-wrapper" data-index="2">
+      <div class="modal__additional container">
+        <div class="modal__additional-title">
+          Подробнее о комплекте Onlooker M85 Pro 4G с базовой задней камерой
+        </div>
+        <div class="modal__additional-subtitle">Комплект поставки:</div>
+        <div class="modal__additional-text">
+          Onlooker M84 Pro с 32GB встроенной памяти, базовая задняя камера,
+          кабель 6 метров для задней камеры, крепление на лобовое стекло,
+          зарядное устройство в прикуриватель, GPS модуль, инструкция,
+          гарантийный талон.
+        </div>
+        <div class="modal__additional-subtitle">
+          Гарантированные фирменные подарки:
+        </div>
+        <div class="modal__additional-items">
+          <div class="modal__additional-item">
+            Промокод для приложения радар-детектора (бессрочная лицензия на 5
+            устройств).
+          </div>
+          <div class="modal__additional-item">
+            Буклет с полезными приложениями.
+          </div>
+          <div class="modal__additional-item">
+            Специальный аксессуар для безопасной установки/извлечения
+            СИМ-карты/карты памяти и для RESET перезагрузки устройства.
+          </div>
+        </div>
+        <div class="modal__additional-buttons">
+          <button
+            class="additional__button-close modal__additional-closest popup-close"
+          >
+            Закрыть
+          </button>
+          <button class="button additional__button-modal">
+            Добавить к заказу
+          </button>
+        </div>
+        <button
+          class="modal__additional-close modal__additional-closest popup-close"
+        >
+          <img class="popup-close" src="img/modal/additional/+.svg" alt="close" />
+        </button>
+      </div>
+    </div>
+    <div class="modal__additional-wrapper" data-index="3">
+      <div class="modal__additional container">
+        <div class="modal__additional-title">
+          Подробнее о комплекте Onlooker M86 Pro 4G с базовой задней камерой
+        </div>
+        <div class="modal__additional-subtitle">Комплект поставки:</div>
+        <div class="modal__additional-text">
+          Onlooker M84 Pro с 32GB встроенной памяти, базовая задняя камера,
+          кабель 6 метров для задней камеры, крепление на лобовое стекло,
+          зарядное устройство в прикуриватель, GPS модуль, инструкция,
+          гарантийный талон.
+        </div>
+        <div class="modal__additional-subtitle">
+          Гарантированные фирменные подарки:
+        </div>
+        <div class="modal__additional-items">
+          <div class="modal__additional-item">
+            Промокод для приложения радар-детектора (бессрочная лицензия на 5
+            устройств).
+          </div>
+          <div class="modal__additional-item">
+            Буклет с полезными приложениями.
+          </div>
+          <div class="modal__additional-item">
+            Специальный аксессуар для безопасной установки/извлечения
+            СИМ-карты/карты памяти и для RESET перезагрузки устройства.
+          </div>
+        </div>
+        <div class="modal__additional-buttons">
+          <button
+            class="additional__button-close modal__additional-closest popup-close"
+          >
+            Закрыть
+          </button>
+          <button class="button additional__button-modal">
+            Добавить к заказу
+          </button>
+        </div>
+        <button
+          class="modal__additional-close modal__additional-closest popup-close"
+        >
+          <img class="popup-close" src="img/modal/additional/+.svg" alt="close" />
+        </button>
+      </div>
+    </div>
+    <div class="overlay__additional"></div>
 
     <!-- MODAL SHEME -->
 
