@@ -10044,52 +10044,50 @@ input:hover {
 }
 
 .equipment__img2 {
-  position: absolute;
-  width: 31.5rem;
-  height: 26.1rem;
-  top: 16rem;
-  left: -37rem;
+  width: 30.5rem;
+  height: 23.1rem;
+  top: 20rem;
+  left: -35rem;
 }
 
 .equipment__img3 {
   position: absolute;
-  width: 28.5rem;
-  height: 21.1rem;
+  width: 24.5rem;
+  height: 20.1rem;
   top: 27rem;
-  left: -24rem;
-  opacity: 0.5;
+  left: -17rem;
 }
 
 .equipment__img4 {
   position: absolute;
-  width: 31.5rem;
-  height: 26.1rem;
-  top: 30rem;
-  left: -6rem;
+  width: 25.5rem;
+  height: 18.1rem;
+  top: 32rem;
+  left: -2rem;
 }
 
 .equipment__img5 {
   position: absolute;
-  width: 31.5rem;
-  height: 26.1rem;
-  top: 25rem;
-  left: 8rem;
+  width: 25.5rem;
+  height: 20.1rem;
+  top: 30rem;
+  left: 11rem;
 }
 
 .equipment__img6 {
   position: absolute;
   width: 16.5rem;
-  height: 18.1rem;
-  top: 24rem;
-  left: 32rem;
+  height: 14.1rem;
+  top: 29rem;
+  left: 29rem;
 }
 
 .equipment__img7 {
   position: absolute;
   width: 31.5rem;
-  height: 13.1rem;
-  top: 20rem;
-  left: 37rem;
+  height: 15.1rem;
+  top: 22rem;
+  left: 35rem;
 }
 
 .img__equipment-block {
