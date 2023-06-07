@@ -13153,12 +13153,12 @@ input:checked + .slider:before {
   top: 34rem;
   left: 13rem;
   opacity: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-direction: normal;
@@ -13430,8 +13430,8 @@ input:checked + .slider:before {
   animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: 1.1s;
-  animation-delay: 1.1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-direction: normal;
