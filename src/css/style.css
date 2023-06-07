@@ -12611,12 +12611,12 @@ input:checked + .slider:before {
   top: 35rem;
   left: 2rem;
   opacity: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-direction: normal;
@@ -12625,8 +12625,8 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: alert__img-car2;
-  animation-name: alert__img-car2;
+  -webkit-animation-name: alert__img-car3;
+  animation-name: alert__img-car3;
 }
 
 @-webkit-keyframes alert__img-car2 {
@@ -12744,7 +12744,7 @@ input:checked + .slider:before {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  opacity: 0;
+  opacity: 1;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-timing-function: linear;
@@ -12759,8 +12759,6 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: appearance;
-  animation-name: appearance;
 }
 
 @-webkit-keyframes appearance {
@@ -12998,12 +12996,12 @@ input:checked + .slider:before {
   top: 22rem;
   left: 9rem;
   opacity: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-direction: normal;
@@ -13012,8 +13010,8 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: alert__img-car2;
-  animation-name: alert__img-car2;
+  -webkit-animation-name: alert__img-car3;
+  animation-name: alert__img-car3;
 }
 
 @keyframes alert__img-car2 {
