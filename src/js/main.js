@@ -557,11 +557,11 @@ Array.from(closeButtons).forEach(button => {
       ".modal__call-wrapper .popup-close"
     );
 
-    bindModal(
-      ".header__button",
-      ".modal__call-wrapper",
-      ".modal__call-wrapper .popup-close"
-    );
+    // bindModal(
+    //   ".header__button",
+    //   ".modal__call-wrapper",
+    //   ".modal__call-wrapper .popup-close"
+    
     // bindModal(
     //   ".additional__link",
     //   ".modal__additional-wrapper",

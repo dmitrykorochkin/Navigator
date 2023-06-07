@@ -12836,8 +12836,6 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: sign-one;
-  animation-name: sign-one;
 }
 
 @-webkit-keyframes sign-one {
@@ -13134,8 +13132,6 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: sign-one;
-  animation-name: sign-one;
 }
 
 @keyframes sign-one {
@@ -13291,8 +13287,6 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: sign-one;
-  animation-name: sign-one;
 }
 
 @keyframes sign-one {
@@ -13327,8 +13321,6 @@ input:checked + .slider:before {
   animation-fill-mode: forwards;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-  -webkit-animation-name: sign-one;
-  animation-name: sign-one;
 }
 
 @keyframes sign-one {
