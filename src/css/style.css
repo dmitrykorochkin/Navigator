@@ -1623,6 +1623,11 @@ img {
     margin-top: 70rem;
     margin-bottom: 13.5rem;
   }
+  .advantages__item:nth-child(2) {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
   .advantages__item img {
     width: 7.2rem;
     height: 7.2rem;
@@ -2877,13 +2882,21 @@ img {
 }
 
 @media (max-width: 48em) {
-  .camers .swiper-button-prev,
   .camers .swiper-button-next {
     display: block;
   }
-  .camers .swiper-button-prev svg,
   .camers .swiper-button-next svg {
-    margin: 0.5rem 1.45rem;
+    width: 1rem;
+    height: 3rem;
+    margin: 1rem 1.6rem;
+  }
+  .camers .swiper-button-prev {
+    display: block;
+  }
+  .camers .swiper-button-prev svg {
+    width: 1rem;
+    height: 3rem;
+    margin: 0rem 1.4rem;
   }
   .camers .swiper-slide {
     width: 45.6rem;
@@ -3087,6 +3100,7 @@ img {
 
 @media (max-width: 48em) {
   .camers__ignor {
+    display: grid;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -3103,6 +3117,11 @@ img {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: start;
+  }
+  .camers__ignor-item:last-child {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
   }
   .camers__ignor-item--text {
     text-align: left;
@@ -5790,6 +5809,11 @@ input:hover {
   margin-bottom: 9.5rem;
 }
 
+@media (max-width: 48em) {
+  .screen__title {
+    margin-bottom: 6.5rem;
+  }
+}
 .screen__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5848,13 +5872,31 @@ input:hover {
     font-size: 3rem;
     margin-right: 1rem;
   }
+  .screen__item-title span {
+    margin-left: 1rem;
+  }
+  .screen__item-title-360 {
+    margin-bottom: 17rem;
+  }
   .title-big {
-    font-size: 3.4rem;
+    position: absolute;
+    top: -27rem;
+    right: 3rem;
+    font-size: 3.8rem;
   }
   .screen__item:nth-child(3) {
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1;
+  }
+  .screen__item-title-mob {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .screen__item-title-mob p {
+    margin-bottom: 3rem;
   }
 }
 .screen__img1 {
