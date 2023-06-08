@@ -7507,6 +7507,7 @@ input:hover {
   }
   .memory__right p {
     text-align: center;
+    font-size: 5.2rem;
   }
 }
 .memory__text {
@@ -7580,7 +7581,16 @@ input:hover {
     text-align: center;
   }
   .cart__subtitle-one {
+    font-size: 3rem;
     text-align: center;
+    position: absolute;
+    bottom: 21rem;
+    left: 11rem;
+  }
+  .cart__subtitle-mob {
+    position: absolute;
+    bottom: 28rem;
+    left: 14rem;
   }
 }
 .cart__title {
@@ -8775,6 +8785,11 @@ input:hover {
   margin-bottom: 18.9rem;
 }
 
+@media (max-width: 48em) {
+  .durable {
+    margin-bottom: 10rem;
+  }
+}
 .block__item {
   font-weight: 400;
   font-size: 2rem;
@@ -8825,7 +8840,10 @@ input:hover {
 
 @media (max-width: 48em) {
   .durable__subtitle {
-    margin-bottom: 34rem;
+    font-size: 3rem;
+    position: absolute;
+    top: 12rem;
+    left: 8rem;
   }
 }
 .durable__term {
@@ -8856,12 +8874,13 @@ input:hover {
 
 @media (max-width: 48em) {
   .durable__term {
+    margin-top: 7rem;
+    margin-bottom: 35rem;
     padding: 1.2rem;
     font-size: 2.8rem;
     text-align: center;
     width: 33.1rem;
     height: 14rem;
-    margin-bottom: 3rem;
   }
 }
 .durable__title {
@@ -9646,7 +9665,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .installation__left span {
-    left: 42rem;
+    position: absolute;
+    left: 22rem;
     top: 4rem;
     width: 17rem;
   }
@@ -9669,7 +9689,7 @@ input:hover {
 
 @media (max-width: 48em) {
   .installation__right span {
-    left: 41rem;
+    right: 21rem;
     top: 4rem;
   }
 }
@@ -10077,12 +10097,20 @@ input:hover {
   opacity: 0.6;
 }
 
+.equipment__img-one {
+  position: absolute;
+  width: 44.3rem;
+  height: 25.8rem;
+  top: 3rem;
+  right: -37rem;
+}
+
 .equipment__img {
   position: absolute;
   width: 44.3rem;
   height: 25.8rem;
   top: 3rem;
-  right: 5rem;
+  right: -37rem;
 }
 
 .equipment__img2 {
@@ -10133,16 +10161,22 @@ input:hover {
   left: 35rem;
 }
 
+.equipment__img-wrap {
+  position: absolute;
+  top: 12rem;
+  left: 83rem;
+}
+
 .img__equipment-block {
   display: none;
 }
 
 @media (max-width: 48em) {
-  .equipment__img {
+  .equipment__img-one {
     width: 50.3rem;
-    height: 20.8rem;
-    top: 36rem;
-    right: 4rem;
+    height: 18.8rem;
+    top: 35rem;
+    left: -3rem;
   }
   .equipment__img2 {
     width: 19.5rem;
@@ -10182,6 +10216,18 @@ input:hover {
     height: 13.1rem;
     top: 51rem;
     left: 31rem;
+  }
+  .equipment__img-wrap {
+    position: absolute;
+    top: 46rem;
+    left: 10rem;
+  }
+  .equipment__img {
+    position: absolute;
+    width: 50.3rem;
+    height: 18.8rem;
+    top: 35rem;
+    left: -3rem;
   }
 }
 @media (max-width: 48em) {
