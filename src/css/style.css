@@ -3330,6 +3330,8 @@ img {
     -ms-flex-direction: column;
     flex-direction: column;
     margin: 0 2rem 10rem 0;
+    width: 60rem;
+    margin-left: 2rem;
   }
 }
 .sensor__item {
@@ -13717,7 +13719,6 @@ input:checked + .slider:before {
     position: absolute;
     top: -8rem;
     left: 1rem;
-    opacity: 0;
   }
   .alert__img-road-green3 {
     width: 11rem;
