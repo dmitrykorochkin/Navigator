@@ -15746,6 +15746,7 @@ input:checked + .slider:before {
     font-size: 2.6rem;
   }
   .offer__wrap {
+    width: 60rem;
     height: auto;
     padding: 3rem 1.8rem;
   }
@@ -15855,19 +15856,22 @@ input:checked + .slider:before {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 999;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: none;
 }
 
 .modal__promotion-block {
   width: 75rem;
+  position: fixed;
+  width: 60rem;
+  font-size: 2rem;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   margin: 0 auto;
   padding: 3rem;
-  position: relative;
   background: -o-linear-gradient(174.02deg, #121212 3.53%, #181818 97.46%), #FFFFFF;
   background: linear-gradient(275.98deg, #121212 3.53%, #181818 97.46%), #FFFFFF;
   -webkit-box-shadow: 0px 0px 249px rgba(12, 148, 125, 0.27);
