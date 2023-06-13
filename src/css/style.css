@@ -4854,10 +4854,13 @@ img {
     font-size: 2.8rem;
     margin-bottom: 20rem;
   }
+  .form__left .video__price {
+    margin-left: 0;
+  }
   .form__left .video__price .price__new {
     font-size: 4rem;
     margin-right: 2rem;
-    margin-left: 10rem;
+    margin-left: 3rem;
   }
   .form__left .video__price .price__old {
     font-size: 3rem;
@@ -5188,7 +5191,7 @@ input:hover {
 @media (max-width: 48em) {
   .form__check {
     top: 23rem;
-    left: 1rem;
+    left: 2rem;
     width: 59.1rem;
     padding: 1.4rem 2.3rem 1.4rem 1rem;
     -webkit-box-orient: horizontal;
@@ -5370,7 +5373,9 @@ input:hover {
     font-size: 3rem;
   }
   .coldstart__item-text {
-    font-size: 2.6rem;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 136.4%;
   }
   .coldstart__item {
     margin-bottom: 3rem;
@@ -5401,10 +5406,30 @@ input:hover {
   height: 4.4rem;
 }
 
+.coldstart__item-img-mob {
+  display: none;
+}
+
+.coldstart__item-img2 {
+  width: 60rem;
+  height: 35.6rem;
+  display: block;
+}
+
 @media (max-width: 48em) {
+  .coldstart__item-img-mob {
+    display: block;
+    width: 60rem;
+    height: 35.6rem;
+  }
   .coldstart__item-img {
     width: 60rem;
     height: 35.6rem;
+  }
+  .coldstart__item-img2 {
+    width: 60rem;
+    height: 35.6rem;
+    display: none;
   }
   .info__img1 {
     width: 5.9rem;
@@ -5494,6 +5519,7 @@ input:hover {
   }
 }
 .coldstart__footer-text {
+  font-family: "Montserrat";
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 144%;
@@ -5530,6 +5556,7 @@ input:hover {
     padding: 2.2rem 0rem 2.2rem 0rem;
   }
   .coldstart__footer-text {
+    margin-left: 3rem;
     margin-bottom: 2rem;
   }
 }
@@ -5703,7 +5730,7 @@ input:hover {
     margin-bottom: 3rem;
   }
   .radar__option-text {
-    font-size: 2rem;
+    font-size: 2.4rem;
     width: 46.2rem;
     text-align: left;
   }
@@ -6000,6 +6027,8 @@ input:hover {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-bottom: 10rem;
+    width: 45rem;
+    margin-left: 8rem;
   }
   .screen__block-text {
     font-size: 2.5rem;
@@ -8516,13 +8545,13 @@ input:hover {
     align-items: center;
     position: absolute;
     width: 50rem;
-    top: 54rem;
-    left: 4rem;
+    top: 59rem;
+    left: 6rem;
   }
   .adapter__left-top {
     max-width: 56.7rem;
-    top: 54rem;
-    left: -1rem;
+    top: 58rem;
+    left: 0rem;
     z-index: 4;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8603,10 +8632,10 @@ input:hover {
   .adapter__img2 {
     display: block;
     position: absolute;
-    top: 53rem;
+    top: 59rem;
     left: 0rem;
-    width: 57rem;
-    height: 65rem;
+    width: 59rem;
+    height: 66rem;
   }
 }
 .adapter__info-title {
@@ -8682,6 +8711,11 @@ input:hover {
   margin-bottom: 3.8em;
 }
 
+@media (max-width: 48em) {
+  .adapter__descr {
+    font-size: 2.2rem;
+  }
+}
 .adapter__advantages {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9279,8 +9313,10 @@ input:hover {
 
 @media (max-width: 48em) {
   .warm {
+    max-width: 50rem;
     padding: 1.1rem 3.4rem 2.1rem 7.4rem;
     margin-bottom: 70rem;
+    margin-left: 5rem;
   }
   .warm__text {
     font-size: 2.2rem;
@@ -10282,13 +10318,13 @@ input:hover {
   transition: all 0.3s;
 }
 .equipment__item:hover {
-  color: #06B0A1;
+  color: rgb(6, 176, 161);
   cursor: default;
 }
 .equipment__item:hover .equipment__number {
-  background: #06B0A1;
+  background: rgb(6, 176, 161);
   color: #fff;
-  border: #06B0A1;
+  border: rgb(6, 176, 161);
 }
 
 .equipment__number {
