@@ -1086,6 +1086,11 @@ img {
   margin-bottom: 5rem;
 }
 
+@media (max-width: 48em) {
+  .offer__button {
+    font-size: 2.8rem;
+  }
+}
 .step__button {
   font-weight: 600;
   font-size: 1.6rem;
@@ -2891,7 +2896,7 @@ img {
   .camers .swiper-button-next svg {
     width: 1rem;
     height: 3rem;
-    margin: 1rem 1.6rem;
+    margin: 0.7rem 1.7rem;
   }
   .camers .swiper-button-prev {
     display: block;
@@ -2899,7 +2904,7 @@ img {
   .camers .swiper-button-prev svg {
     width: 1rem;
     height: 3rem;
-    margin: 0rem 1.4rem;
+    margin: 0.3rem 1.3rem;
   }
   .camers .swiper-slide {
     width: 45.6rem;
@@ -15548,6 +15553,15 @@ input:checked + .slider:before {
   color: #FFFFFF;
 }
 
+@media (max-width: 48em) {
+  .offer__item {
+    width: 50rem;
+    margin-left: 5rem;
+  }
+  .offer__item-text {
+    font-size: 2.2rem;
+  }
+}
 .offer__bonus {
   font-weight: 400;
   font-size: 2.2rem;
@@ -15560,6 +15574,13 @@ input:checked + .slider:before {
   font-weight: 700;
 }
 
+@media (max-width: 48em) {
+  .offer__bonus {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+}
 .offer__card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15751,7 +15772,7 @@ input:checked + .slider:before {
     padding: 3rem 1.8rem;
   }
   .offer__wrap-text {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .offer__wrap-title {
     font-size: 2.4rem;
