@@ -4440,7 +4440,7 @@ img {
   }
   .tabs__subtitle {
     max-width: 56rem;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
   }
   .tabs__item-text {
     font-size: 2rem;
@@ -4481,6 +4481,9 @@ img {
 @media (max-width: 48em) {
   .tabs__item-text {
     font-size: 2rem;
+  }
+  .tabs__subtitle {
+    font-size: 2.4rem;
   }
 }
 .notification {
@@ -4940,6 +4943,7 @@ img {
   }
   .form2__text {
     max-width: 58.5rem;
+    padding: 2rem 5rem 5rem 5rem;
   }
 }
 .form__click {
@@ -5484,6 +5488,7 @@ input:hover {
     font-size: 3rem;
   }
   .coldstart__info {
+    margin-left: 3rem;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
@@ -7775,7 +7780,10 @@ input:hover {
 
 @media (max-width: 48em) {
   .cartreader__present {
+    font-weight: 400;
     font-size: 3rem;
+    line-height: 130%;
+    text-align: center;
     width: 40rem;
     height: 8rem;
     padding: 1.6rem 3.3rem;
@@ -8025,6 +8033,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .smartbox {
+    max-width: 60rem;
+    height: 9.8rem;
     position: absolute;
     top: -27rem;
     left: 1rem;
@@ -8462,7 +8472,7 @@ input:hover {
   content: "";
   background-image: url(../img/adapter/icon8.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   width: 3rem;
   height: 3rem;
@@ -10097,6 +10107,8 @@ input:hover {
 
 @media (max-width: 48em) {
   .update__one {
+    text-align: center;
+    border-radius: 2rem;
     top: 30rem;
     right: 12rem;
     display: block;
@@ -11227,9 +11239,17 @@ input:checked + .slider:before {
   padding: 1.8rem 2.1rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   border-radius: 1.2rem;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+}
+.examination__reviews:hover {
+  border: 0.1rem solid #0ABD92;
+  color: #0ABD92;
+}
+.examination__reviews:hover:hover .examination__reviews-text {
+  color: rgb(6, 176, 161);
+}
+.examination__reviews:hover:hover .examination__reviews-icon {
+  opacity: 1;
+  color: rgb(6, 176, 161);
 }
 
 @media (max-width: 48em) {
@@ -11260,10 +11280,11 @@ input:checked + .slider:before {
   border-radius: 1.2rem;
 }
 .examination__article:hover {
-  border-color: #0ABD92;
-}
-.examination__article:hover .examination__article-text {
+  border: 0.1rem solid #0ABD92;
   color: #0ABD92;
+}
+.examination__article:hover:hover .examination__article-text {
+  color: rgb(6, 176, 161);
 }
 .examination__article:hover img {
   -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(120%) contrast(96%);
@@ -11459,9 +11480,6 @@ input:checked + .slider:before {
   font-size: 1.6rem;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.3);
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .examination__video {
@@ -11474,15 +11492,13 @@ input:checked + .slider:before {
   padding: 1.8rem 2.1rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   border-radius: 1.2rem;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 .examination__video:hover {
-  border-color: #0ABD92;
-}
-.examination__video:hover .examination__video-text {
+  border: 0.1rem solid #0ABD92;
   color: #0ABD92;
+}
+.examination__video:hover:hover .examination__video-text {
+  color: rgb(6, 176, 161);
 }
 .examination__video:hover img {
   -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(120%) contrast(96%);
@@ -12062,18 +12078,16 @@ input:checked + .slider:before {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   cursor: pointer;
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
 }
 .answers:hover {
-  border: 1px solid #06B0A1;
+  border: 0.1rem solid #0ABD92;
+  color: #0ABD92;
 }
-.answers:hover .answers__text {
-  color: #06B0A1;
+.answers:hover:hover .answers__text {
+  color: rgb(6, 176, 161);
 }
-.answers:hover .answers__icon {
-  -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
+.answers:hover:hover .answers__icon {
+  color: rgb(6, 176, 161);
   opacity: 1;
 }
 
@@ -12082,9 +12096,6 @@ input:checked + .slider:before {
   font-size: 1.8rem;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.3);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
 }
 
 @media (max-width: 48em) {
@@ -12551,28 +12562,23 @@ input:checked + .slider:before {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   cursor: pointer;
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
 }
 .pay:hover {
-  border: 1px solid #06B0A1;
+  border: 0.1rem solid #0ABD92;
+  color: #0ABD92;
 }
-.pay:hover .pay__text {
-  color: #06B0A1;
+.pay:hover:hover.pay__text {
+  color: rgb(6, 176, 161);
 }
-.pay:hover .pay__icon {
-  -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
+.pay:hover:hover .pay__icon {
   opacity: 1;
+  color: rgb(6, 176, 161);
 }
 .pay .pay__text {
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.3);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
 }
 
 @media (max-width: 48em) {
@@ -12932,28 +12938,8 @@ input:checked + .slider:before {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  opacity: 0;
-  -webkit-animation: road 0.5s linear 0.5s 1 normal forwards;
-  animation: road 0.5s linear 0.5s 1 normal forwards;
 }
 
-@-webkit-keyframes road {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes road {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .alert__img-sign {
   width: 7rem;
   height: 7.5rem;
@@ -13941,13 +13927,10 @@ input:checked + .slider:before {
 }
 .alert__tab:hover {
   border: 0.1rem solid #0ABD92;
-  -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
+  color: #0ABD92;
 }
 .alert__tab:hover .alert__tab-text {
   color: rgb(6, 176, 161);
-  opacity: 1;
-  -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
-  filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
 }
 
 .active-tab {
@@ -13957,11 +13940,20 @@ input:checked + .slider:before {
   -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
   filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
 }
-.active-tab .alert__tab-text {
+.active-tab img {
+  opacity: 1;
+  color: rgb(6, 176, 161);
+}
+.active-tab .alert__tab-text,
+.active-tab .examination__video-text,
+.active-tab .examination__article-text,
+.active-tab .examination__reviews-text,
+.active-tab .pay__text,
+.active-tab .answers__text {
   color: rgb(6, 176, 161);
   opacity: 1;
-  -webkit-filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
-  filter: invert(50%) sepia(17%) saturate(5572%) hue-rotate(139deg) brightness(86%) contrast(96%);
+  -webkit-filter: brightness(0) saturate(100%) invert(49%) sepia(87%) saturate(1864%) hue-rotate(130deg) brightness(99%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(49%) sepia(87%) saturate(1864%) hue-rotate(130deg) brightness(99%) contrast(92%);
 }
 
 @media (max-width: 48em) {
@@ -14357,7 +14349,9 @@ input:checked + .slider:before {
 
 @media (max-width: 48em) {
   .certificate {
-    padding: 0.9rem 1.3rem 3.3rem 2.3rem;
+    width: 60rem;
+    border-radius: 3rem;
+    padding: 1.9rem 2.3rem 3.3rem 2.3rem;
   }
 }
 .certificate__title {
@@ -14380,6 +14374,9 @@ input:checked + .slider:before {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .cartificate__items {
@@ -14413,8 +14410,8 @@ input:checked + .slider:before {
 
 @media (max-width: 48em) {
   .certificate__text {
-    font-size: 2.8rem;
-    width: 20rem;
+    font-size: 2.2rem;
+    width: 37rem;
   }
 }
 .certificate__one {
@@ -14544,6 +14541,9 @@ input:checked + .slider:before {
   }
   .certificate__img {
     display: none;
+  }
+  .certificate__icon2 {
+    width: 26rem;
   }
 }
 .modal__close {
