@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   AOS.init();
 
+
   // *********************************   slider  ******************************************
   const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
@@ -592,36 +593,24 @@ Array.from(closeButtons).forEach(button => {
   modals();
 
 const modalPromotion = () => {
-  const offer = document.querySelector(".offer");
   const buttonProm = document.querySelectorAll(".offer__wrap-link");
   const modalsProm = document.querySelectorAll(".modal__promotion-one");
-  let scrollPosition = 0;
+  const offer = document.querySelector(".offer");
+
+  let scrollTopPosition;
 
   const openModal = modal => {
+    scrollTopPosition = window.pageYOffset; // сохраняем текущее положение страницы
     modal.style.display = "block";
-    if (window.innerWidth > document.documentElement.clientWidth) {
-      // если есть вертикальный скролл, сохраняем текущую позицию
-      scrollPosition = window.pageYOffset;
-      document.body.style.top = -scrollPosition + "px";
-    }
+    offer.style.overflow = "hidden"; // скрываем скролл на блоке offer
     document.addEventListener("keydown", closeModalOnESC);
   };
 
   const closeModal = modal => {
     modal.style.display = "none";
-    document.body.style.overflow = ""; // восстанавливаем скролл на странице
+    offer.style.overflow = "auto"; // показываем скролл на блоке offer
+    window.scrollTo(0, scrollTopPosition); // устанавливаем сохраненное положение страницы
     document.removeEventListener("keydown", closeModalOnESC);
-
-    // Проверяем, был ли скролл на странице до открытия модального окна
-    if (scrollPosition) {
-      window.scrollTo(0, scrollPosition);
-    }
-
-    if (offer.scrollHeight > offer.clientHeight) {
-      // Если высота контейнера превышает видимую высоту,
-      // то добавляем вертикальный скролл
-      offer.style.overflowY = "auto";
-    }
   };
 
   const closeModalOnESC = event => {
@@ -664,6 +653,7 @@ const modalPromotion = () => {
 };
 
 modalPromotion();
+
 
 
 
