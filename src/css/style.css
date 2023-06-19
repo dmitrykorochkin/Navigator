@@ -2459,6 +2459,7 @@ img {
   content: "";
   position: absolute;
   left: -1.7rem;
+  top: -1rem;
   width: 0.3rem;
   height: 9.8rem;
   background: -o-linear-gradient(314.86deg, #0ABD92 0%, #009DB8 102.25%);
@@ -5431,8 +5432,8 @@ input:hover {
 }
 
 .coldstart__item-img2 {
-  width: 60rem;
-  height: 35.6rem;
+  width: 67rem;
+  height: 40rem;
   display: block;
 }
 
@@ -14902,8 +14903,8 @@ input:checked + .slider:before {
   width: 25rem;
   height: 23rem;
   position: absolute;
-  top: 26px;
-  left: 8rem;
+  top: 1.6rem;
+  left: 10rem;
 }
 
 @media (max-width: 48em) {
@@ -15920,7 +15921,6 @@ input:checked + .slider:before {
   margin: 0 auto;
   position: relative;
   width: 85rem;
-  height: 62rem;
   background: -o-linear-gradient(174.02deg, #121212 3.53%, #181818 97.46%), #FFFFFF;
   background: linear-gradient(275.98deg, #121212 3.53%, #181818 97.46%), #FFFFFF;
   -webkit-box-shadow: 0px 0px 249px rgba(12, 148, 125, 0.27);
