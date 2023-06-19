@@ -2024,8 +2024,8 @@ img {
   }
 }
 .video__img {
-  width: 57.2rem;
-  height: 31.9rem;
+  width: 60rem;
+  height: 33rem;
 }
 
 .video {
@@ -2111,13 +2111,13 @@ img {
   .video__preview-title {
     font-size: 2.5rem;
     top: 2rem;
-    left: 22rem;
+    left: 24rem;
   }
   .video__button {
     text-align: center;
   }
   .video__preview-subtitle {
-    left: 9rem;
+    left: 10rem;
   }
 }
 .video__price {
@@ -2601,6 +2601,25 @@ img {
   z-index: 1;
 }
 
+.camers #swiper3 {
+  display: none;
+}
+
+.slider-wrapper-one {
+  display: block;
+}
+
+@media (max-width: 48em) {
+  .slider-wrapper-one {
+    display: none;
+  }
+  .camers .swiper {
+    height: auto;
+  }
+  .camers #swiper3 {
+    display: block;
+  }
+}
 .camers__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2896,6 +2915,9 @@ img {
 }
 
 @media (max-width: 48em) {
+  .camers .swiper {
+    display: block;
+  }
   .camers .swiper-button-next {
     display: block;
   }
@@ -2916,20 +2938,22 @@ img {
     width: 45.6rem;
   }
   #swiper3 {
-    width: 50rem;
+    width: 60rem;
     margin: 0 auto;
   }
   #swiper3 .swiper-button-next {
     display: block;
-    top: 56rem;
+    top: 27rem;
+    right: 0rem;
   }
   #swiper3 .swiper-button-prev {
     display: block;
-    top: 56rem;
+    top: 27rem;
+    left: 0rem;
   }
   #swiper3 .swiper-pagination {
     display: block;
-    bottom: 168rem;
+    bottom: 0;
   }
   .swiper-slide {
     width: 30rem;
@@ -2944,11 +2968,11 @@ img {
     width: 30rem;
   }
   .camers__list-item {
-    width: 24rem;
-    height: 21.7rem;
+    width: 29rem;
+    height: 24.7rem;
   }
   .camers__list-item--text {
-    font-size: 2.1rem;
+    font-size: 2.4rem;
   }
 }
 .camers__title {

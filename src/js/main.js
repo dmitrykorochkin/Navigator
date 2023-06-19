@@ -1,34 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   AOS.init();
 
-
   // *********************************   slider  ******************************************
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 40,
-
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets"
-    },
-    // autoplay: {
-    //   delay: 5000
-    // },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      }
-    },
-
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-      hideOnClick: true
-    }
-  });
-
   const swiper2 = new Swiper("#swiper2", {
     slidesPerView: 1,
     spaceBetween: 70,
@@ -46,102 +19,101 @@ document.addEventListener("DOMContentLoaded", function() {
       delay: 5000
     }
   });
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    pagination: { el: ".swiper-pagination", type: "bullets" },
+    autoplay: { delay: 5000 },
+    breakpoints: { 768: { slidesPerView: 3, spaceBetween: 40 } },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+      hideOnClick: true
+    }
+  });
 
 
+    
+    if (window.innerWidth <= 767) {
+      const swiper3 = new Swiper("#swiper3", {
+    
+        slidesPerView: 1,
+        spaceBetween: 40,
 
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets"
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          hideOnClick: true
+        },
+        // autoplay: {
+        //   delay: 5000
+        // }
+      });
+    }
+  
+  //  *************************   Slider 360  **************************************************
 
-window.onload = function() {
-  if (window.innerWidth <= 767) {
-    const swiper3 = new Swiper("#swiper3", {
-      slidesPerView: 1,
-      spaceBetween: 70,
-      loop: false,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets"
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        hideOnClick: true
-      },
-      autoplay: {
-        delay: 5000
-      }
-    });
+  const slider = document.querySelector(".modal__360-wrap");
+  const prevBtn = document.querySelector(".modal__360-prev");
+  const nextBtn = document.querySelector(".modal__360-next");
+  const playBtn = document.querySelector(".modal__360-play");
+  const images = document.querySelectorAll(".modal__360-img");
+
+  let currentIndex = 0;
+  let intervalId = null;
+  let isPlaying = false;
+
+  function showSlide(index) {
+    images.forEach(image => (image.style.display = "none"));
+    images[index].style.display = "block";
   }
-};
 
-
-
-
-
-    //  *************************   Slider 360  **************************************************
-
-const slider = document.querySelector(".modal__360-wrap");
-const prevBtn = document.querySelector(".modal__360-prev");
-const nextBtn = document.querySelector(".modal__360-next");
-const playBtn = document.querySelector(".modal__360-play");
-const images = document.querySelectorAll(".modal__360-img");
-
-let currentIndex = 0;
-let intervalId = null;
-let isPlaying = false;
-
-function showSlide(index) {
-  images.forEach(image => (image.style.display = "none"));
-  images[index].style.display = "block";
-}
-
-function goToPrev(event) {
-  event.preventDefault();
-  if (currentIndex === 0) {
-    currentIndex = images.length - 1;
-  } else {
-    currentIndex--;
+  function goToPrev(event) {
+    event.preventDefault();
+    if (currentIndex === 0) {
+      currentIndex = images.length - 1;
+    } else {
+      currentIndex--;
+    }
+    showSlide(currentIndex);
   }
+
+  function goToNext(event) {
+    event.preventDefault();
+    if (currentIndex === images.length - 1) {
+      currentIndex = 0;
+    } else {
+      currentIndex++;
+    }
+    showSlide(currentIndex);
+  }
+
+  function togglePlay(event) {
+    event.preventDefault();
+    if (!isPlaying) {
+      // если проигрывание не запущено
+      intervalId = setInterval(() => {
+        goToNext(event);
+      }, 100);
+      playBtn.innerHTML = '<img src="./img/360/360/pause.svg" alt="pause" />';
+      isPlaying = true;
+    } else {
+      // если проигрывание запущено
+      clearInterval(intervalId);
+      playBtn.innerHTML = '<img src="./img/360/play.svg" alt="play" />';
+      isPlaying = false;
+    }
+  }
+
+  prevBtn.addEventListener("click", goToPrev);
+  nextBtn.addEventListener("click", goToNext);
+  playBtn.addEventListener("click", togglePlay);
+
   showSlide(currentIndex);
-}
-
-function goToNext(event) {
-  event.preventDefault();
-  if (currentIndex === images.length - 1) {
-    currentIndex = 0;
-  } else {
-    currentIndex++;
-  }
-  showSlide(currentIndex);
-}
-
-function togglePlay(event) {
-  event.preventDefault();
-  if (!isPlaying) {
-    // если проигрывание не запущено
-    intervalId = setInterval(() => {
-      goToNext(event);
-    }, 100);
-    playBtn.innerHTML = '<img src="./img/360/360/pause.svg" alt="pause" />';
-    isPlaying = true;
-  } else {
-    // если проигрывание запущено
-    clearInterval(intervalId);
-    playBtn.innerHTML = '<img src="./img/360/play.svg" alt="play" />';
-    isPlaying = false;
-  }
-}
-
-prevBtn.addEventListener("click", goToPrev);
-nextBtn.addEventListener("click", goToNext);
-playBtn.addEventListener("click", togglePlay);
-
-showSlide(currentIndex);
-
-
-
-
-
-
-
 
   // **************************************  accordion  *****************************************
 
@@ -188,8 +160,7 @@ showSlide(currentIndex);
     });
   });
 
-  //**************************  tabs pay answer ***************************** 
-
+  //**************************  tabs pay answer *****************************
 
   // tabs 4 режима
 
@@ -302,31 +273,30 @@ showSlide(currentIndex);
 
   // бургер меню
 
-const navbarMenu = document.querySelector(".navbar");
-const buttonBurger = document.querySelector(".header__burger");
-const buttonBurgerClose = document.querySelector(".header__burger-close");
-const menuLinks = document.querySelectorAll(".menu__list a");
+  const navbarMenu = document.querySelector(".navbar");
+  const buttonBurger = document.querySelector(".header__burger");
+  const buttonBurgerClose = document.querySelector(".header__burger-close");
+  const menuLinks = document.querySelectorAll(".menu__list a");
 
-buttonBurger.addEventListener("click", () => {
-  navbarMenu.classList.add("navbar__visible");
-  buttonBurger.style.display = "none";
-  buttonBurgerClose.style.display = "block";
-});
+  buttonBurger.addEventListener("click", () => {
+    navbarMenu.classList.add("navbar__visible");
+    buttonBurger.style.display = "none";
+    buttonBurgerClose.style.display = "block";
+  });
 
-buttonBurgerClose.addEventListener("click", () => {
-  navbarMenu.classList.remove("navbar__visible");
-  buttonBurger.style.display = "block";
-  buttonBurgerClose.style.display = "none";
-});
-
-menuLinks.forEach(link => {
-  link.addEventListener("click", () => {
+  buttonBurgerClose.addEventListener("click", () => {
     navbarMenu.classList.remove("navbar__visible");
     buttonBurger.style.display = "block";
     buttonBurgerClose.style.display = "none";
   });
-});
 
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navbarMenu.classList.remove("navbar__visible");
+      buttonBurger.style.display = "block";
+      buttonBurgerClose.style.display = "none";
+    });
+  });
 
   // загрузка страниц при скролле
 
@@ -375,40 +345,40 @@ menuLinks.forEach(link => {
     }
   };
 
-const cursor = document.querySelector(".cursor");
+  const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove", function(e) {
-  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-});
+  document.addEventListener("mousemove", function(e) {
+    cursor.style.cssText =
+      "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+  });
 
-document.addEventListener("mouseover", function(e) {
-  if (e.target.closest("button, a")) {
-    cursor.classList.add("_over");
-  }
-});
-
-document.addEventListener("mouseout", function(e) {
-  if (e.target.closest("button, a")) {
-    cursor.classList.remove("_over");
-    cursor.style.display = "none"; // добавили скрытие курсора
-  }
-});
-
-document.addEventListener("mousedown", function(e) {
-  if (e.target.closest("button, a")) {
-    cursor.classList.add("click");
-    cursor.classList.remove("_over");
-    setTimeout(function() {
-      cursor.classList.remove("click");
+  document.addEventListener("mouseover", function(e) {
+    if (e.target.closest("button, a")) {
       cursor.classList.add("_over");
-    }, 500);
-  }
-});
+    }
+  });
 
-document.addEventListener("mouseenter", function(e) {
-  cursor.style.display = "block"; // добавили отображение курсора
-});
+  document.addEventListener("mouseout", function(e) {
+    if (e.target.closest("button, a")) {
+      cursor.classList.remove("_over");
+      cursor.style.display = "none"; // добавили скрытие курсора
+    }
+  });
 
+  document.addEventListener("mousedown", function(e) {
+    if (e.target.closest("button, a")) {
+      cursor.classList.add("click");
+      cursor.classList.remove("_over");
+      setTimeout(function() {
+        cursor.classList.remove("click");
+        cursor.classList.add("_over");
+      }, 500);
+    }
+  });
+
+  document.addEventListener("mouseenter", function(e) {
+    cursor.style.display = "block"; // добавили отображение курсора
+  });
 
   // ==========================================================================
   // ====================   Плавный скролл по якорям  =========================
@@ -424,108 +394,106 @@ document.addEventListener("mouseenter", function(e) {
     });
   });
 
+  const inputMask = new Inputmask("+7 (999) 999-99-99");
+  const forms = document.querySelectorAll(".form__element");
 
+  forms.forEach(form => {
+    const telSelector = form.querySelector('input[type="tel"]');
+    inputMask.mask(telSelector);
 
-
-const inputMask = new Inputmask("+7 (999) 999-99-99");
-const forms = document.querySelectorAll(".form__element");
-
-forms.forEach(form => {
-  const telSelector = form.querySelector('input[type="tel"]');
-  inputMask.mask(telSelector);
-
-  new window.JustValidate(`#${form.id}`, {
-    rules: {
-      tel: {
-        required: true,
-        function: () => {
-          const phone = telSelector.inputmask.unmaskedvalue();
-          return Number(phone) && phone.length === 10;
+    new window.JustValidate(`#${form.id}`, {
+      rules: {
+        tel: {
+          required: true,
+          function: () => {
+            const phone = telSelector.inputmask.unmaskedvalue();
+            return Number(phone) && phone.length === 10;
+          }
         }
-      }
-    },
-    submitHandler: async function(form) {
-      const formData = new FormData(form);
+      },
+      submitHandler: async function(form) {
+        const formData = new FormData(form);
 
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData)
-        });
-
-        if (response.ok) {
-          console.log("Отправлено");
-
-          // Отправка почты
-          const mailData = new FormData();
-          mailData.append("name", formData.get("name"));
-          mailData.append("phone", formData.get("phone"));
-          mailData.append("type", "mail");
-
-          const mailResponse = await fetch("mail.php", {
+        try {
+          const response = await fetch(form.action, {
             method: "POST",
-            headers: { "Content-Type": "multipart/form-data" },
-            body: mailData
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData)
           });
 
-          if (mailResponse.ok) {
-            console.log(await mailResponse.text());
-          }
+          if (response.ok) {
+            console.log("Отправлено");
 
+            // Отправка почты
+            const mailData = new FormData();
+            mailData.append("name", formData.get("name"));
+            mailData.append("phone", formData.get("phone"));
+            mailData.append("type", "mail");
+
+            const mailResponse = await fetch("mail.php", {
+              method: "POST",
+              headers: { "Content-Type": "multipart/form-data" },
+              body: mailData
+            });
+
+            if (mailResponse.ok) {
+              console.log(await mailResponse.text());
+            }
+
+            // Показываем модальное окно с сообщением об успехе
+            const modalThanksWrapper = document.querySelector(
+              ".modal__thanks-wrapper"
+            );
+            modalThanksWrapper.style.display = "block";
+          } else {
+            console.error("Ошибка при отправке формы");
+          }
+        } catch (error) {
+          console.error(error);
+        }
+
+        form.reset();
+      }
+    });
+  });
+
+  const lastForms = document.querySelector(".purchase__button");
+  const form4 = document.querySelector("#form4");
+
+  lastForms.addEventListener("click", () => {
+    // Получим данные формы
+    const formData = new FormData(form4);
+
+    // Отправим данные на сервер через AJAX запрос
+    fetch(form4.action, {
+      method: "POST",
+      body: formData
+    })
+      .then(response => {
+        if (response.ok) {
           // Показываем модальное окно с сообщением об успехе
           const modalThanksWrapper = document.querySelector(
             ".modal__thanks-wrapper"
           );
           modalThanksWrapper.style.display = "block";
-        } else {
-          console.error("Ошибка при отправке формы");
         }
-      } catch (error) {
-        console.error(error);
-      }
-
-      form.reset();
-    }
+      })
+      .catch(error => {
+        // Показываем модальное окно с сообщением об ошибке
+        console.log("Ошибка при отправке формы");
+      });
   });
-});
 
-const lastForms = document.querySelector(".purchase__button");
-const form4 = document.querySelector("#form4");
-
-lastForms.addEventListener("click", () => {
-  // Получим данные формы
-  const formData = new FormData(form4);
-
-  // Отправим данные на сервер через AJAX запрос
-  fetch(form4.action, {
-    method: "POST",
-    body: formData
-  })
-    .then(response => {
-      if (response.ok) {
-        // Показываем модальное окно с сообщением об успехе
-        const modalThanksWrapper = document.querySelector(
-          ".modal__thanks-wrapper"
-        );
-        modalThanksWrapper.style.display = "block";
-      }
-    })
-    .catch(error => {
-      // Показываем модальное окно с сообщением об ошибке
-      console.log("Ошибка при отправке формы");
+  // Найдем кнопку закрытия модального окна
+  const closeButtons = document.querySelectorAll(".thanks__close");
+  Array.from(closeButtons).forEach(button => {
+    button.addEventListener("click", () => {
+      const modalThanksWrapper = document.querySelector(
+        ".modal__thanks-wrapper"
+      );
+      modalThanksWrapper.style.display = "none";
     });
-});
-
-// Найдем кнопку закрытия модального окна
-const closeButtons = document.querySelectorAll(".thanks__close");
-Array.from(closeButtons).forEach(button => {
-  button.addEventListener("click", () => {
-    const modalThanksWrapper = document.querySelector(".modal__thanks-wrapper");
-    modalThanksWrapper.style.display = "none";
   });
-});
-
 
   const modals = () => {
     function bindModal(triggerSelector, modalSelector, closeSelector) {
@@ -567,7 +535,7 @@ Array.from(closeButtons).forEach(button => {
     //   ".header__button",
     //   ".modal__call-wrapper",
     //   ".modal__call-wrapper .popup-close"
-    
+
     // bindModal(
     //   ".additional__link",
     //   ".modal__additional-wrapper",
@@ -597,81 +565,75 @@ Array.from(closeButtons).forEach(button => {
 
   modals();
 
-const modalPromotion = () => {
-  const buttonProm = document.querySelectorAll(".offer__wrap-link");
-  const modalsProm = document.querySelectorAll(".modal__promotion-one");
-  const offer = document.querySelector(".offer");
+  const modalPromotion = () => {
+    const buttonProm = document.querySelectorAll(".offer__wrap-link");
+    const modalsProm = document.querySelectorAll(".modal__promotion-one");
+    const offer = document.querySelector(".offer");
 
-  let scrollTopPosition;
+    let scrollTopPosition;
 
-  const openModal = modal => {
-    scrollTopPosition = window.pageYOffset; // сохраняем текущее положение страницы
-    modal.style.display = "block";
-    offer.style.overflow = "hidden"; // скрываем скролл на блоке offer
-    document.addEventListener("keydown", closeModalOnESC);
-  };
+    const openModal = modal => {
+      scrollTopPosition = window.pageYOffset; // сохраняем текущее положение страницы
+      modal.style.display = "block";
+      offer.style.overflow = "hidden"; // скрываем скролл на блоке offer
+      document.addEventListener("keydown", closeModalOnESC);
+    };
 
-  const closeModal = modal => {
-    modal.style.display = "none";
-    offer.style.overflow = "auto"; // показываем скролл на блоке offer
-    window.scrollTo(0, scrollTopPosition); // устанавливаем сохраненное положение страницы
-    document.removeEventListener("keydown", closeModalOnESC);
-  };
+    const closeModal = modal => {
+      modal.style.display = "none";
+      offer.style.overflow = "auto"; // показываем скролл на блоке offer
+      window.scrollTo(0, scrollTopPosition); // устанавливаем сохраненное положение страницы
+      document.removeEventListener("keydown", closeModalOnESC);
+    };
 
-  const closeModalOnESC = event => {
-    if (event.keyCode === 27) {
-      const openModal = document.querySelector(
-        '.modal__promotion-one[style*="display: block"]'
-      );
-      closeModal(openModal);
-    }
-  };
-
-  document.addEventListener("click", event => {
-    const target = event.target;
-
-    // Проверяем, был ли клик на кнопке открытия модального окна
-    for (let i = 0; i < buttonProm.length; i++) {
-      if (target === buttonProm[i]) {
-        event.preventDefault();
-        openModal(modalsProm[i]);
-        return;
+    const closeModalOnESC = event => {
+      if (event.keyCode === 27) {
+        const openModal = document.querySelector(
+          '.modal__promotion-one[style*="display: block"]'
+        );
+        closeModal(openModal);
       }
-    }
+    };
 
-    // Проверяем, был ли клик на кнопке закрытия модального окна
-    if (target.classList.contains("button__promotion-close")) {
-      console.log("Клик на кнопке закрытия модального окна");
-      const modal = target.closest(".modal__promotion-one");
-      closeModal(modal);
-      console.log("Функция closeModal выполнена");
-    }
+    document.addEventListener("click", event => {
+      const target = event.target;
 
-    // Проверяем, был ли клик вне модального окна
-    for (let i = 0; i < modalsProm.length; i++) {
-      if (target === modalsProm[i]) {
-        closeModal(target);
-        return;
+      // Проверяем, был ли клик на кнопке открытия модального окна
+      for (let i = 0; i < buttonProm.length; i++) {
+        if (target === buttonProm[i]) {
+          event.preventDefault();
+          openModal(modalsProm[i]);
+          return;
+        }
       }
-    }
-  });
-};
 
-modalPromotion();
+      // Проверяем, был ли клик на кнопке закрытия модального окна
+      if (target.classList.contains("button__promotion-close")) {
+        console.log("Клик на кнопке закрытия модального окна");
+        const modal = target.closest(".modal__promotion-one");
+        closeModal(modal);
+        console.log("Функция closeModal выполнена");
+      }
 
+      // Проверяем, был ли клик вне модального окна
+      for (let i = 0; i < modalsProm.length; i++) {
+        if (target === modalsProm[i]) {
+          closeModal(target);
+          return;
+        }
+      }
+    });
+  };
 
+  modalPromotion();
 
+  const modalAdditional = () => {
+    const buttonAdditionalList = document.querySelectorAll(".additional__link");
+    const modalAdditionalList = document.querySelectorAll(
+      ".modal__additional-wrapper"
+    );
 
-
-
-
-const modalAdditional = () => {
-  const buttonAdditionalList = document.querySelectorAll(".additional__link");
-  const modalAdditionalList = document.querySelectorAll(
-    ".modal__additional-wrapper"
-  );
-
- const openModal = modal => {
+    const openModal = modal => {
       modal.style.display = "block";
       document.addEventListener("keydown", closeModalOnESC);
     };
@@ -683,7 +645,9 @@ const modalAdditional = () => {
 
     const closeModalOnESC = event => {
       if (event.keyCode === 27) {
-        const openModal = document.querySelector('.modal__additional-wrapper[style*="display: block"]');
+        const openModal = document.querySelector(
+          '.modal__additional-wrapper[style*="display: block"]'
+        );
         closeModal(openModal);
       }
     };
@@ -716,14 +680,9 @@ const modalAdditional = () => {
         }
       }
     });
-  }
+  };
 
-modalAdditional();
-
-
-
-
-
+  modalAdditional();
 
   // комплектующие
 
@@ -743,117 +702,114 @@ modalAdditional();
     });
   });
 
+  // modal additional
+  //   ".additional__link",
+  //   ".modal__additional-wrapper",
+  //   ".modal__additional-wrapper .popup-close"
 
-  // modal additional  
-      //   ".additional__link",
-    //   ".modal__additional-wrapper",
-    //   ".modal__additional-wrapper .popup-close"
+  // const buttonAdditional = document.querySelectorAll(".additional__link");
+  // const modalAdditionalOverlay = document.querySelectorAll(".modal__additional-wrapper");
+  // const modalAdditional = document.querySelector(".modal__additional");
+  // const overlay = document.querySelector(".overlay");
+  // let activeModal = null;
 
-    // const buttonAdditional = document.querySelectorAll(".additional__link");
-    // const modalAdditionalOverlay = document.querySelectorAll(".modal__additional-wrapper");
-    // const modalAdditional = document.querySelector(".modal__additional");
-    // const overlay = document.querySelector(".overlay");
-    // let activeModal = null;
+  // buttonAdditional.forEach(button => {
+  //   button.addEventListener("click", event => {
+  //     event.preventDefault();
+  //     const index = event.target.getAttribute("data-index");
+  //     const modal = document.querySelector(`.modal__additional-wrapper[data-index="${index}"]`);
+  //     if (modal) {
+  //       showModal(modal);
+  //     }
+  //   });
+  // });
 
-    // buttonAdditional.forEach(button => {
-    //   button.addEventListener("click", event => {
-    //     event.preventDefault();
-    //     const index = event.target.getAttribute("data-index");
-    //     const modal = document.querySelector(`.modal__additional-wrapper[data-index="${index}"]`);
-    //     if (modal) {
-    //       showModal(modal);
-    //     }
-    //   });
-    // });
+  // function showModal(modal) {
+  //   modal.style.display = "block";
+  //   overlay.style.display = "block";
 
-    // function showModal(modal) {
-    //   modal.style.display = "block";
-    //   overlay.style.display = "block";
+  //   // Add event listeners to close buttons
+  //   const closeButtons = modal.querySelectorAll(".popup-close");
+  //   closeButtons.forEach(button => {
+  //     button.addEventListener("click", () => {
+  //       hideModal(modal);
+  //     });
+  //   });
 
-    //   // Add event listeners to close buttons
-    //   const closeButtons = modal.querySelectorAll(".popup-close");
-    //   closeButtons.forEach(button => {
-    //     button.addEventListener("click", () => {
-    //       hideModal(modal);
-    //     });
-    //   });
+  //   overlay.addEventListener("click", outsideClickHandler);
+  //   document.addEventListener("keydown", keyDownHandler);
 
-    //   overlay.addEventListener("click", outsideClickHandler);
-    //   document.addEventListener("keydown", keyDownHandler);
+  //   activeModal = modal;
+  // }
 
-    //   activeModal = modal;
-    // }
+  // function hideModal(modal) {
+  //   modal.style.display = "none";
+  //   overlay.style.display = "none";
 
-    // function hideModal(modal) {
-    //   modal.style.display = "none";
-    //   overlay.style.display = "none";
+  //   // Remove event listeners from close buttons
+  //   const closeButtons = modal.querySelectorAll(".popup-close");
+  //   closeButtons.forEach(button => {
+  //     button.removeEventListener("click", () => {
+  //       hideModal(modal);
+  //     });
+  //   });
 
-    //   // Remove event listeners from close buttons
-    //   const closeButtons = modal.querySelectorAll(".popup-close");
-    //   closeButtons.forEach(button => {
-    //     button.removeEventListener("click", () => {
-    //       hideModal(modal);
-    //     });
-    //   });
+  //   overlay.removeEventListener("click", outsideClickHandler);
+  //   document.removeEventListener("keydown", keyDownHandler);
 
-    //   overlay.removeEventListener("click", outsideClickHandler);
-    //   document.removeEventListener("keydown", keyDownHandler);
+  //   activeModal = null;
+  // }
 
-    //   activeModal = null;
-    // }
+  // function outsideClickHandler(event) {
+  //   if (event.target == overlay && activeModal !== null) {
+  //     hideModal(activeModal);
+  //   }
+  // }
 
-    // function outsideClickHandler(event) {
-    //   if (event.target == overlay && activeModal !== null) {
-    //     hideModal(activeModal);
-    //   }
-    // }
-
-    // function keyDownHandler(event) {
-    //   if (event.key === "Escape" && activeModal !== null) {
-    //     hideModal(activeModal);
-    //   }
-    // }
-
-
+  // function keyDownHandler(event) {
+  //   if (event.key === "Escape" && activeModal !== null) {
+  //     hideModal(activeModal);
+  //   }
+  // }
 
   // ************************  АНИМАЦИЯ *****************************
 
-let index = 0;
+  let index = 0;
 
-// Функция, вызываемая при появлении элемента в области видимости
-const handleIntersection = (entries, observer) => {
-  const items = document.querySelectorAll(".tabs__item");
-  const images = document.querySelectorAll(".tabs__container");
+  // Функция, вызываемая при появлении элемента в области видимости
+  const handleIntersection = (entries, observer) => {
+    const items = document.querySelectorAll(".tabs__item");
+    const images = document.querySelectorAll(".tabs__container");
 
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      items.forEach(item => item.classList.remove("active-tab"));
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        items.forEach(item => item.classList.remove("active-tab"));
 
-      items[index].classList.add("active-tab");
+        items[index].classList.add("active-tab");
 
-      images.forEach(image => image.classList.remove("active"));
+        images.forEach(image => image.classList.remove("active"));
 
-      images[index].classList.add("active");
-    } else {
-      items.forEach(function(item, i) {
-        if (item.classList.contains("active-tab")) {
-          index = i;
-        }
-      });
+        images[index].classList.add("active");
+      } else {
+        items.forEach(function(item, i) {
+          if (item.classList.contains("active-tab")) {
+            index = i;
+          }
+        });
 
-      items.forEach(item => item.classList.remove("active-tab"));
-      images.forEach(image => image.classList.remove("active"));
-    }
+        items.forEach(item => item.classList.remove("active-tab"));
+        images.forEach(image => image.classList.remove("active"));
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersection);
+  const targetElement = document.querySelector("#mode");
+  observer.observe(targetElement);
+
+  window.addEventListener("scroll", function() {
+    index = 0;
   });
-};
-
-const observer = new IntersectionObserver(handleIntersection);
-const targetElement = document.querySelector("#mode");
-observer.observe(targetElement);
-
-window.addEventListener("scroll", function() {
-  index = 0;
-});
 
   // *******************************************************************************************
 
@@ -897,11 +853,6 @@ window.addEventListener("scroll", function() {
   };
   alertAnimation();
 
-
-
-
-
-
   //*******************************  Анимация машинок и аварии *********************************
 
   const protections = document.querySelectorAll(
@@ -929,10 +880,4 @@ window.addEventListener("scroll", function() {
   const protection = document.querySelector("#protection");
 
   observerProtection.observe(protection);
-
-
-
-
-
-
 });
