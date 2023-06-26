@@ -2,29 +2,25 @@ document.addEventListener("DOMContentLoaded", function() {
   AOS.init();
 
   // *********************************   slider  ******************************************
-  const swiper2 = new Swiper("#swiper2", {
+
+
+  const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
-    spaceBetween: 70,
+    spaceBetween: 40,
 
     pagination: {
       el: ".swiper-pagination",
       type: "bullets"
     },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-      hideOnClick: true
-    },
     autoplay: {
       delay: 5000
-    }
-  });
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 40,
-    pagination: { el: ".swiper-pagination", type: "bullets" },
-    autoplay: { delay: 5000 },
-    breakpoints: { 768: { slidesPerView: 3, spaceBetween: 40 } },
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      }
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -32,27 +28,43 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-    if (window.innerWidth <= 767) {
-      const swiper3 = new Swiper("#swiper3", {
-    
-        slidesPerView: 1,
-        spaceBetween: 40,
+  if (window.innerWidth <= 767) {
+    const swiper3 = new Swiper("#swiper3", {
+      slidesPerView: 1,
+      spaceBetween: 40,
 
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets"
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          hideOnClick: true
-        },
-        autoplay: {
-          delay: 5000
-        }
-      });
-    }
-  
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets"
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        hideOnClick: false
+      },
+      autoplay: {
+        delay: 5000
+      }
+    });
+  }
+    const swiper2 = new Swiper("#swiper2", {
+      slidesPerView: 1,
+      spaceBetween: 40,
+
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets"
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        hideOnClick: true
+      },
+      autoplay: {
+        delay: 5000
+      }
+    });
+
   //  *************************   Slider 360  **************************************************
 
   const slider = document.querySelector(".modal__360-wrap");
@@ -195,7 +207,10 @@ document.addEventListener("DOMContentLoaded", function() {
   //tabs slider
 
   const itemSlide = document.querySelectorAll(".item-slide");
-  const slideBlock = document.querySelectorAll(".swiper");
+  const slideBlock = document.querySelectorAll(".examination .swiper");
+
+  console.log(itemSlide);
+  console.log(slideBlock);
 
   itemSlide.forEach((item, index) => {
     item.addEventListener("mouseover", () => {
